@@ -1,0 +1,33 @@
+|states
+switches[0] => comb_proc.IN1
+switches[0] => Equal0.IN2
+switches[0] => Equal1.IN2
+switches[0] => Equal2.IN2
+switches[0] => Equal3.IN3
+switches[1] => comb_proc.IN1
+switches[1] => Equal0.IN1
+switches[1] => Equal1.IN1
+switches[1] => Equal2.IN3
+switches[1] => Equal3.IN2
+switches[2] => comb_proc.IN0
+switches[2] => Equal0.IN0
+switches[2] => Equal1.IN3
+switches[2] => Equal2.IN1
+switches[2] => Equal3.IN1
+switches[3] => comb_proc.IN1
+switches[3] => Equal0.IN3
+switches[3] => Equal1.IN0
+switches[3] => Equal2.IN0
+switches[3] => Equal3.IN0
+keys[0] => ~NO_FANOUT~
+keys[1] => ~NO_FANOUT~
+keys[2] => ~NO_FANOUT~
+keys[3] => ~NO_FANOUT~
+clk => PS~1.DATAIN
+hexs[0] <= hexs[0].DB_MAX_OUTPUT_PORT_TYPE
+hexs[1] <= hexs[1].DB_MAX_OUTPUT_PORT_TYPE
+hexs[2] <= hexs[2].DB_MAX_OUTPUT_PORT_TYPE
+hexs[3] <= hexs[3].DB_MAX_OUTPUT_PORT_TYPE
+led <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
