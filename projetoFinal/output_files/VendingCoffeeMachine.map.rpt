@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingCoffeeMachine
-Mon May 13 22:53:23 2019
+Mon May 13 23:35:28 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,16 +10,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |states|PS
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -45,20 +36,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 13 22:53:23 2019       ;
+; Analysis & Synthesis Status        ; Failed - Mon May 13 23:35:28 2019           ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VendingCoffeeMachine                        ;
 ; Top-level Entity Name              ; states                                      ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 14                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -164,181 +155,26 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                              ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; states.vhd                       ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projetoFinal/states.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-
-
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-;                                             ;         ;
-; Total combinational functions               ; 0       ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 0       ;
-;     -- 3 input functions                    ; 0       ;
-;     -- <=2 input functions                  ; 0       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 0       ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 0       ;
-;     -- Dedicated logic registers            ; 0       ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 14      ;
-;                                             ;         ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; keys[0] ;
-; Maximum fan-out                             ; 1       ;
-; Total fan-out                               ; 14      ;
-; Average fan-out                             ; 0.50    ;
-+---------------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |states                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |states             ; states      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------+
-; State Machine - |states|PS                ;
-+-------+------+------+------+-------+------+
-; Name  ; PS.F ; PS.S ; PS.E ; PS.SB ; PS.I ;
-+-------+------+------+------+-------+------+
-; PS.I  ; 0    ; 0    ; 0    ; 0     ; 0    ;
-; PS.SB ; 0    ; 0    ; 0    ; 1     ; 1    ;
-; PS.E  ; 0    ; 0    ; 1    ; 0     ; 1    ;
-; PS.S  ; 0    ; 1    ; 0    ; 0     ; 1    ;
-; PS.F  ; 1    ; 0    ; 0    ; 0     ; 1    ;
-+-------+------+------+------+-------+------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; PS.E                                  ; Lost fanout        ;
-; PS.S                                  ; Lost fanout        ;
-; PS.F                                  ; Lost fanout        ;
-; PS.I                                  ; Lost fanout        ;
-; PS.SB                                 ; Lost fanout        ;
-; Total Number of Removed Registers = 5 ;                    ;
-+---------------------------------------+--------------------+
-
-
-+-----------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                 ;
-+---------------+--------------------+----------------------------------------+
-; Register name ; Reason for Removal ; Registers Removed due to This Register ;
-+---------------+--------------------+----------------------------------------+
-; PS.E          ; Lost Fanouts       ; PS.I, PS.SB                            ;
-+---------------+--------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 13 22:53:10 2019
+    Info: Processing started: Mon May 13 23:35:19 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingCoffeeMachine -c VendingCoffeeMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 13
-    Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 5
-Info (12127): Elaborating entity "states" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at states.vhd(9): used implicit default value for signal "hexs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at states.vhd(10): used implicit default value for signal "led" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 10
-Warning (10540): VHDL Signal Declaration warning at states.vhd(16): used explicit default value for signal "s_reset" because signal was never assigned a value File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 16
-Warning (10631): VHDL Process Statement warning at states.vhd(31): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Info (10041): Inferred latch for "NS.F" at states.vhd(31) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Info (10041): Inferred latch for "NS.S" at states.vhd(31) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Info (10041): Inferred latch for "NS.E" at states.vhd(31) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Info (10041): Inferred latch for "NS.SB" at states.vhd(31) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Info (10041): Inferred latch for "NS.I" at states.vhd(31) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 31
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hexs[0]" is stuck at GND File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 9
-    Warning (13410): Pin "hexs[1]" is stuck at GND File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 9
-    Warning (13410): Pin "hexs[2]" is stuck at GND File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 9
-    Warning (13410): Pin "hexs[3]" is stuck at GND File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 9
-    Warning (13410): Pin "led" is stuck at GND File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 10
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "keys[0]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 7
-    Warning (15610): No output dependent on input pin "keys[1]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 7
-    Warning (15610): No output dependent on input pin "keys[2]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 7
-    Warning (15610): No output dependent on input pin "keys[3]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 7
-    Warning (15610): No output dependent on input pin "clk" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 8
-    Warning (15610): No output dependent on input pin "switches[0]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 6
-    Warning (15610): No output dependent on input pin "switches[1]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 6
-    Warning (15610): No output dependent on input pin "switches[2]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 6
-    Warning (15610): No output dependent on input pin "switches[3]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 6
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 5 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4818 megabytes
-    Info: Processing ended: Mon May 13 22:53:23 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+Error (10500): VHDL syntax error at states.vhd(48) near text "with";  expecting "end", or "(", or an identifier ("with" is a reserved keyword), or a sequential statement File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 48
+Error (10500): VHDL syntax error at states.vhd(49) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 49
+Error (10500): VHDL syntax error at states.vhd(50) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 50
+Error (10500): VHDL syntax error at states.vhd(51) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 51
+Error (10500): VHDL syntax error at states.vhd(52) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 52
+Info (12021): Found 0 design units, including 0 entities, in source file states.vhd
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 5 errors, 1 warning
+    Error: Peak virtual memory: 4799 megabytes
+    Error: Processing ended: Mon May 13 23:35:28 2019
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:20
 
 
