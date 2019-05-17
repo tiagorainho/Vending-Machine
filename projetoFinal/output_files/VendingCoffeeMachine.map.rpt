@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingCoffeeMachine
-Mon May 13 23:35:28 2019
+Fri May 17 15:40:33 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,23 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |control|states:data|PS
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: debouncer:key0
+ 13. Parameter Settings for User Entity Instance: debouncer:key1
+ 14. Parameter Settings for User Entity Instance: debouncer:key2
+ 15. Parameter Settings for User Entity Instance: debouncer:key3
+ 16. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +52,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon May 13 23:35:28 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 17 15:40:33 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VendingCoffeeMachine                        ;
-; Top-level Entity Name              ; states                                      ;
+; Top-level Entity Name              ; control                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 474                                         ;
+;     Total combinational functions  ; 470                                         ;
+;     Dedicated logic registers      ; 110                                         ;
+; Total registers                    ; 110                                         ;
+; Total pins                         ; 38                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -59,7 +75,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value        ;
 +----------------------------------------------------------------------------+--------------------+----------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                      ;
-; Top-level entity name                                                      ; states             ; VendingCoffeeMachine ;
+; Top-level entity name                                                      ; control            ; VendingCoffeeMachine ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V            ;
 ; Use smart compilation                                                      ; Off                ; Off                  ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                   ;
@@ -148,11 +164,335 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; states.vhd                       ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projetoFinal/states.vhd                         ;         ;
+; control.vhd                      ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projetoFinal/control.vhd                        ;         ;
+; debouncer.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projetoFinal/debouncer.vhd                      ;         ;
+; BinToBCD.vhd                     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd                       ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projetoFinal/Bin7SegDecoder.vhd                 ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/lpm_divide_q9m.tdf              ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/sign_div_unsign_fkh.tdf         ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/alt_u_div_i4f.tdf               ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/add_sub_7pc.tdf                 ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/add_sub_8pc.tdf                 ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/lpm_divide_jhm.tdf              ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/sign_div_unsign_bkh.tdf         ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projetoFinal/db/alt_u_div_a4f.tdf               ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 474            ;
+;                                             ;                ;
+; Total combinational functions               ; 470            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 130            ;
+;     -- 3 input functions                    ; 105            ;
+;     -- <=2 input functions                  ; 235            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 327            ;
+;     -- arithmetic mode                      ; 143            ;
+;                                             ;                ;
+; Total registers                             ; 110            ;
+;     -- Dedicated logic registers            ; 110            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 38             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 110            ;
+; Total fan-out                               ; 1634           ;
+; Average fan-out                             ; 2.49           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |control                                  ; 470 (0)             ; 110 (0)                   ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |control                                                                                                                     ; control             ; work         ;
+;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|Bin7SegDecoder:outHex0                                                                                              ; Bin7SegDecoder      ; work         ;
+;    |Bin7SegDecoder:outHex1|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|Bin7SegDecoder:outHex1                                                                                              ; Bin7SegDecoder      ; work         ;
+;    |BinToBCD:bin2BCD_01|                  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD            ; work         ;
+;       |lpm_divide:Div0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 47 (47)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f       ; work         ;
+;    |debouncer:key0|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key0                                                                                                      ; debouncer           ; work         ;
+;    |debouncer:key1|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key1                                                                                                      ; debouncer           ; work         ;
+;    |debouncer:key2|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key2                                                                                                      ; debouncer           ; work         ;
+;    |debouncer:key3|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key3                                                                                                      ; debouncer           ; work         ;
+;    |states:data|                          ; 104 (104)           ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|states:data                                                                                                         ; states              ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------+
+; State Machine - |control|states:data|PS               ;
++--------+--------+--------+------+------+-------+------+
+; Name   ; PS.F_T ; PS.F_N ; PS.S ; PS.E ; PS.SB ; PS.I ;
++--------+--------+--------+------+------+-------+------+
+; PS.I   ; 0      ; 0      ; 0    ; 0    ; 0     ; 0    ;
+; PS.SB  ; 0      ; 0      ; 0    ; 0    ; 1     ; 1    ;
+; PS.E   ; 0      ; 0      ; 0    ; 1    ; 0     ; 1    ;
+; PS.S   ; 0      ; 0      ; 1    ; 0    ; 0     ; 1    ;
+; PS.F_N ; 0      ; 1      ; 0    ; 0    ; 0     ; 1    ;
+; PS.F_T ; 1      ; 0      ; 0    ; 0    ; 0     ; 1    ;
++--------+--------+--------+------+------+-------+------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++-----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------+------------------------+
+; states:data|s_led_on                                ; states:data|Selector23 ; yes                    ;
+; states:data|s_hex_En                                ; states:data|WideOr2    ; yes                    ;
+; states:data|hex01[0]                                ; states:data|Selector10 ; yes                    ;
+; states:data|hex01[1]                                ; states:data|Selector10 ; yes                    ;
+; states:data|hex01[2]                                ; states:data|Selector10 ; yes                    ;
+; states:data|hex01[3]                                ; states:data|Selector10 ; yes                    ;
+; states:data|s_count_switches[0]                     ; states:data|Selector19 ; yes                    ;
+; states:data|s_count_switches[1]                     ; states:data|Selector19 ; yes                    ;
+; states:data|s_count_switches[2]                     ; states:data|Selector19 ; yes                    ;
+; states:data|s_money[6]                              ; states:data|PS.S       ; yes                    ;
+; states:data|s_price[5]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[5]                              ; states:data|PS.S       ; yes                    ;
+; states:data|s_price[4]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[4]                              ; states:data|PS.S       ; yes                    ;
+; states:data|s_price[3]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[3]                              ; states:data|PS.S       ; yes                    ;
+; states:data|s_price[2]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[2]                              ; states:data|PS.S       ; yes                    ;
+; states:data|s_price[1]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[1]                              ; states:data|s_money[1] ; yes                    ;
+; states:data|s_price[0]                              ; states:data|Selector10 ; yes                    ;
+; states:data|s_money[0]                              ; states:data|s_money[0] ; yes                    ;
+; states:data|NS.S_573                                ; states:data|Selector12 ; yes                    ;
+; states:data|NS.I_615                                ; states:data|Selector16 ; yes                    ;
+; states:data|NS.F_N_559                              ; states:data|Selector12 ; yes                    ;
+; states:data|NS.E_587                                ; states:data|Selector16 ; yes                    ;
+; states:data|NS.F_T_545                              ; states:data|Selector12 ; yes                    ;
+; states:data|NS.SB_601                               ; states:data|Selector16 ; yes                    ;
+; states:data|hex01[4]                                ; states:data|Selector10 ; yes                    ;
+; states:data|hex01[5]                                ; states:data|Selector10 ; yes                    ;
+; Number of user-specified and inferred latches = 30  ;                        ;                        ;
++-----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 110   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key0|s_debounceCnt[4]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key1|s_debounceCnt[13] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key2|s_debounceCnt[12] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key3|s_debounceCnt[6]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |control|states:data|Selector4            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |control|states:data|s_money              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:key0 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                     ;
+; msecmininwidth ; 100   ; Signed Integer                     ;
+; inpolarity     ; '0'   ; Enumerated                         ;
+; outpolarity    ; '1'   ; Enumerated                         ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:key1 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                     ;
+; msecmininwidth ; 100   ; Signed Integer                     ;
+; inpolarity     ; '0'   ; Enumerated                         ;
+; outpolarity    ; '1'   ; Enumerated                         ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:key2 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                     ;
+; msecmininwidth ; 100   ; Signed Integer                     ;
+; inpolarity     ; '0'   ; Enumerated                         ;
+; outpolarity    ; '1'   ; Enumerated                         ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:key3 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                     ;
+; msecmininwidth ; 100   ; Signed Integer                     ;
+; inpolarity     ; '0'   ; Enumerated                         ;
+; outpolarity    ; '1'   ; Enumerated                         ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 110                         ;
+;     ENA               ; 72                          ;
+;     plain             ; 38                          ;
+; cycloneiii_lcell_comb ; 472                         ;
+;     arith             ; 143                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 116                         ;
+;         3 data inputs ; 24                          ;
+;     normal            ; 329                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 97                          ;
+;         3 data inputs ; 81                          ;
+;         4 data inputs ; 130                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.80                        ;
+; Average LUT depth     ; 5.72                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,20 +501,186 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 13 23:35:19 2019
+    Info: Processing started: Fri May 17 15:40:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingCoffeeMachine -c VendingCoffeeMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10500): VHDL syntax error at states.vhd(48) near text "with";  expecting "end", or "(", or an identifier ("with" is a reserved keyword), or a sequential statement File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 48
-Error (10500): VHDL syntax error at states.vhd(49) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 49
-Error (10500): VHDL syntax error at states.vhd(50) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 50
-Error (10500): VHDL syntax error at states.vhd(51) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 51
-Error (10500): VHDL syntax error at states.vhd(52) near text "when";  expecting ";" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 52
-Info (12021): Found 0 design units, including 0 entities, in source file states.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 5 errors, 1 warning
-    Error: Peak virtual memory: 4799 megabytes
-    Error: Processing ended: Mon May 13 23:35:28 2019
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:20
+Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
+    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 15
+    Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-Shell File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 16
+    Info (12023): Found entity 1: control File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-Behav File: D:/Programacao/Quartus/LSD/projetoFinal/debouncer.vhd Line: 15
+    Info (12023): Found entity 1: debouncer File: D:/Programacao/Quartus/LSD/projetoFinal/debouncer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bintobcd.vhd
+    Info (12022): Found design unit 1: BinToBCD-Behav File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 10
+    Info (12023): Found entity 1: BinToBCD File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: D:/Programacao/Quartus/LSD/projetoFinal/Bin7SegDecoder.vhd Line: 10
+    Info (12023): Found entity 1: Bin7SegDecoder File: D:/Programacao/Quartus/LSD/projetoFinal/Bin7SegDecoder.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file bdf.bdf
+    Info (12023): Found entity 1: bdf
+Info (12127): Elaborating entity "control" for the top level hierarchy
+Info (12129): Elaborating entity "debouncer" using architecture "A:behav" for hierarchy "debouncer:key0" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 23
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:data" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 43
+Warning (10540): VHDL Signal Declaration warning at states.vhd(24): used explicit default value for signal "s_clock" because signal was never assigned a value File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at states.vhd(51): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 51
+Warning (10492): VHDL Process Statement warning at states.vhd(64): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at states.vhd(83): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at states.vhd(100): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at states.vhd(102): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at states.vhd(110): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at states.vhd(118): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at states.vhd(120): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at states.vhd(122): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at states.vhd(125): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at states.vhd(125): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at states.vhd(136): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at states.vhd(151): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at states.vhd(158): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at states.vhd(170): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at states.vhd(171): signal "s_led_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 171
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "s_led_on", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "s_count_switches", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "s_price", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "hex01", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "hex23", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at states.vhd(39): inferring latch(es) for signal or variable "s_money", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[0]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[1]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[2]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[3]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[4]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[5]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_money[6]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_hex_En" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[0]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[1]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[2]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[3]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[4]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[5]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[6]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex23[7]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[0]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[1]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[2]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[3]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[4]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[5]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[6]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "hex01[7]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[0]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[1]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[2]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[3]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[4]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_price[5]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.F_T" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.F_N" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.S" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.E" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.SB" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "NS.I" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_count_switches[0]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_count_switches[1]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_count_switches[2]" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (10041): Inferred latch for "s_led_on" at states.vhd(39) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 55
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 65
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 17
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 16
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 16
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: D:/Programacao/Quartus/LSD/projetoFinal/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: D:/Programacao/Quartus/LSD/projetoFinal/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: D:/Programacao/Quartus/LSD/projetoFinal/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/Programacao/Quartus/LSD/projetoFinal/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/Programacao/Quartus/LSD/projetoFinal/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 17
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 17
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: D:/Programacao/Quartus/LSD/projetoFinal/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: D:/Programacao/Quartus/LSD/projetoFinal/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: D:/Programacao/Quartus/LSD/projetoFinal/db/alt_u_div_a4f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod1" File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 18
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod1" with the following parameter: File: D:/Programacao/Quartus/LSD/projetoFinal/BinToBCD.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "states:data|s_price[1]" merged with LATCH primitive "states:data|s_price[4]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Info (13026): Duplicate LATCH primitive "states:data|s_price[2]" merged with LATCH primitive "states:data|s_price[3]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (13012): Latch states:data|s_led_on has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|hex01[0] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|hex01[1] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|hex01[2] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|hex01[3] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|s_money[1] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debouncer:key0|s_pulsedOut File: D:/Programacao/Quartus/LSD/projetoFinal/debouncer.vhd Line: 37
+Warning (13012): Latch states:data|s_money[0] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal debouncer:key0|s_pulsedOut File: D:/Programacao/Quartus/LSD/projetoFinal/debouncer.vhd Line: 37
+Warning (13012): Latch states:data|NS.S_573 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.SB File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|NS.I_615 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_N File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|NS.F_N_559 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|NS.E_587 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|s_count_switches[0] File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (13012): Latch states:data|NS.F_T_545 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|NS.SB_601 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|s_count_switches[1] File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (13012): Latch states:data|hex01[4] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Warning (13012): Latch states:data|hex01[5] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 17
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "states:data|hex01[4]" merged with LATCH primitive "states:data|hex01[1]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+    Info (13026): Duplicate LATCH primitive "states:data|hex01[3]" merged with LATCH primitive "states:data|hex01[2]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 39
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 12
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 517 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 479 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Fri May 17 15:40:33 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 

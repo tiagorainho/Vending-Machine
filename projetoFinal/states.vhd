@@ -3,30 +3,36 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
 entity states is
-	port(	switches : in std_logic_vector(3 downto 0);
-			keys     : in std_logic_vector(3 downto 0);
-			clk      : in std_logic;
-			hexs     : out std_logic_vector(3 downto 0);
-			led      : out std_logic);
+	port(	switches  : in std_logic_vector(3 downto 0);
+			keys      : in std_logic_vector(3 downto 0);
+			clk       : in std_logic;
+			hexEn     : out std_logic := '0';
+			hex01     : out std_logic_vector(7 downto 0);
+			hex23     : out std_logic_vector(7 downto 0);
+			led       : out std_logic);
 end states;
 
 architecture Behav of states is
-	type state is (I, SB, E, S, F); --	I:Inicial;		SB:Stand By;		E:Error		S:Start;		F:Final
-	signal PS, NS  : state;
+	type state is (I, SB, E, S, F_N, F_T); --	I:Inicial;		SB:Stand By;			E:Error
+	signal PS, NS  : state :=I;						-- S:Start;			F_N:Final Normal;		F_T:Final Temporizador
 	signal s_reset : std_logic := '0';
 	signal s_switchesCount : unsigned(1 downto 0);
-	signal s_price : unsigned(50,3);
-	signal s_money : unsigned(100,3);
+	signal s_price : unsigned(5 downto 0);
+	signal s_money : unsigned(6 downto 0);
+	signal s_count_switches : unsigned(2 downto 0);
+	signal s_led_on: std_logic := '0';
+	signal s_clock : natural := 0;
+	signal s_hex_En: std_logic := '0';
 begin
 
 sync_proc: process(clk)
 	begin
 	if (rising_edge(clk)) then
-		if (s_reset = '1') then
-			PS <= I;
-		else
+		--if (s_reset = '1') then
+		--	PS <= I;
+		--else
 			PS <= NS;
-		end if;
+	--	end if;
 	end if;
 end process;
 
@@ -34,56 +40,137 @@ comb_proc : process(PS, switches, keys)
 begin
 	case PS is
 	when I =>
-		if (switches(3) = '1' or switches(2) = '1' or switches(1) = '1'  or switches(0) = '1') then
+		s_led_on <= '0';
+		
+		s_count_switches <= unsigned("00"&switches(0 downto 0))
+			+unsigned("00"&switches(1 downto 1))
+			+unsigned("00"&switches(2 downto 2))
+			+unsigned("00"&switches(3 downto 3));
+
+			
+		if(s_count_switches=to_unsigned(1,3)) then
 			NS <= SB;
 		else
 			NS <= I;
 		end if;
 	
 	when SB =>
-		--s_switchesCount <= unsigned(switches(3 downto 3)) + unsigned(switches(2 downto 2)) + unsigned(switches(1 downto 1)) + unsigned(switches(0 downto 0),1);
-		--if (s_switchesCount = to_unsigned(1 , 1)) then
-		if(switches="1000" or switches="0100" or switches="0010" or switches="0001") then
-		
-			with switches select
-				s_price <=  to_unsigned(30,3) when "0001",
-								to_unsigned(30,3) when "0010",
-								to_unsigned(50,3) when "0100",
-								to_unsigned(45,3) when others;
+	
+		s_count_switches <= (unsigned("00"&switches(0 downto 0))
+			+unsigned("00"&switches(1 downto 1))
+			+unsigned("00"&switches(2 downto 2))
+			+unsigned("00"&switches(3 downto 3)));
+			
+		if(s_count_switches=to_unsigned(1,3)) then
+			
+			if(switches(0)='1') then
+				s_price <= "110010"; -- 50
+				
+			elsif(switches(1)='1') then
+				s_price <= "101101"; -- 45
+				
+			elsif(switches(2)='1') then
+				s_price <= "011110"; -- 30
+				
+			else
+				s_price <= "011110"; -- 30
+			end if;
 			
 			if(keys(3)='1' or keys(2)='1' or keys(1)='1' or keys(0)='1') then
 				NS <= S;
 			end if;
-		elsif(switches="0000") then
-			NS <= I;
+			
+			hex01 <= "00"&std_logic_vector(s_price(5 downto 0));
+			hex23 <= "00000000";
+			s_hex_En <= '1';
+			
 		else
-			NS <= SB;
+			s_hex_En <= '1';
+			NS <= I;
 		end if;
 			
 	when E =>
-		if(switches="1000" or switches="0100" or switches="0010" or switches="0001") then
-			NS <= S;
-		elsif(switches="0000") then
+	
+	s_hex_En <= '0';
+	s_count_switches<=unsigned("00"&switches(0 downto 0))
+			+unsigned("00"&switches(1 downto 1))
+			+unsigned("00"&switches(2 downto 2))
+			+unsigned("00"&switches(3 downto 3));	
+	
+		if(s_count_switches>to_unsigned(1,3)) then
+			NS <= SB;
+		elsif(s_count_switches=to_unsigned(0,3)) then
 			NS <= I;
 		else
 			NS <= E;
 		end if;
 		
 	when S =>
+		s_hex_En <= '1';
+		hex01 <= "00"&std_logic_vector(s_price(5 downto 0));
+		hex23 <= "00000000";
 		
+		
+		s_money<= to_unsigned(0,7);
+		if(keys(0)='1') then
+			s_money <= s_money+to_unsigned(5,7);
+		elsif(keys(1)='1') then
+			s_money <= s_money + to_unsigned(10,7);
+		elsif(keys(2)='1') then
+			s_money <= s_money + to_unsigned(20,7);
+		elsif(keys(3)='1') then
+			s_money <= s_money + to_unsigned(50,7);
+		end if;
+		
+		if(s_money > s_price) then
+		
+			s_count_switches<=unsigned("00"&switches(0 downto 0))
+			+unsigned("00"&switches(1 downto 1))
+			+unsigned("00"&switches(2 downto 2))
+			+unsigned("00"&switches(3 downto 3));
+		
+			
+			hex01 <= "00000000";
+			hex23 <= "00000000";
+			s_led_on <= '1';
+			if(s_count_switches = to_unsigned(0,3)) then
+				NS <= F_T;
+			else
+				NS <= F_N;
+			end if;
+		end if;
+		
+	when F_N =>	
 	
-	when F =>
-	
+		s_count_switches<=unsigned("00"&switches(0 downto 0))
+			+unsigned("00"&switches(1 downto 1))
+			+unsigned("00"&switches(2 downto 2))
+			+unsigned("00"&switches(3 downto 3));
+		
+		
+		if(s_count_switches = to_unsigned(0,3)) then
+			s_led_on <= '0';
+			NS <= I;
+		end if;
+
+	when F_T =>
+		
+		if (rising_edge(clk)) then
+			if (s_clock = 150000000) then  -- 3Hz
+				s_led_on <= '0';
+				NS <= I;
+			end if;
+		end if;
+		
 	when others => -- Catch all condition
-		NS <= I;
+		NS <= PS;
 	end case;
+	
+	
+	hexEn <= std_logic(s_hex_En);
+	led   <= std_logic(s_led_on);
+	
 end process;
 	
-	--with PS select
-	--stOut <= "0001" when A,
-	--"0010" when B,
-	--"0100" when C,
-	--"1000" when D,
-	--"0000" when others;
-	
+
 end Behav;
