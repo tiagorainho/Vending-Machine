@@ -9,6 +9,10 @@ entity states is
 			hexEn     : out std_logic := '0';
 			hex01     : out std_logic_vector(7 downto 0);
 			hex23     : out std_logic_vector(7 downto 0);
+			ledr0 : out std_logic;
+			ledr1 : out std_logic;
+			ledr2 : out std_logic;
+			ledr3 : out std_logic;
 			led       : out std_logic);
 end states;
 
@@ -41,6 +45,7 @@ comb_proc : process(PS, switches, keys)
 begin
 	case PS is
 	when I =>
+		ledr0 <= '1';
 		s_led_on <= '0';
 		s_hex_En <= '0';
 		s_price  <= to_unsigned(0,6);
@@ -53,13 +58,14 @@ begin
 
 			
 		if(s_count_switches=to_unsigned(1,3)) then
+			ledr0 <='0';
 			NS <= SB;
 		else
 			NS <= I;
 		end if;
 	
 	when SB =>
-		
+		ledr1 <= '1';
 		s_count_switches <= (unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
@@ -86,12 +92,14 @@ begin
 			
 			if(keys(3)='1' or keys(2)='1' or keys(1)='1' or keys(0)='1') then
 				s_money <= to_unsigned(0,7);
+				ledr1<='0';
 				NS <= S;
 			end if;			
 			
 		else
 			s_hex_En <= '0';
 			s_price <= to_unsigned(0,6);
+			ledr1<= '0';
 			NS <= I;
 		end if;
 			
@@ -112,6 +120,7 @@ begin
 		end if;
 		
 	when S =>
+		ledr2<='1';
 		s_hex_En <= '1';
 		s_hex01 <= to_unsigned(0,2)&(s_price(5 downto 0));
 		s_hex23 <= "00000000";
@@ -139,14 +148,16 @@ begin
 			s_hex23 <= "00000000";
 			s_led_on <= '1';
 			if(s_count_switches = to_unsigned(0,3)) then
+				ledr2<='0';
 				NS <= F_T;
 			else
+				ledr2<='0';
 				NS <= F_N;
 			end if;
 		end if;
 		
 	when F_N =>	
-	
+		ledr3<='1';
 		s_count_switches<=unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
@@ -155,20 +166,22 @@ begin
 		
 		if(s_count_switches = to_unsigned(0,3)) then
 			s_led_on <= '0';
+			ledr3<='0';
 			NS <= I;
 		end if;
 
 	when F_T =>
 		
 		if (rising_edge(clk)) then
-			if (s_clock = 150000000) then  -- 3Hz
+			if (s_clock = 150000000) then  -- 1/3Hz
 				s_led_on <= '0';
+				ledr3<='0';
 				NS <= I;
 			end if;
 		end if;
 		
 	when others => -- Catch all condition
-		NS <= PS;
+		NS <= I;
 	end case;
 	
 	hex01 <= std_logic_vector(s_hex01);

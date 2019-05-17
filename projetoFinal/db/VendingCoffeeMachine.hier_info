@@ -12,6 +12,10 @@ SW[0] => states:data.switches[0]
 SW[1] => states:data.switches[1]
 SW[2] => states:data.switches[2]
 SW[3] => states:data.switches[3]
+LEDR[0] << states:data.ledr0
+LEDR[1] << states:data.ledr1
+LEDR[2] << states:data.ledr2
+LEDR[3] << states:data.ledr3
 LEDG[0] << states:data.led
 HEX0[0] << bin7segdecoder:outHex0.decOut_n[0]
 HEX0[1] << bin7segdecoder:outHex0.decOut_n[1]
@@ -223,6 +227,10 @@ hex23[4] <= <GND>
 hex23[5] <= <GND>
 hex23[6] <= <GND>
 hex23[7] <= <GND>
+ledr0 <= ledr0$latch.DB_MAX_OUTPUT_PORT_TYPE
+ledr1 <= ledr1$latch.DB_MAX_OUTPUT_PORT_TYPE
+ledr2 <= ledr2$latch.DB_MAX_OUTPUT_PORT_TYPE
+ledr3 <= ledr3$latch.DB_MAX_OUTPUT_PORT_TYPE
 led <= s_led_on.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -6,6 +6,7 @@ entity control is
 	port( KEY      : in std_logic_vector(3 downto 0);
 			CLOCK_50 : in std_logic;
 			SW       : in std_logic_vector(3 downto 0);
+			LEDR : out std_logic_vector(3 downto 0);
 			LEDG     : out std_logic_vector(0 downto 0);
 			HEX0     : out std_logic_vector(6 downto 0);
 			HEX1     : out std_logic_vector(6 downto 0);
@@ -50,6 +51,10 @@ begin
 							hexEn               => s_hexEn,
 							hex01               => s_hex01,
 							hex23               => s_hex23,
+							ledr0 => LEDR(0),
+							ledr1 => LEDR(1),
+							ledr2 => LEDR(2),
+							ledr3 => LEDR(3),
 							led                 => LEDG(0));
 						
 	bin2BCD_01 : entity work.BinToBCD(Behav)
