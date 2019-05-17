@@ -1,5 +1,5 @@
 Flow report for VendingCoffeeMachine
-Fri May 17 15:41:01 2019
+Fri May 17 16:28:40 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 17 15:41:01 2019       ;
+; Flow Status                        ; Successful - Fri May 17 16:28:40 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VendingCoffeeMachine                        ;
 ; Top-level Entity Name              ; control                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 471 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 470 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 480 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 480 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 110 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 110                                         ;
 ; Total pins                         ; 38 / 529 ( 7 % )                            ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 05/17/2019 15:40:23  ;
+; Start date & time ; 05/17/2019 16:28:03  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; VendingCoffeeMachine ;
 +-------------------+----------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+----------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value        ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+----------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 154027284689125.155810402316236        ; --                   ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 154027284689125.155810688311824        ; --                   ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --                   ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>               ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --                   ; --          ; eda_simulation ;
@@ -95,12 +95,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 4831 MB             ; 00:00:21                           ;
-; Fitter                    ; 00:00:15     ; 1.0                     ; 5762 MB             ; 00:00:24                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4704 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4867 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4676 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:51                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4837 MB             ; 00:00:22                           ;
+; Fitter                    ; 00:00:14     ; 1.0                     ; 5743 MB             ; 00:00:24                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4702 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.1                     ; 4869 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4678 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:52                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri May 17 15:40:33 2019
+Analysis & Synthesis Status : Successful - Fri May 17 16:28:14 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : VendingCoffeeMachine
 Top-level Entity Name : control
 Family : Cyclone IV E
-Total logic elements : 474
-    Total combinational functions : 470
+Total logic elements : 484
+    Total combinational functions : 480
     Dedicated logic registers : 110
 Total registers : 110
 Total pins : 38

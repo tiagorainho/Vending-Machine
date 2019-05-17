@@ -23,6 +23,7 @@ architecture Behav of states is
 	signal s_led_on: std_logic := '0';
 	signal s_clock : natural := 0;
 	signal s_hex_En: std_logic := '0';
+	signal s_hex01, s_hex23 : unsigned(7 downto 0);
 begin
 
 sync_proc: process(clk)
@@ -41,6 +42,9 @@ begin
 	case PS is
 	when I =>
 		s_led_on <= '0';
+		s_hex_En <= '0';
+		s_price  <= to_unsigned(0,6);
+		s_money  <= to_unsigned(0,7);
 		
 		s_count_switches <= unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
@@ -55,13 +59,17 @@ begin
 		end if;
 	
 	when SB =>
-	
+		
 		s_count_switches <= (unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
 			+unsigned("00"&switches(3 downto 3)));
 			
 		if(s_count_switches=to_unsigned(1,3)) then
+		
+			s_hex01 <= to_unsigned(0,2)&(s_price(5 downto 0));
+			s_hex23 <= "00000000";
+			s_hex_En <= '1';
 			
 			if(switches(0)='1') then
 				s_price <= "110010"; -- 50
@@ -77,15 +85,13 @@ begin
 			end if;
 			
 			if(keys(3)='1' or keys(2)='1' or keys(1)='1' or keys(0)='1') then
+				s_money <= to_unsigned(0,7);
 				NS <= S;
-			end if;
-			
-			hex01 <= "00"&std_logic_vector(s_price(5 downto 0));
-			hex23 <= "00000000";
-			s_hex_En <= '1';
+			end if;			
 			
 		else
-			s_hex_En <= '1';
+			s_hex_En <= '0';
+			s_price <= to_unsigned(0,6);
 			NS <= I;
 		end if;
 			
@@ -107,11 +113,10 @@ begin
 		
 	when S =>
 		s_hex_En <= '1';
-		hex01 <= "00"&std_logic_vector(s_price(5 downto 0));
-		hex23 <= "00000000";
+		s_hex01 <= to_unsigned(0,2)&(s_price(5 downto 0));
+		s_hex23 <= "00000000";
 		
 		
-		s_money<= to_unsigned(0,7);
 		if(keys(0)='1') then
 			s_money <= s_money+to_unsigned(5,7);
 		elsif(keys(1)='1') then
@@ -122,16 +127,16 @@ begin
 			s_money <= s_money + to_unsigned(50,7);
 		end if;
 		
-		if(s_money > s_price) then
+		if(s_money >= s_price) then
 		
 			s_count_switches<=unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
 			+unsigned("00"&switches(3 downto 3));
 		
-			
-			hex01 <= "00000000";
-			hex23 <= "00000000";
+			s_hex_En <= '0';
+			s_hex01 <= "00000000";
+			s_hex23 <= "00000000";
 			s_led_on <= '1';
 			if(s_count_switches = to_unsigned(0,3)) then
 				NS <= F_T;
@@ -166,7 +171,8 @@ begin
 		NS <= PS;
 	end case;
 	
-	
+	hex01 <= std_logic_vector(s_hex01);
+	hex23 <= std_logic_vector(s_hex23);
 	hexEn <= std_logic(s_hex_En);
 	led   <= std_logic(s_led_on);
 	
