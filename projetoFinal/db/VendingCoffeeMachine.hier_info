@@ -184,7 +184,7 @@ switches[1] => s_price.DATAA
 switches[2] => Add1.IN4
 switches[3] => Add2.IN6
 keys[0] => comb_proc.IN1
-keys[0] => Selector28.IN4
+keys[0] => Selector55.IN4
 keys[0] => s_money[1].OUTPUTSELECT
 keys[0] => s_money[1].IN1
 keys[0] => s_money[2].OUTPUTSELECT
@@ -227,10 +227,10 @@ hex23[4] <= <GND>
 hex23[5] <= <GND>
 hex23[6] <= <GND>
 hex23[7] <= <GND>
-ledr0 <= ledr0$latch.DB_MAX_OUTPUT_PORT_TYPE
-ledr1 <= ledr1$latch.DB_MAX_OUTPUT_PORT_TYPE
-ledr2 <= ledr2$latch.DB_MAX_OUTPUT_PORT_TYPE
-ledr3 <= ledr3$latch.DB_MAX_OUTPUT_PORT_TYPE
+ledr0 <= ledr0.DB_MAX_OUTPUT_PORT_TYPE
+ledr1 <= ledr1.DB_MAX_OUTPUT_PORT_TYPE
+ledr2 <= ledr2.DB_MAX_OUTPUT_PORT_TYPE
+ledr3 <= ledr3.DB_MAX_OUTPUT_PORT_TYPE
 led <= s_led_on.DB_MAX_OUTPUT_PORT_TYPE
 
 

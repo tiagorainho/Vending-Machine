@@ -2,220 +2,184 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'states:data|PS.S'
-Slack : -6.706
-TNS   : -95.114
-
-Type  : Slow 1200mV 85C Model Setup 'states:data|PS.SB'
-Slack : -6.203
-TNS   : -94.920
-
 Type  : Slow 1200mV 85C Model Setup 'states:data|PS.F_N'
-Slack : -5.080
-TNS   : -56.706
+Slack : -9.396
+TNS   : -83.009
 
-Type  : Slow 1200mV 85C Model Setup 'states:data|PS.F_T'
-Slack : -4.968
-TNS   : -45.354
+Type  : Slow 1200mV 85C Model Setup 'states:data|PS.S'
+Slack : -9.070
+TNS   : -269.030
 
-Type  : Slow 1200mV 85C Model Setup 'states:data|PS.I'
-Slack : -4.241
-TNS   : -21.757
+Type  : Slow 1200mV 85C Model Setup 'states:data|s_clock[0]'
+Slack : -5.553
+TNS   : -146.274
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -3.875
-TNS   : -345.387
+Slack : -5.312
+TNS   : -355.742
+
+Type  : Slow 1200mV 85C Model Setup 'states:data|PS.I'
+Slack : -4.196
+TNS   : -19.899
+
+Type  : Slow 1200mV 85C Model Hold 'states:data|s_clock[0]'
+Slack : -0.808
+TNS   : -11.745
+
+Type  : Slow 1200mV 85C Model Hold 'states:data|PS.S'
+Slack : 0.051
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : -0.019
-TNS   : -0.019
+Slack : 0.392
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'states:data|PS.F_N'
-Slack : 0.110
+Slack : 0.712
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'states:data|PS.I'
-Slack : 0.579
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'states:data|PS.F_T'
-Slack : 0.786
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'states:data|PS.SB'
-Slack : 0.824
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'states:data|PS.S'
-Slack : 0.957
+Slack : 0.857
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -144.350
+TNS   : -143.065
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.F_N'
-Slack : 0.306
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.F_T'
-Slack : 0.319
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.S'
 Slack : 0.365
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.SB'
-Slack : 0.402
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.S'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|s_clock[0]'
+Slack : 0.384
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:data|PS.I'
-Slack : 0.425
+Slack : 0.407
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'states:data|PS.S'
-Slack : -6.176
-TNS   : -87.240
-
-Type  : Slow 1200mV 0C Model Setup 'states:data|PS.SB'
-Slack : -5.731
-TNS   : -86.981
-
 Type  : Slow 1200mV 0C Model Setup 'states:data|PS.F_N'
-Slack : -4.468
-TNS   : -51.862
+Slack : -8.728
+TNS   : -75.704
 
-Type  : Slow 1200mV 0C Model Setup 'states:data|PS.F_T'
-Slack : -4.366
-TNS   : -41.115
+Type  : Slow 1200mV 0C Model Setup 'states:data|PS.S'
+Slack : -8.428
+TNS   : -244.276
 
-Type  : Slow 1200mV 0C Model Setup 'states:data|PS.I'
-Slack : -3.811
-TNS   : -19.324
+Type  : Slow 1200mV 0C Model Setup 'states:data|s_clock[0]'
+Slack : -5.272
+TNS   : -130.885
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -3.471
-TNS   : -306.690
+Slack : -4.631
+TNS   : -316.057
+
+Type  : Slow 1200mV 0C Model Setup 'states:data|PS.I'
+Slack : -3.718
+TNS   : -17.588
+
+Type  : Slow 1200mV 0C Model Hold 'states:data|s_clock[0]'
+Slack : -0.843
+TNS   : -12.802
+
+Type  : Slow 1200mV 0C Model Hold 'states:data|PS.S'
+Slack : 0.003
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.112
-TNS   : -0.112
-
-Type  : Slow 1200mV 0C Model Hold 'states:data|PS.F_N'
-Slack : 0.090
+Slack : 0.351
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'states:data|PS.I'
-Slack : 0.566
+Slack : 0.707
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'states:data|PS.S'
-Slack : 0.836
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'states:data|PS.F_T'
-Slack : 0.839
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'states:data|PS.SB'
-Slack : 0.846
+Type  : Slow 1200mV 0C Model Hold 'states:data|PS.F_N'
+Slack : 0.723
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -144.350
+TNS   : -143.065
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_N'
-Slack : 0.214
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|s_clock[0]'
+Slack : 0.323
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_T'
-Slack : 0.222
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_N'
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.S'
-Slack : 0.317
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.SB'
-Slack : 0.368
+Slack : 0.394
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:data|PS.I'
-Slack : 0.418
+Slack : 0.395
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'states:data|PS.S'
-Slack : -2.978
-TNS   : -42.390
-
-Type  : Fast 1200mV 0C Model Setup 'states:data|PS.SB'
-Slack : -2.703
-TNS   : -40.051
-
 Type  : Fast 1200mV 0C Model Setup 'states:data|PS.F_N'
-Slack : -1.967
-TNS   : -22.729
+Slack : -4.519
+TNS   : -37.103
 
-Type  : Fast 1200mV 0C Model Setup 'states:data|PS.F_T'
-Slack : -1.919
-TNS   : -18.355
+Type  : Fast 1200mV 0C Model Setup 'states:data|PS.S'
+Slack : -4.365
+TNS   : -110.188
 
-Type  : Fast 1200mV 0C Model Setup 'states:data|PS.I'
-Slack : -1.816
-TNS   : -7.733
+Type  : Fast 1200mV 0C Model Setup 'states:data|s_clock[0]'
+Slack : -2.569
+TNS   : -55.602
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.369
-TNS   : -114.469
+Slack : -2.218
+TNS   : -119.061
+
+Type  : Fast 1200mV 0C Model Setup 'states:data|PS.I'
+Slack : -1.850
+TNS   : -8.926
+
+Type  : Fast 1200mV 0C Model Hold 'states:data|s_clock[0]'
+Slack : -0.327
+TNS   : -4.480
+
+Type  : Fast 1200mV 0C Model Hold 'states:data|PS.S'
+Slack : -0.029
+TNS   : -0.029
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.054
-TNS   : -0.055
-
-Type  : Fast 1200mV 0C Model Hold 'states:data|PS.I'
-Slack : 0.173
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'states:data|PS.F_N'
-Slack : 0.220
+Slack : 0.269
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'states:data|PS.SB'
-Slack : 0.245
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'states:data|PS.F_T'
-Slack : 0.304
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'states:data|PS.S'
-Slack : 0.432
+Type  : Fast 1200mV 0C Model Hold 'states:data|PS.I'
+Slack : 0.424
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -120.241
+TNS   : -119.554
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.SB'
-Slack : 0.309
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_N'
-Slack : 0.316
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|s_clock[0]'
+Slack : 0.253
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.S'
-Slack : 0.358
+Slack : 0.321
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.I'
-Slack : 0.390
+Slack : 0.368
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_T'
-Slack : 0.408
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:data|PS.F_N'
+Slack : 0.385
 TNS   : 0.000
 
 ------------------------------------------------------------

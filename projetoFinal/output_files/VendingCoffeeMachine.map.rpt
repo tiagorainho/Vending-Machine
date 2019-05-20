@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingCoffeeMachine
-Fri May 17 18:21:24 2019
+Mon May 20 21:42:15 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -52,15 +52,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 17 18:21:24 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 20 21:42:15 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VendingCoffeeMachine                        ;
 ; Top-level Entity Name              ; control                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 493                                         ;
-;     Total combinational functions  ; 489                                         ;
-;     Dedicated logic registers      ; 110                                         ;
-; Total registers                    ; 110                                         ;
+; Total logic elements               ; 593                                         ;
+;     Total combinational functions  ; 589                                         ;
+;     Dedicated logic registers      ; 109                                         ;
+; Total registers                    ; 109                                         ;
 ; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -203,20 +203,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 493            ;
+; Estimated Total logic elements              ; 593            ;
 ;                                             ;                ;
-; Total combinational functions               ; 489            ;
+; Total combinational functions               ; 589            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 139            ;
-;     -- 3 input functions                    ; 111            ;
-;     -- <=2 input functions                  ; 239            ;
+;     -- 4 input functions                    ; 149            ;
+;     -- 3 input functions                    ; 140            ;
+;     -- <=2 input functions                  ; 300            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 346            ;
-;     -- arithmetic mode                      ; 143            ;
+;     -- normal mode                          ; 416            ;
+;     -- arithmetic mode                      ; 173            ;
 ;                                             ;                ;
-; Total registers                             ; 110            ;
-;     -- Dedicated logic registers            ; 110            ;
+; Total registers                             ; 109            ;
+;     -- Dedicated logic registers            ; 109            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 42             ;
@@ -224,8 +224,8 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 110            ;
-; Total fan-out                               ; 1704           ;
+; Maximum fan-out                             ; 109            ;
+; Total fan-out                               ; 1950           ;
 ; Average fan-out                             ; 2.49           ;
 +---------------------------------------------+----------------+
 
@@ -235,7 +235,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |control                                  ; 489 (0)             ; 110 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |control                                                                                                                     ; control             ; work         ;
+; |control                                  ; 589 (0)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |control                                                                                                                     ; control             ; work         ;
 ;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|Bin7SegDecoder:outHex0                                                                                              ; Bin7SegDecoder      ; work         ;
 ;    |Bin7SegDecoder:outHex1|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|Bin7SegDecoder:outHex1                                                                                              ; Bin7SegDecoder      ; work         ;
 ;    |BinToBCD:bin2BCD_01|                  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD            ; work         ;
@@ -251,24 +251,23 @@ refer to the applicable agreement for further details.
 ;    |debouncer:key1|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key1                                                                                                      ; debouncer           ; work         ;
 ;    |debouncer:key2|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key2                                                                                                      ; debouncer           ; work         ;
 ;    |debouncer:key3|                       ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debouncer:key3                                                                                                      ; debouncer           ; work         ;
-;    |states:data|                          ; 123 (123)           ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|states:data                                                                                                         ; states              ; work         ;
+;    |states:data|                          ; 223 (223)           ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|states:data                                                                                                         ; states              ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------+
-; State Machine - |control|states:data|PS               ;
-+--------+--------+--------+------+------+-------+------+
-; Name   ; PS.F_T ; PS.F_N ; PS.S ; PS.E ; PS.SB ; PS.I ;
-+--------+--------+--------+------+------+-------+------+
-; PS.I   ; 0      ; 0      ; 0    ; 0    ; 0     ; 0    ;
-; PS.SB  ; 0      ; 0      ; 0    ; 0    ; 1     ; 1    ;
-; PS.E   ; 0      ; 0      ; 0    ; 1    ; 0     ; 1    ;
-; PS.S   ; 0      ; 0      ; 1    ; 0    ; 0     ; 1    ;
-; PS.F_N ; 0      ; 1      ; 0    ; 0    ; 0     ; 1    ;
-; PS.F_T ; 1      ; 0      ; 0    ; 0    ; 0     ; 1    ;
-+--------+--------+--------+------+------+-------+------+
++------------------------------------------------+
+; State Machine - |control|states:data|PS        ;
++--------+--------+--------+------+-------+------+
+; Name   ; PS.F_T ; PS.F_N ; PS.S ; PS.SB ; PS.I ;
++--------+--------+--------+------+-------+------+
+; PS.I   ; 0      ; 0      ; 0    ; 0     ; 0    ;
+; PS.SB  ; 0      ; 0      ; 0    ; 1     ; 1    ;
+; PS.S   ; 0      ; 0      ; 1    ; 0     ; 1    ;
+; PS.F_N ; 0      ; 1      ; 0    ; 0     ; 1    ;
+; PS.F_T ; 1      ; 0      ; 0    ; 0     ; 1    ;
++--------+--------+--------+------+-------+------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -276,41 +275,67 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
 +-----------------------------------------------------+------------------------+------------------------+
-; states:data|ledr0                                   ; states:data|PS.I       ; yes                    ;
-; states:data|ledr1                                   ; states:data|PS.SB      ; yes                    ;
-; states:data|ledr2                                   ; states:data|PS.S       ; yes                    ;
-; states:data|ledr3                                   ; states:data|PS.F_N     ; yes                    ;
-; states:data|s_led_on                                ; states:data|Selector38 ; yes                    ;
+; states:data|s_led_on                                ; states:data|Selector65 ; yes                    ;
 ; states:data|s_hex_En                                ; states:data|s_hex_En   ; yes                    ;
-; states:data|s_hex01[0]                              ; states:data|Selector15 ; yes                    ;
-; states:data|s_hex01[1]                              ; states:data|Selector15 ; yes                    ;
-; states:data|s_hex01[2]                              ; states:data|Selector15 ; yes                    ;
-; states:data|s_hex01[3]                              ; states:data|Selector15 ; yes                    ;
-; states:data|s_count_switches[0]                     ; states:data|Selector24 ; yes                    ;
-; states:data|s_count_switches[1]                     ; states:data|Selector24 ; yes                    ;
-; states:data|s_count_switches[2]                     ; states:data|Selector24 ; yes                    ;
-; states:data|s_money[6]                              ; states:data|Selector31 ; yes                    ;
-; states:data|s_money[5]                              ; states:data|Selector31 ; yes                    ;
-; states:data|s_price[5]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|s_money[4]                              ; states:data|Selector31 ; yes                    ;
-; states:data|s_price[4]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|s_money[3]                              ; states:data|Selector31 ; yes                    ;
-; states:data|s_price[3]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|s_money[2]                              ; states:data|Selector31 ; yes                    ;
-; states:data|s_price[2]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|s_money[1]                              ; states:data|Selector30 ; yes                    ;
-; states:data|s_price[1]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|s_money[0]                              ; states:data|Selector28 ; yes                    ;
-; states:data|s_price[0]                              ; states:data|WideOr1    ; yes                    ;
-; states:data|NS.I_573                                ; states:data|Selector21 ; yes                    ;
-; states:data|NS.SB_559                               ; states:data|Selector21 ; yes                    ;
-; states:data|NS.S_531                                ; states:data|Selector17 ; yes                    ;
-; states:data|NS.F_N_517                              ; states:data|Selector17 ; yes                    ;
-; states:data|NS.F_T_503                              ; states:data|Selector17 ; yes                    ;
-; states:data|s_hex01[4]                              ; states:data|Selector15 ; yes                    ;
-; states:data|s_hex01[5]                              ; states:data|Selector15 ; yes                    ;
-; states:data|NS.E_545                                ; states:data|Selector21 ; yes                    ;
-; Number of user-specified and inferred latches = 34  ;                        ;                        ;
+; states:data|s_hex01[0]                              ; states:data|Selector46 ; yes                    ;
+; states:data|s_hex01[1]                              ; states:data|Selector46 ; yes                    ;
+; states:data|s_hex01[2]                              ; states:data|Selector46 ; yes                    ;
+; states:data|s_hex01[3]                              ; states:data|Selector46 ; yes                    ;
+; states:data|NS.S_1119                               ; states:data|Selector48 ; yes                    ;
+; states:data|NS.F_T_1085                             ; states:data|Selector48 ; yes                    ;
+; states:data|NS.I_1153                               ; states:data|Selector48 ; yes                    ;
+; states:data|NS.SB_1136                              ; states:data|Selector48 ; yes                    ;
+; states:data|s_clock[0]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[2]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[3]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[4]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[5]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[6]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[7]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[8]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[9]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[10]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[11]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[12]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[13]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[14]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[15]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[16]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[17]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[18]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[19]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[20]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[21]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[22]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[23]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[24]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[25]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[26]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[27]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[28]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[29]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[30]                             ; states:data|Selector1  ; yes                    ;
+; states:data|s_clock[1]                              ; states:data|Selector1  ; yes                    ;
+; states:data|s_count_switches[0]                     ; states:data|Selector53 ; yes                    ;
+; states:data|s_count_switches[1]                     ; states:data|Selector53 ; yes                    ;
+; states:data|s_count_switches[2]                     ; states:data|Selector53 ; yes                    ;
+; states:data|s_money[6]                              ; states:data|Selector58 ; yes                    ;
+; states:data|s_money[5]                              ; states:data|Selector58 ; yes                    ;
+; states:data|s_price[5]                              ; states:data|ledr3      ; yes                    ;
+; states:data|s_money[4]                              ; states:data|Selector58 ; yes                    ;
+; states:data|s_price[4]                              ; states:data|ledr3      ; yes                    ;
+; states:data|s_money[3]                              ; states:data|Selector58 ; yes                    ;
+; states:data|s_price[3]                              ; states:data|ledr3      ; yes                    ;
+; states:data|s_money[2]                              ; states:data|Selector58 ; yes                    ;
+; states:data|s_price[2]                              ; states:data|ledr3      ; yes                    ;
+; states:data|s_money[1]                              ; states:data|Selector57 ; yes                    ;
+; states:data|s_price[1]                              ; states:data|ledr3      ; yes                    ;
+; states:data|s_money[0]                              ; states:data|Selector55 ; yes                    ;
+; states:data|s_price[0]                              ; states:data|ledr3      ; yes                    ;
+; states:data|NS.F_N_1102                             ; states:data|Selector48 ; yes                    ;
+; states:data|s_hex01[4]                              ; states:data|Selector46 ; yes                    ;
+; states:data|s_hex01[5]                              ; states:data|Selector46 ; yes                    ;
+; Number of user-specified and inferred latches = 60  ;                        ;                        ;
 +-----------------------------------------------------+------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -320,7 +345,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 110   ;
+; Total registers                              ; 109   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -335,14 +360,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key0|s_debounceCnt[18] ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key1|s_debounceCnt[19] ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key2|s_debounceCnt[4]  ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key3|s_debounceCnt[5]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key0|s_debounceCnt[14] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key1|s_debounceCnt[16] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key2|s_debounceCnt[7]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |control|debouncer:key3|s_debounceCnt[6]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |control|states:data|ledr3                ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |control|states:data|s_price              ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |control|states:data|Selector8            ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |control|states:data|s_money[2]           ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |control|states:data|Selector31           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |control|states:data|Selector40           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |control|states:data|s_money[5]           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |control|states:data|Selector58           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -473,23 +499,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 42                          ;
-; cycloneiii_ff         ; 110                         ;
+; cycloneiii_ff         ; 109                         ;
 ;     ENA               ; 72                          ;
-;     plain             ; 38                          ;
-; cycloneiii_lcell_comb ; 491                         ;
-;     arith             ; 143                         ;
+;     plain             ; 37                          ;
+; cycloneiii_lcell_comb ; 594                         ;
+;     arith             ; 173                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 116                         ;
+;         2 data inputs ; 146                         ;
 ;         3 data inputs ; 24                          ;
-;     normal            ; 348                         ;
+;     normal            ; 421                         ;
 ;         0 data inputs ; 7                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 101                         ;
-;         3 data inputs ; 87                          ;
-;         4 data inputs ; 139                         ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 131                         ;
+;         3 data inputs ; 116                         ;
+;         4 data inputs ; 149                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.80                        ;
-; Average LUT depth     ; 5.77                        ;
+; Average LUT depth     ; 5.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -508,7 +534,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 17 18:21:13 2019
+    Info: Processing started: Mon May 20 21:42:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingCoffeeMachine -c VendingCoffeeMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -532,40 +558,65 @@ Info (12021): Found 1 design units, including 1 entities, in source file bdf.bdf
 Info (12127): Elaborating entity "control" for the top level hierarchy
 Info (12129): Elaborating entity "debouncer" using architecture "A:behav" for hierarchy "debouncer:key0" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 24
 Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:data" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 44
-Warning (10540): VHDL Signal Declaration warning at states.vhd(28): used explicit default value for signal "s_clock" because signal was never assigned a value File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 28
-Warning (10492): VHDL Process Statement warning at states.vhd(60): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at states.vhd(74): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at states.vhd(76): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at states.vhd(125): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at states.vhd(130): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at states.vhd(132): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 132
-Warning (10492): VHDL Process Statement warning at states.vhd(134): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 134
-Warning (10492): VHDL Process Statement warning at states.vhd(136): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 136
-Warning (10492): VHDL Process Statement warning at states.vhd(139): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 139
-Warning (10492): VHDL Process Statement warning at states.vhd(139): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 139
-Warning (10492): VHDL Process Statement warning at states.vhd(150): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 150
-Warning (10492): VHDL Process Statement warning at states.vhd(167): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 167
-Warning (10492): VHDL Process Statement warning at states.vhd(175): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 175
-Warning (10492): VHDL Process Statement warning at states.vhd(187): signal "s_hex01" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 187
-Warning (10492): VHDL Process Statement warning at states.vhd(188): signal "s_hex23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 188
-Warning (10492): VHDL Process Statement warning at states.vhd(189): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 189
-Warning (10492): VHDL Process Statement warning at states.vhd(190): signal "s_led_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 190
-Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "ledr0", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at states.vhd(59): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at states.vhd(71): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at states.vhd(73): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at states.vhd(103): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at states.vhd(108): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at states.vhd(110): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at states.vhd(112): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_money" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_price" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at states.vhd(128): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at states.vhd(143): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at states.vhd(150): signal "s_clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at states.vhd(157): signal "s_count_switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at states.vhd(161): signal "s_clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at states.vhd(168): signal "s_hex01" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at states.vhd(169): signal "s_hex23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at states.vhd(170): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at states.vhd(171): signal "s_led_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 171
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_led_on", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_price", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_money", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_count_switches", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "ledr1", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex01", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex23", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "ledr2", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "ledr3", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Info (10041): Inferred latch for "ledr3" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Info (10041): Inferred latch for "ledr2" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_clock", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[0]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[1]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[2]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[3]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[4]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[5]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[6]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[7]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[8]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[9]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[10]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[11]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[12]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[13]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[14]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[15]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[16]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[17]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[18]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[19]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[20]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[21]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[22]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[23]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[24]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[25]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[26]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[27]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[28]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[29]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_clock[30]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex23[0]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex23[1]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex23[2]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
@@ -582,11 +633,9 @@ Info (10041): Inferred latch for "s_hex01[4]" at states.vhd(44) File: D:/Program
 Info (10041): Inferred latch for "s_hex01[5]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex01[6]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex01[7]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Info (10041): Inferred latch for "ledr1" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "NS.F_T" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "NS.F_N" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "NS.S" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Info (10041): Inferred latch for "NS.E" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "NS.SB" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "NS.I" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_count_switches[0]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
@@ -607,7 +656,6 @@ Info (10041): Inferred latch for "s_price[4]" at states.vhd(44) File: D:/Program
 Info (10041): Inferred latch for "s_price[5]" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_hex_En" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (10041): Inferred latch for "s_led_on" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Info (10041): Inferred latch for "ledr0" at states.vhd(44) File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 60
 Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/projetoFinal/control.vhd Line: 70
 Info (278001): Inferred 3 megafunctions from design logic
@@ -661,6 +709,76 @@ Warning (13012): Latch states:data|s_hex01[2] has unsafe behavior File: D:/Progr
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_hex01[3] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|NS.S_1119 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.SB File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|NS.F_T_1085 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|NS.I_1153 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|NS.SB_1136 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|s_count_switches[0] File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Warning (13012): Latch states:data|s_clock[0] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[2] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[3] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[4] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[5] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[6] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[7] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[8] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[9] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[10] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[11] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[12] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[13] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[14] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[15] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[16] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[17] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[18] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[19] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[20] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[21] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[22] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[23] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[24] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[25] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[26] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[27] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[28] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[29] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[30] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
+Warning (13012): Latch states:data|s_clock[1] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_T File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_money[6] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_money[5] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
@@ -683,22 +801,12 @@ Warning (13012): Latch states:data|s_money[0] has unsafe behavior File: D:/Progr
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_price[0] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.SB File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
-Warning (13012): Latch states:data|NS.I_573 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.F_N File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
-Warning (13012): Latch states:data|NS.SB_559 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|s_count_switches[1] File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-Warning (13012): Latch states:data|NS.S_531 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.SB File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
-Warning (13012): Latch states:data|NS.F_N_517 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
-Warning (13012): Latch states:data|NS.F_T_503 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
+Warning (13012): Latch states:data|NS.F_N_1102 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_hex01[4] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
 Warning (13012): Latch states:data|s_hex01[5] has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|PS.S File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 21
-Warning (13012): Latch states:data|NS.E_545 has unsafe behavior File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:data|s_count_switches[0] File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "states:data|s_hex01[4]" merged with LATCH primitive "states:data|s_hex01[1]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
     Info (13026): Duplicate LATCH primitive "states:data|s_hex01[3]" merged with LATCH primitive "states:data|s_hex01[2]" File: D:/Programacao/Quartus/LSD/projetoFinal/states.vhd Line: 44
@@ -708,14 +816,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 540 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 639 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 498 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 84 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Fri May 17 18:21:24 2019
+    Info (21061): Implemented 597 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 140 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Mon May 20 21:42:15 2019
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:21
 
 

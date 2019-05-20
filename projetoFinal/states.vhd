@@ -17,8 +17,8 @@ entity states is
 end states;
 
 architecture Behav of states is
-	type state is (I, SB, E, S, F_N, F_T); --	I:Inicial;		SB:Stand By;			E:Error
-	signal PS, NS  : state :=I;						-- S:Start;			F_N:Final Normal;		F_T:Final Temporizador
+	type state is (I, SB, S, F_N, F_T); 		--	I: Inicial;		SB: Stand By;
+	signal PS, NS  : state :=I;					-- S: Start;			F_N: Final Normal;		F_T: Final Temporizador
 	signal s_reset : std_logic := '0';
 	signal s_switchesCount : unsigned(1 downto 0);
 	signal s_price : unsigned(5 downto 0);
@@ -45,7 +45,6 @@ comb_proc : process(PS, switches, keys)
 begin
 	case PS is
 	when I =>
-		ledr0 <= '1';
 		s_led_on <= '0';
 		s_hex_En <= '0';
 		s_price  <= to_unsigned(0,6);
@@ -58,14 +57,12 @@ begin
 
 			
 		if(s_count_switches=to_unsigned(1,3)) then
-			ledr0 <='0';
 			NS <= SB;
 		else
 			NS <= I;
 		end if;
 	
 	when SB =>
-		ledr1 <= '1';
 		s_count_switches <= (unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
@@ -92,35 +89,16 @@ begin
 			
 			if(keys(3)='1' or keys(2)='1' or keys(1)='1' or keys(0)='1') then
 				s_money <= to_unsigned(0,7);
-				ledr1<='0';
 				NS <= S;
 			end if;			
 			
 		else
 			s_hex_En <= '0';
 			s_price <= to_unsigned(0,6);
-			ledr1<= '0';
 			NS <= I;
-		end if;
-			
-	when E =>
-	
-	s_hex_En <= '0';
-	s_count_switches<=unsigned("00"&switches(0 downto 0))
-			+unsigned("00"&switches(1 downto 1))
-			+unsigned("00"&switches(2 downto 2))
-			+unsigned("00"&switches(3 downto 3));	
-	
-		if(s_count_switches>to_unsigned(1,3)) then
-			NS <= SB;
-		elsif(s_count_switches=to_unsigned(0,3)) then
-			NS <= I;
-		else
-			NS <= E;
 		end if;
 		
 	when S =>
-		ledr2<='1';
 		s_hex_En <= '1';
 		s_hex01 <= to_unsigned(0,2)&(s_price(5 downto 0));
 		s_hex23 <= "00000000";
@@ -148,16 +126,14 @@ begin
 			s_hex23 <= "00000000";
 			s_led_on <= '1';
 			if(s_count_switches = to_unsigned(0,3)) then
-				ledr2<='0';
-				NS <= F_T;
-			else
-				ledr2<='0';
 				NS <= F_N;
+			else
+				s_clock <= 0;
+				NS <= F_T;
 			end if;
 		end if;
 		
 	when F_N =>	
-		ledr3<='1';
 		s_count_switches<=unsigned("00"&switches(0 downto 0))
 			+unsigned("00"&switches(1 downto 1))
 			+unsigned("00"&switches(2 downto 2))
@@ -166,18 +142,23 @@ begin
 		
 		if(s_count_switches = to_unsigned(0,3)) then
 			s_led_on <= '0';
-			ledr3<='0';
 			NS <= I;
 		end if;
 
 	when F_T =>
 		
-		if (rising_edge(clk)) then
-			if (s_clock = 150000000) then  -- 1/3Hz
-				s_led_on <= '0';
-				ledr3<='0';
+		if (s_clock = 150000000) then  -- 1/3Hz
+			s_led_on <= '0';
+			
+			s_count_switches<=unsigned("00"&switches(0 downto 0))
+				+unsigned("00"&switches(1 downto 1))
+				+unsigned("00"&switches(2 downto 2))
+				+unsigned("00"&switches(3 downto 3));
+			if(s_count_switches = to_unsigned(0,3)) then
 				NS <= I;
 			end if;
+		else
+		 s_clock <= s_clock +1;
 		end if;
 		
 	when others => -- Catch all condition
@@ -189,6 +170,25 @@ begin
 	hexEn <= std_logic(s_hex_En);
 	led   <= std_logic(s_led_on);
 	
+	
+	ledr0<='0';
+	ledr1<='0';
+	ledr2<='0';
+	ledr3<='0';
+	if(PS=I) then
+		ledr0<='1';
+	elsif(PS=SB) then
+		ledr1<='1';
+	elsif(PS=S) then
+		ledr2<='1';
+	elsif(PS=F_T) then
+		ledr3<= '1';
+	else
+		ledr0<='1';
+		ledr1<='1';
+		ledr2<='1';
+		ledr3<='1';
+	end if;
 end process;
 	
 
