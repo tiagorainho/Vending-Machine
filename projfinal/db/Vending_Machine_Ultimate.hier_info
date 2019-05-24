@@ -1,0 +1,44 @@
+|states
+cafe_curto => ~NO_FANOUT~
+cafe_longo => ~NO_FANOUT~
+choc_quente => preco.OUTPUTSELECT
+choc_quente => preco.OUTPUTSELECT
+choc_quente => preco.OUTPUTSELECT
+choc_quente => preco[3].DATAIN
+choc_quente => preco[2].DATAIN
+cappucino => preco.DATAA
+cappucino => preco.DATAA
+cappucino => preco.DATAA
+count_sw[0] => Equal0.IN2
+count_sw[1] => Equal0.IN1
+count_sw[2] => Equal0.IN0
+dinheiro[0] => Equal1.IN6
+dinheiro[1] => Equal1.IN5
+dinheiro[2] => Equal1.IN4
+dinheiro[3] => Equal1.IN3
+dinheiro[4] => Equal1.IN2
+dinheiro[5] => Equal1.IN1
+dinheiro[6] => Equal1.IN0
+clk => PS~1.DATAIN
+reset => PS.OUTPUTSELECT
+reset => PS.OUTPUTSELECT
+reset => PS.OUTPUTSELECT
+hexEn << s_hex_En.DB_MAX_OUTPUT_PORT_TYPE
+hex01[0] << s_hex01[0].DB_MAX_OUTPUT_PORT_TYPE
+hex01[1] << s_hex01[1].DB_MAX_OUTPUT_PORT_TYPE
+hex01[2] << s_hex01[2].DB_MAX_OUTPUT_PORT_TYPE
+hex01[3] << s_hex01[3].DB_MAX_OUTPUT_PORT_TYPE
+hex01[4] << s_hex01[4].DB_MAX_OUTPUT_PORT_TYPE
+hex01[5] << s_hex01[5].DB_MAX_OUTPUT_PORT_TYPE
+hex01[6] << <GND>
+hex01[7] << <GND>
+hex23[0] << <GND>
+hex23[1] << <GND>
+hex23[2] << <GND>
+hex23[3] << <GND>
+hex23[4] << <GND>
+hex23[5] << <GND>
+hex23[6] << <GND>
+hex23[7] << <GND>
+
+
