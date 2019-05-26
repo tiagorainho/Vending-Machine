@@ -80,14 +80,20 @@ begin
 			
 		when S =>
 		
-			troco <= to_integer(unsigned(dinheiro)) - to_integer(unsigned(preco)); --???????'??????????????????
+			
 			if (dinheiro >= preco) then 
+				troco <= std_logic_vector(unsigned(dinheiro) - unsigned(preco)); --calculo do troco
 				s_hex01 <= unsigned(troco);
 				s_hex23 <= "00000000";
+				NS <= F;
 			end if;
 			
 			
 		when F =>
+			if(count_sw = "001") then
+				NS <= I;
+				s_hex_En <= '0'; --desligar leds
+			end if;
 		end case;
 		
 	end process;

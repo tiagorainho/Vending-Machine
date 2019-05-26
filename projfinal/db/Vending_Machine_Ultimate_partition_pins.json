@@ -32,19 +32,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "hex01[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "cappucino",
-					"strict" : false
-				},
-				{
-					"name" : "choc_quente",
+					"name" : "hex01[7]",
 					"strict" : false
 				},
 				{
@@ -60,23 +52,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "dinheiro[5]",
-					"strict" : false
-				},
-				{
 					"name" : "dinheiro[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dinheiro[0]",
+					"name" : "dinheiro[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dinheiro[1]",
+					"name" : "dinheiro[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dinheiro[2]",
+					"name" : "dinheiro[4]",
 					"strict" : false
 				},
 				{
@@ -84,7 +72,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "dinheiro[4]",
+					"name" : "dinheiro[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dinheiro[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dinheiro[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "cappucino",
+					"strict" : false
+				},
+				{
+					"name" : "choc_quente",
 					"strict" : false
 				}
 			]
