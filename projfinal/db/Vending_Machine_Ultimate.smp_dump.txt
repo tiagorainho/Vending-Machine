@@ -1,5 +1,5 @@
 
-State Machine - |states|PS
+State Machine - |Vending_Machine_Ultimate|states:states|PS
 Name PS.F PS.S PS.SB PS.I 
 PS.I 0 0 0 0 
 PS.SB 0 0 1 1 

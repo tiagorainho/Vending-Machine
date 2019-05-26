@@ -5,37 +5,37 @@ entity Vending_Machine_Ultimate is
 	port( CLOCK_50 : in std_logic;
 			SW       : in std_logic_vector(4 downto 0);
 			KEY      : in std_logic_vector(3 downto 0);
-			HEX0     : out std_logic_vector(7 downto 0);
-			HEX1     : out std_logic_vector(7 downto 0);
-			HEX2     : out std_logic_vector(7 downto 0);
-			HEX3     : out std_logic_vector(7 downto 0));
+			HEX0     : out std_logic_vector(6 downto 0);
+			HEX1     : out std_logic_vector(6 downto 0);
+			HEX2     : out std_logic_vector(6 downto 0);
+			HEX3     : out std_logic_vector(6 downto 0));
 end Vending_Machine_Ultimate;
 
 architecture Shell of Vending_Machine_Ultimate is
-signal s_hex01, s_hex23               : std_logic_vector(7 downto 0);
+signal s_hex01, s_hex23               : std_logic_vector(6 downto 0);
 signal s_hexEn, s_reset_a                        : std_logic;
 signal s_key0, s_key1, s_key2, s_key3 : std_logic;
-signal s_soma : std_logic_vector(7 downto 0);
+signal s_soma : std_logic_vector(6 downto 0);
 signal s_counter_SW : std_logic_vector(2 downto 0);
 signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0);
 
 begin
 
 --######################  KEYS  #####################################
-	key0 : entity work.debouncer(Behav)
+	key0 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,
 							dirtyIn   => KEY(0),
 							pulsedOut => s_key0);
 
-	key1 : entity work.debouncer(Behav)
+	key1 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,
 							dirtyIn   => KEY(1),
 							pulsedOut => s_key1);
-	key2 : entity work.debouncer(Behav)
+	key2 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,
 							dirtyIn   => KEY(2),
 							pulsedOut => s_key2);
-	key3 : entity work.debouncer(Behav)
+	key3 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,
 							dirtyIn   => KEY(3),
 							pulsedOut => s_key3);
@@ -55,8 +55,8 @@ begin
 --######################## contador     #################################
 
 	counter : entity work.switchesCounter(Behav)
-					port map(clk        => CLOCK_50;
-								switches   => SW(4 downto 0),
+					port map(clk        => CLOCK_50,
+								switches   => SW(3 downto 0),
 								counter    => s_counter_SW);
 
 --######################## states  #####################################

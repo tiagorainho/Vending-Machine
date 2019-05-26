@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun May 26 15:44:09 2019
+Analysis & Synthesis Status : Successful - Sun May 26 16:38:54 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Vending_Machine_Ultimate
-Top-level Entity Name : states
+Top-level Entity Name : Vending_Machine_Ultimate
 Family : Cyclone IV E
-Total logic elements : 57
-    Total combinational functions : 57
-    Dedicated logic registers : 4
-Total registers : 4
-Total pins : 35
+Total logic elements : 194
+    Total combinational functions : 194
+    Dedicated logic registers : 7
+Total registers : 7
+Total pins : 38
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

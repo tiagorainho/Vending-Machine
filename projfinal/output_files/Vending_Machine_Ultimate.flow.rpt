@@ -1,5 +1,5 @@
 Flow report for Vending_Machine_Ultimate
-Sun May 26 15:44:09 2019
+Sun May 26 16:39:41 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun May 26 15:44:09 2019       ;
+; Flow Status                        ; Successful - Sun May 26 16:39:35 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
-; Top-level Entity Name              ; states                                      ;
+; Top-level Entity Name              ; Vending_Machine_Ultimate                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 57                                          ;
-;     Total combinational functions  ; 57                                          ;
-;     Dedicated logic registers      ; 4                                           ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 35                                          ;
+; Total logic elements               ; 194 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 194 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 7 / 114,480 ( < 1 % )                       ;
+; Total registers                    ; 7                                           ;
+; Total pins                         ; 38 / 529 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,52 +64,60 @@ refer to the applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 05/26/2019 15:43:50      ;
+; Start date & time ; 05/26/2019 16:38:35      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; Vending_Machine_Ultimate ;
 +-------------------+--------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                   ;
-+-------------------------------------+----------------------------------------+--------------------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value            ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+--------------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 154027284689125.155888182918068        ; --                       ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                       ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                       ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --                       ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                       ; states      ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                       ; states      ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                       ; states      ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                       ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; states                                 ; Vending_Machine_Ultimate ; --          ; --         ;
-+-------------------------------------+----------------------------------------+--------------------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 220812855860213.155888511511404        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4809 MB             ; 00:00:38                           ;
-; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:38                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 4819 MB             ; 00:00:41                           ;
+; Fitter                    ; 00:00:31     ; 1.0                     ; 5712 MB             ; 00:00:46                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4699 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4858 MB             ; 00:00:05                           ;
+; Total                     ; 00:01:02     ; --                      ; --                  ; 00:01:38                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; TiagoLegion      ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; LAPTOP-PJTU4N7E  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; LAPTOP-PJTU4N7E  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; LAPTOP-PJTU4N7E  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-PJTU4N7E  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
+quartus_fit --read_settings_files=off --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
+quartus_asm --read_settings_files=off --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
+quartus_sta Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 
 
 
