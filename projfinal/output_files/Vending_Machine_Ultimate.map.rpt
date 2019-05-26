@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Vending_Machine_Ultimate
-Sun May 26 01:19:12 2019
+Sun May 26 15:44:09 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -44,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 26 01:19:12 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun May 26 15:44:09 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
 ; Top-level Entity Name              ; states                                      ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 62                                          ;
-;     Total combinational functions  ; 62                                          ;
+; Total logic elements               ; 57                                          ;
+;     Total combinational functions  ; 57                                          ;
 ;     Dedicated logic registers      ; 4                                           ;
 ; Total registers                    ; 4                                           ;
-; Total pins                         ; 34                                          ;
+; Total pins                         ; 35                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -160,18 +160,17 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; states.vhd                       ; yes             ; User VHDL File  ; C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; states.vhd                       ; yes             ; User VHDL File  ; C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -179,30 +178,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 62    ;
+; Estimated Total logic elements              ; 57    ;
 ;                                             ;       ;
-; Total combinational functions               ; 62    ;
+; Total combinational functions               ; 57    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 5     ;
-;     -- 3 input functions                    ; 45    ;
-;     -- <=2 input functions                  ; 12    ;
+;     -- 4 input functions                    ; 7     ;
+;     -- 3 input functions                    ; 39    ;
+;     -- <=2 input functions                  ; 11    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 50    ;
+;     -- normal mode                          ; 45    ;
 ;     -- arithmetic mode                      ; 12    ;
 ;                                             ;       ;
 ; Total registers                             ; 4     ;
 ;     -- Dedicated logic registers            ; 4     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 34    ;
+; I/O pins                                    ; 35    ;
 ;                                             ;       ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ;                                             ;       ;
 ; Maximum fan-out node                        ; PS.S  ;
-; Maximum fan-out                             ; 12    ;
-; Total fan-out                               ; 229   ;
-; Average fan-out                             ; 1.71  ;
+; Maximum fan-out                             ; 11    ;
+; Total fan-out                               ; 218   ;
+; Average fan-out                             ; 1.66  ;
 +---------------------------------------------+-------+
 
 
@@ -211,7 +210,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |states                    ; 62 (62)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |states             ; states      ; work         ;
+; |states                    ; 57 (57)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 35   ; 0            ; |states             ; states      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -234,34 +233,30 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; s_hex_En                                            ; Selector17          ; yes                    ;
-; s_hex01[0]                                          ; Selector9           ; yes                    ;
-; s_hex01[1]                                          ; Selector9           ; yes                    ;
-; s_hex01[2]                                          ; Selector9           ; yes                    ;
-; s_hex01[3]                                          ; Selector9           ; yes                    ;
-; s_hex01[4]                                          ; Selector9           ; yes                    ;
-; s_hex01[5]                                          ; Selector9           ; yes                    ;
-; s_hex01[6]                                          ; Selector9           ; yes                    ;
-; s_hex01[7]                                          ; Selector9           ; yes                    ;
-; preco[0]                                            ; PS.SB               ; yes                    ;
-; troco[0]                                            ; Selector9           ; yes                    ;
-; preco[5]                                            ; PS.SB               ; yes                    ;
-; preco[4]                                            ; PS.SB               ; yes                    ;
-; preco[3]                                            ; PS.SB               ; yes                    ;
-; preco[2]                                            ; PS.SB               ; yes                    ;
-; preco[1]                                            ; PS.SB               ; yes                    ;
-; troco[1]                                            ; Selector9           ; yes                    ;
-; troco[2]                                            ; Selector9           ; yes                    ;
-; troco[3]                                            ; Selector9           ; yes                    ;
-; troco[4]                                            ; Selector9           ; yes                    ;
-; troco[5]                                            ; Selector9           ; yes                    ;
-; troco[6]                                            ; Selector9           ; yes                    ;
-; troco[7]                                            ; Selector9           ; yes                    ;
-; NS.SB_485                                           ; Selector13          ; yes                    ;
-; NS.F_465                                            ; Selector13          ; yes                    ;
-; NS.S_475                                            ; Selector13          ; yes                    ;
-; NS.I_495                                            ; Selector13          ; yes                    ;
-; Number of user-specified and inferred latches = 27  ;                     ;                        ;
+; s_hex_En                                            ; Selector16          ; yes                    ;
+; s_hex01[0]                                          ; Selector12          ; yes                    ;
+; s_hex01[1]                                          ; Selector12          ; yes                    ;
+; s_hex01[2]                                          ; Selector12          ; yes                    ;
+; s_hex01[3]                                          ; Selector12          ; yes                    ;
+; s_hex01[4]                                          ; Selector12          ; yes                    ;
+; s_hex01[5]                                          ; Selector12          ; yes                    ;
+; s_hex01[6]                                          ; Selector12          ; yes                    ;
+; s_hex01[7]                                          ; Selector12          ; yes                    ;
+; s_preco[0]                                          ; PS.SB               ; yes                    ;
+; s_troco[0]                                          ; s_troco[3]          ; yes                    ;
+; s_preco[5]                                          ; PS.SB               ; yes                    ;
+; s_preco[4]                                          ; PS.SB               ; yes                    ;
+; s_preco[3]                                          ; PS.SB               ; yes                    ;
+; s_preco[2]                                          ; PS.SB               ; yes                    ;
+; s_preco[1]                                          ; PS.SB               ; yes                    ;
+; s_troco[1]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[2]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[3]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[4]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[5]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[6]                                          ; s_troco[3]          ; yes                    ;
+; s_troco[7]                                          ; s_troco[3]          ; yes                    ;
+; Number of user-specified and inferred latches = 23  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -286,22 +281,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 34                          ;
+; boundary_port         ; 35                          ;
 ; cycloneiii_ff         ; 4                           ;
 ;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 63                          ;
+; cycloneiii_lcell_comb ; 59                          ;
 ;     arith             ; 12                          ;
 ;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 11                          ;
-;     normal            ; 51                          ;
-;         0 data inputs ; 1                           ;
+;     normal            ; 47                          ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 34                          ;
-;         4 data inputs ; 5                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 7                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.74                        ;
+; Average LUT depth     ; 2.76                        ;
 +-----------------------+-----------------------------+
 
 
@@ -320,118 +315,114 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun May 26 01:18:51 2019
+    Info: Processing started: Sun May 26 15:43:49 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
-    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 15
-    Info (12023): Found entity 1: DebounceUnit File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 5
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/Debouncer.vhd Line: 15
+    Info (12023): Found entity 1: DebounceUnit File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 19
-    Info (12023): Found entity 1: states File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 5
+    Info (12022): Found design unit 1: states-Behav File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 20
+    Info (12023): Found entity 1: states File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
+    Info (12022): Found design unit 1: switchesCounter-Behav File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 11
+    Info (12023): Found entity 1: switchesCounter File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file acumulador.vhd
+    Info (12022): Found design unit 1: Acumulador-Behav File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/Acumulador.vhd Line: 15
+    Info (12023): Found entity 1: Acumulador File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/Acumulador.vhd Line: 5
 Info (12127): Elaborating entity "states" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at states.vhd(47): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 47
-Warning (10492): VHDL Process Statement warning at states.vhd(57): signal "preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 57
-Warning (10492): VHDL Process Statement warning at states.vhd(72): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 72
-Warning (10620): VHDL warning at states.vhd(73): comparison between unequal length operands always returns FALSE File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 73
-Warning (10492): VHDL Process Statement warning at states.vhd(84): signal "preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 84
-Warning (10492): VHDL Process Statement warning at states.vhd(85): signal "preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at states.vhd(86): signal "troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at states.vhd(93): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 93
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "s_hex01", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "s_hex23", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "preco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at states.vhd(41): inferring latch(es) for signal or variable "troco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[0]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[1]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[2]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[3]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[4]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[5]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[6]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "troco[7]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[0]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[1]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[2]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[3]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[4]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[5]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[6]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "preco[7]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[0]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[1]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[2]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[3]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[4]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[5]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[6]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex23[7]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[0]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[1]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[2]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[3]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[4]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[5]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[6]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex01[7]" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "NS.F" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "NS.S" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "NS.SB" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "NS.I" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Info (10041): Inferred latch for "s_hex_En" at states.vhd(41) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at states.vhd(49): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at states.vhd(72): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at states.vhd(77): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 77
+Warning (10620): VHDL warning at states.vhd(78): comparison between unequal length operands always returns FALSE File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at states.vhd(89): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at states.vhd(90): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at states.vhd(91): signal "s_troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at states.vhd(100): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 100
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_preco", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex01", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex23", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_troco", which holds its previous value in one or more paths through the process File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[0]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[1]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[2]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[3]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[4]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[5]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[6]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_troco[7]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[0]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[1]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[2]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[3]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[4]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[5]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[6]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex23[7]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[0]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[1]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[2]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[3]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[4]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[5]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[6]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex01[7]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[0]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[1]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[2]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[3]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[4]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[5]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[6]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_preco[7]" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_reset_a" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Info (10041): Inferred latch for "s_hex_En" at states.vhd(43) File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "preco[1]" merged with LATCH primitive "preco[4]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "preco[2]" merged with LATCH primitive "preco[3]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-Warning (13012): Latch s_hex01[0] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[1] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[2] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[3] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[4] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[5] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[6] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch s_hex01[7] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch NS.SB_485 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal count_sw[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 10
-Warning (13012): Latch NS.F_465 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
-Warning (13012): Latch NS.S_475 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal count_sw[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 10
-Warning (13012): Latch NS.I_495 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.F File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "s_preco[1]" merged with LATCH primitive "s_preco[4]" File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Info (13026): Duplicate LATCH primitive "s_preco[2]" merged with LATCH primitive "s_preco[3]" File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+Warning (13012): Latch s_hex01[0] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[1] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[2] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[3] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[4] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[5] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[6] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
+Warning (13012): Latch s_hex01[7] has unsafe behavior File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PS.S File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 22
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex23[0]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[1]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[2]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[3]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[4]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[5]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[6]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
-    Warning (13410): Pin "hex23[7]" is stuck at GND File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 16
+    Warning (13410): Pin "resetAcumulador" is stuck at VCC File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 14
+    Warning (13410): Pin "hex23[0]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[1]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[2]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[3]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[4]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[5]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[6]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
+    Warning (13410): Pin "hex23[7]" is stuck at GND File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "cafe_curto" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 6
-    Warning (15610): No output dependent on input pin "cafe_longo" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 7
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "cafe_curto" File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 6
+    Warning (15610): No output dependent on input pin "cafe_longo" File: C:/Users/Tiago/Desktop/projetos/projeto-final-lsd/projfinal/states.vhd Line: 7
+Info (21057): Implemented 92 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 62 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Sun May 26 01:19:12 2019
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 57 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 4809 megabytes
+    Info: Processing ended: Sun May 26 15:44:10 2019
     Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:48
+    Info: Total CPU time (on all processors): 00:00:39
 
 
