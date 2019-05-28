@@ -9,26 +9,26 @@ entity Acumulador is
 			key1  : in std_logic;
 			key2  : in std_logic;
 			key3  : in std_logic;
-			soma  : out std_logic_vector(6 downto 0));
+			soma  : out std_logic_vector(7 downto 0));
 end Acumulador;
 
 architecture Behav of Acumulador is
-signal s_count: unsigned(6 downto 0) := to_unsigned(0,7);
+signal s_count: unsigned(7 downto 0) := to_unsigned(0,8);
 begin
 	process(clk)
 	begin
 		if(rising_edge(clk)) then
 			if(reset = '1') then
-				s_count <= to_unsigned(0,7);
+				s_count <= to_unsigned(0,8);
 			else
 				if(key0 ='1') then
-					s_count <= s_count + to_unsigned(5,7);
+					s_count <= s_count + to_unsigned(5,8);
 				elsif(key1 ='1') then
-					s_count <= s_count + to_unsigned(10,7);
+					s_count <= s_count + to_unsigned(10,8);
 				elsif(key2 ='1') then
-					s_count <= s_count + to_unsigned(20,7);
+					s_count <= s_count + to_unsigned(20,8);
 				elsif(key3 ='1') then
-					s_count <= s_count + to_unsigned(50,7);
+					s_count <= s_count + to_unsigned(50,8);
 				end if;
 			end if;
 		end if;

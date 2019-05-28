@@ -12,11 +12,12 @@ entity Vending_Machine_Ultimate is
 end Vending_Machine_Ultimate;
 
 architecture Shell of Vending_Machine_Ultimate is
-signal s_hex01, s_hex23               : std_logic_vector(6 downto 0);
-signal s_hexEn, s_reset_a                        : std_logic;
-signal s_key0, s_key1, s_key2, s_key3 : std_logic;
-signal s_soma : std_logic_vector(6 downto 0);
-signal s_counter_SW : std_logic_vector(2 downto 0);
+signal s_hex01, s_hex23               						: std_logic_vector(7 downto 0);
+signal s_hexEn, s_reset_a						            : std_logic;
+signal s_hexEn_piscarI, s_hexEn_piscarO					: std_logic;  
+signal s_key0, s_key1, s_key2, s_key3						: std_logic;
+signal s_soma 														: std_logic_vector(7 downto 0);
+signal s_counter_SW 												: std_logic_vector(2 downto 0);
 signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0);
 
 begin
@@ -64,6 +65,7 @@ begin
 	states : entity work.states(Behav)
 					port map(clk                 => CLOCK_50,
 								hexEn               => s_hexEn,
+								hexPiscar			  => s_hexEn_piscarI,
 								hex01               => s_hex01,
 								hex23               => s_hex23,
 								cafe_curto          => SW(0),
@@ -87,25 +89,34 @@ begin
 							u => Bin_7seg_2,
 							d => Bin_7seg_3);
 							
+
+--#######################  HexPiscar   ##########################################
+
+	piscar : entity work.hexPiscar(Behav)
+					port map(enablePiscar => s_hexEn_piscarI,
+								hexEn			 => s_hexEn,
+								clk			 => CLOCK_50,
+								Enable		 => s_hexEn_piscarO);
+							
 --#######################  Bin7SegDecoder  ######################################
 	outHex0 : entity work.Bin7SegDecoder(Behav)
 					port map(binInput  => Bin_7seg_0,
-								enable    => s_hexEn,
+								enable    => s_hexEn_piscarO,
 								decOut_n  => HEX0);
 								
 	outHex1 : entity work.Bin7SegDecoder(Behav)
 					port map(binInput  => Bin_7seg_1,
-								enable    => s_hexEn,
+								enable    => s_hexEn_piscarO,
 								decOut_n  => HEX1);
 	
 	outHex2 : entity work.Bin7SegDecoder(Behav)
 					port map(binInput  => Bin_7seg_2,
-								enable    => s_hexEn,
+								enable    => s_hexEn_piscarO,
 								decOut_n  => HEX2);
 	
 	outHex3 : entity work.Bin7SegDecoder(Behav)
 					port map(binInput  => Bin_7seg_3,
-								enable    => s_hexEn,
+								enable    => s_hexEn_piscarO,
 								decOut_n  => HEX3);
 --################################################################################
 

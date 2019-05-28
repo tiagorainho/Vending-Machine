@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Vending_Machine_Ultimate
-Sun May 26 16:38:54 2019
+Tue May 28 13:13:41 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,19 +15,18 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Vending_Machine_Ultimate|states:states|PS
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Parameter Settings for User Entity Instance: DebounceUnit:key0
- 14. Parameter Settings for User Entity Instance: DebounceUnit:key1
- 15. Parameter Settings for User Entity Instance: DebounceUnit:key2
- 16. Parameter Settings for User Entity Instance: DebounceUnit:key3
- 17. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
- 18. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
- 19. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: DebounceUnit:key0
+ 13. Parameter Settings for User Entity Instance: DebounceUnit:key1
+ 14. Parameter Settings for User Entity Instance: DebounceUnit:key2
+ 15. Parameter Settings for User Entity Instance: DebounceUnit:key3
+ 16. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +52,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 26 16:38:54 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 28 13:13:41 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
 ; Top-level Entity Name              ; Vending_Machine_Ultimate                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 194                                         ;
-;     Total combinational functions  ; 194                                         ;
-;     Dedicated logic registers      ; 7                                           ;
-; Total registers                    ; 7                                           ;
+; Total logic elements               ; 584                                         ;
+;     Total combinational functions  ; 580                                         ;
+;     Dedicated logic registers      ; 120                                         ;
+; Total registers                    ; 120                                         ;
 ; Total pins                         ; 38                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -169,8 +168,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -186,51 +184,52 @@ refer to the applicable agreement for further details.
 ; Vending_Machine_Ultimate.vhd     ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd    ;         ;
 ; BinToBCD.vhd                     ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd                    ;         ;
 ; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd              ;         ;
+; hexPiscar.vhd                    ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd                   ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
-; db/lpm_divide_o9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_o9m.tdf           ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_dkh.tdf      ;         ;
-; db/alt_u_div_e4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_e4f.tdf            ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_q9m.tdf           ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_fkh.tdf      ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf            ;         ;
 ; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_7pc.tdf              ;         ;
 ; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_8pc.tdf              ;         ;
-; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_ihm.tdf           ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_akh.tdf      ;         ;
-; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_84f.tdf            ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_jhm.tdf           ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_bkh.tdf      ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_a4f.tdf            ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                          ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Estimated Total logic elements              ; 194                    ;
-;                                             ;                        ;
-; Total combinational functions               ; 194                    ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 36                     ;
-;     -- 3 input functions                    ; 64                     ;
-;     -- <=2 input functions                  ; 94                     ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 150                    ;
-;     -- arithmetic mode                      ; 44                     ;
-;                                             ;                        ;
-; Total registers                             ; 7                      ;
-;     -- Dedicated logic registers            ; 7                      ;
-;     -- I/O registers                        ; 0                      ;
-;                                             ;                        ;
-; I/O pins                                    ; 38                     ;
-;                                             ;                        ;
-; Embedded Multiplier 9-bit elements          ; 0                      ;
-;                                             ;                        ;
-; Maximum fan-out node                        ; states:states|s_hex_En ;
-; Maximum fan-out                             ; 27                     ;
-; Total fan-out                               ; 578                    ;
-; Average fan-out                             ; 2.09                   ;
-+---------------------------------------------+------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 584            ;
+;                                             ;                ;
+; Total combinational functions               ; 580            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 138            ;
+;     -- 3 input functions                    ; 139            ;
+;     -- <=2 input functions                  ; 303            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 399            ;
+;     -- arithmetic mode                      ; 181            ;
+;                                             ;                ;
+; Total registers                             ; 120            ;
+;     -- Dedicated logic registers            ; 120            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 38             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 120            ;
+; Total fan-out                               ; 1915           ;
+; Average fan-out                             ; 2.47           ;
++---------------------------------------------+----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -238,23 +237,29 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Entity Name              ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |Vending_Machine_Ultimate                 ; 194 (0)             ; 7 (0)                     ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Vending_Machine_Ultimate                                                                                                                     ; Vending_Machine_Ultimate ; work         ;
+; |Vending_Machine_Ultimate                 ; 580 (0)             ; 120 (0)                   ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Vending_Machine_Ultimate                                                                                                                     ; Vending_Machine_Ultimate ; work         ;
+;    |Acumulador:ac|                        ; 53 (53)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Acumulador:ac                                                                                                       ; Acumulador               ; work         ;
 ;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex0                                                                                              ; Bin7SegDecoder           ; work         ;
 ;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex1                                                                                              ; Bin7SegDecoder           ; work         ;
-;    |BinToBCD:bin2BCD_01|                  ; 110 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD                 ; work         ;
-;       |lpm_divide:Div0|                   ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
-;          |lpm_divide_ihm:auto_generated|  ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm           ; work         ;
-;             |sign_div_unsign_akh:divider| ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh      ; work         ;
-;                |alt_u_div_84f:divider|    ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f            ; work         ;
-;       |lpm_divide:Mod0|                   ; 55 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide               ; work         ;
-;          |lpm_divide_o9m:auto_generated|  ; 55 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_o9m:auto_generated                                                   ; lpm_divide_o9m           ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 55 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh      ; work         ;
-;                |alt_u_div_e4f:divider|    ; 55 (55)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; alt_u_div_e4f            ; work         ;
-;       |lpm_divide:Mod1|                   ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                 ; lpm_divide               ; work         ;
-;          |lpm_divide_o9m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_o9m:auto_generated                                                   ; lpm_divide_o9m           ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh      ; work         ;
-;                |alt_u_div_e4f:divider|    ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; alt_u_div_e4f            ; work         ;
-;    |states:states|                        ; 53 (53)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states                                                                                                       ; states                   ; work         ;
+;    |BinToBCD:bin2BCD_01|                  ; 165 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD                 ; work         ;
+;       |lpm_divide:Div0|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm           ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh      ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f            ; work         ;
+;       |lpm_divide:Mod0|                   ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;       |lpm_divide:Mod1|                   ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;    |DebounceUnit:key0|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key0                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key1|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key1                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key2|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key2                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key3|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key3                                                                                                   ; DebounceUnit             ; work         ;
+;    |hexPiscar:piscar|                     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|hexPiscar:piscar                                                                                                    ; hexPiscar                ; work         ;
+;    |states:states|                        ; 62 (62)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states                                                                                                       ; states                   ; work         ;
 ;    |switchesCounter:counter|              ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|switchesCounter:counter                                                                                             ; switchesCounter          ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -278,84 +283,34 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+--------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
 +-----------------------------------------------------+--------------------------+------------------------+
-; states:states|s_hex_En                              ; states:states|Selector19 ; yes                    ;
-; states:states|s_hex01[0]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_hex01[1]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_hex01[2]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_hex01[3]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_preco[0]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_troco[0]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|s_preco[1]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_preco[2]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_preco[3]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_preco[4]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_preco[5]                            ; states:states|PS.SB      ; yes                    ;
-; states:states|s_troco[1]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|s_troco[2]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|s_troco[3]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|NS.SB_463                             ; states:states|Selector12 ; yes                    ;
-; states:states|NS.F_439                              ; states:states|Selector12 ; yes                    ;
-; states:states|NS.S_451                              ; states:states|Selector12 ; yes                    ;
-; states:states|s_hex01[6]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_hex01[4]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_hex01[5]                            ; states:states|Selector8  ; yes                    ;
-; states:states|s_troco[6]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|s_troco[4]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|s_troco[5]                            ; states:states|s_troco[2] ; yes                    ;
-; states:states|NS.I_475                              ; states:states|Selector12 ; yes                    ;
+; states:states|s_hex01[0]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[1]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[2]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[3]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex_piscar                          ; states:states|Selector24 ; yes                    ;
+; states:states|s_hex_En                              ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_preco[0]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_troco[0]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_preco[5]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_preco[4]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_preco[3]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_preco[2]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_preco[1]                            ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_troco[1]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_troco[2]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_troco[3]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_reset_a                             ; states:states|s_reset_a  ; yes                    ;
+; states:states|s_hex01[7]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[4]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[5]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_hex01[6]                            ; states:states|Selector9  ; yes                    ;
+; states:states|s_troco[7]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_troco[4]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_troco[5]                            ; states:states|s_troco[1] ; yes                    ;
+; states:states|s_troco[6]                            ; states:states|s_troco[1] ; yes                    ;
 ; Number of user-specified and inferred latches = 25  ;                          ;                        ;
 +-----------------------------------------------------+--------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; Acumulador:ac|s_count[0..6]             ; Stuck at GND due to stuck port data_in ;
-; DebounceUnit:key3|s_pulsedOut           ; Lost fanout                            ;
-; DebounceUnit:key3|s_previousIn          ; Lost fanout                            ;
-; DebounceUnit:key3|s_debounceCnt[0..22]  ; Lost fanout                            ;
-; DebounceUnit:key3|s_dirtyIn             ; Lost fanout                            ;
-; DebounceUnit:key2|s_pulsedOut           ; Lost fanout                            ;
-; DebounceUnit:key2|s_previousIn          ; Lost fanout                            ;
-; DebounceUnit:key2|s_debounceCnt[0..22]  ; Lost fanout                            ;
-; DebounceUnit:key2|s_dirtyIn             ; Lost fanout                            ;
-; DebounceUnit:key1|s_pulsedOut           ; Lost fanout                            ;
-; DebounceUnit:key1|s_previousIn          ; Lost fanout                            ;
-; DebounceUnit:key1|s_debounceCnt[0..22]  ; Lost fanout                            ;
-; DebounceUnit:key1|s_dirtyIn             ; Lost fanout                            ;
-; DebounceUnit:key0|s_pulsedOut           ; Lost fanout                            ;
-; DebounceUnit:key0|s_previousIn          ; Lost fanout                            ;
-; DebounceUnit:key0|s_debounceCnt[0..22]  ; Lost fanout                            ;
-; DebounceUnit:key0|s_dirtyIn             ; Lost fanout                            ;
-; Total Number of Removed Registers = 111 ;                                        ;
-+-----------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                    ;
-+-------------------------------+--------------------+---------------------------------------------------------------------------+
-; Register name                 ; Reason for Removal ; Registers Removed due to This Register                                    ;
-+-------------------------------+--------------------+---------------------------------------------------------------------------+
-; DebounceUnit:key3|s_pulsedOut ; Lost Fanouts       ; DebounceUnit:key3|s_previousIn, DebounceUnit:key3|s_debounceCnt[18],      ;
-;                               ;                    ; DebounceUnit:key3|s_debounceCnt[19], DebounceUnit:key3|s_debounceCnt[20], ;
-;                               ;                    ; DebounceUnit:key3|s_debounceCnt[21], DebounceUnit:key3|s_debounceCnt[22], ;
-;                               ;                    ; DebounceUnit:key3|s_dirtyIn                                               ;
-; DebounceUnit:key2|s_pulsedOut ; Lost Fanouts       ; DebounceUnit:key2|s_previousIn, DebounceUnit:key2|s_debounceCnt[18],      ;
-;                               ;                    ; DebounceUnit:key2|s_debounceCnt[19], DebounceUnit:key2|s_debounceCnt[20], ;
-;                               ;                    ; DebounceUnit:key2|s_debounceCnt[21], DebounceUnit:key2|s_debounceCnt[22], ;
-;                               ;                    ; DebounceUnit:key2|s_dirtyIn                                               ;
-; DebounceUnit:key1|s_pulsedOut ; Lost Fanouts       ; DebounceUnit:key1|s_previousIn, DebounceUnit:key1|s_debounceCnt[18],      ;
-;                               ;                    ; DebounceUnit:key1|s_debounceCnt[19], DebounceUnit:key1|s_debounceCnt[20], ;
-;                               ;                    ; DebounceUnit:key1|s_debounceCnt[21], DebounceUnit:key1|s_debounceCnt[22], ;
-;                               ;                    ; DebounceUnit:key1|s_dirtyIn                                               ;
-; DebounceUnit:key0|s_pulsedOut ; Lost Fanouts       ; DebounceUnit:key0|s_previousIn, DebounceUnit:key0|s_debounceCnt[18],      ;
-;                               ;                    ; DebounceUnit:key0|s_debounceCnt[19], DebounceUnit:key0|s_debounceCnt[20], ;
-;                               ;                    ; DebounceUnit:key0|s_debounceCnt[21], DebounceUnit:key0|s_debounceCnt[22], ;
-;                               ;                    ; DebounceUnit:key0|s_dirtyIn                                               ;
-+-------------------------------+--------------------+---------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -363,14 +318,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7     ;
+; Total registers                              ; 120   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 78    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key3|s_debounceCnt[12] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key2|s_debounceCnt[12] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key1|s_debounceCnt[0]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key0|s_debounceCnt[6]  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Vending_Machine_Ultimate|Acumulador:ac|s_count[4]            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
 +----------------------------------------------------------------+
@@ -430,14 +398,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+--------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                       ;
 +------------------------+----------------+--------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                    ;
-; LPM_WIDTHD             ; 7              ; Untyped                                    ;
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                    ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
-; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
@@ -453,14 +421,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+--------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                       ;
 +------------------------+----------------+--------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                    ;
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
 ; LPM_WIDTHD             ; 4              ; Untyped                                    ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                    ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
-; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                    ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
@@ -476,14 +444,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+--------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                       ;
 +------------------------+----------------+--------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                    ;
-; LPM_WIDTHD             ; 7              ; Untyped                                    ;
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                    ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
-; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
@@ -500,22 +468,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 38                          ;
-; cycloneiii_ff         ; 7                           ;
-;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 196                         ;
-;     arith             ; 44                          ;
+; cycloneiii_ff         ; 120                         ;
+;     ENA               ; 78                          ;
+;     plain             ; 42                          ;
+; cycloneiii_lcell_comb ; 582                         ;
+;     arith             ; 181                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 28                          ;
-;     normal            ; 152                         ;
-;         0 data inputs ; 11                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 36                          ;
+;         2 data inputs ; 125                         ;
+;         3 data inputs ; 53                          ;
+;     normal            ; 401                         ;
+;         0 data inputs ; 13                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 148                         ;
+;         3 data inputs ; 86                          ;
+;         4 data inputs ; 138                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.50                       ;
-; Average LUT depth     ; 8.43                        ;
+; Max LUT depth         ; 15.20                       ;
+; Average LUT depth     ; 7.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -534,7 +503,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun May 26 16:38:34 2019
+    Info: Processing started: Tue May 28 13:13:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -542,7 +511,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
     Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 15
     Info (12023): Found entity 1: DebounceUnit File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 20
+    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 21
     Info (12023): Found entity 1: states File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
     Info (12022): Found design unit 1: switchesCounter-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 11
@@ -559,143 +528,156 @@ Info (12021): Found 2 design units, including 1 entities, in source file bintobc
 Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
     Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd Line: 10
     Info (12023): Found entity 1: Bin7SegDecoder File: C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hexpiscar.vhd
+    Info (12022): Found design unit 1: hexPiscar-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd Line: 12
+    Info (12023): Found entity 1: hexPiscar File: C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd Line: 5
 Info (12127): Elaborating entity "Vending_Machine_Ultimate" for the top level hierarchy
-Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 25
-Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 46
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 26
+Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 47
 Warning (10492): VHDL Process Statement warning at Acumulador.vhd(35): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/Acumulador.vhd Line: 35
-Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 57
-Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at states.vhd(49): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 49
-Warning (10492): VHDL Process Statement warning at states.vhd(72): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 72
-Warning (10492): VHDL Process Statement warning at states.vhd(77): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at states.vhd(89): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 89
-Warning (10492): VHDL Process Statement warning at states.vhd(90): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 90
-Warning (10492): VHDL Process Statement warning at states.vhd(91): signal "s_troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 91
-Warning (10492): VHDL Process Statement warning at states.vhd(100): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 100
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_preco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex01", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_hex23", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at states.vhd(43): inferring latch(es) for signal or variable "s_troco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[0]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[1]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[2]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[3]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[4]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[5]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_troco[6]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[0]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[1]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[2]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[3]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[4]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[5]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex23[6]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[0]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[1]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[2]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[3]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[4]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[5]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex01[6]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[0]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[1]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[2]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[3]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[4]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[5]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_preco[6]" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_reset_a" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "NS.F" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "NS.S" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "NS.SB" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "NS.I" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (10041): Inferred latch for "s_hex_En" at states.vhd(43) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 80
-Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 91
+Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 58
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at states.vhd(54): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at states.vhd(76): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at states.vhd(83): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at states.vhd(95): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at states.vhd(97): signal "s_preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at states.vhd(98): signal "s_troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at states.vhd(107): signal "count_sw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_hex01" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_hex23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 117
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex_piscar", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_preco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "NS", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex01", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_hex23", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at states.vhd(44): inferring latch(es) for signal or variable "s_troco", which holds its previous value in one or more paths through the process File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[0]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[1]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[2]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[3]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[4]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[5]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[6]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_troco[7]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[0]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[1]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[2]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[3]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[4]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[5]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[6]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex23[7]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[0]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[1]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[2]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[3]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[4]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[5]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[6]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex01[7]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "NS.F" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "NS.S" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "NS.SB" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "NS.I" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_reset_a" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[0]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[1]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[2]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[3]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[4]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[5]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[6]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_preco[7]" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex_piscar" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (10041): Inferred latch for "s_hex_En" at states.vhd(44) File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 82
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hexPiscar.vhd(24): signal "s_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd Line: 24
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 102
+Warning (14026): LATCH primitive "states:states|NS.F_446" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.S_458" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.SB_470" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.I_482" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.I_482" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.SB_470" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.S_458" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (14026): LATCH primitive "states:states|NS.F_446" is permanently enabled File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
 Info (278001): Inferred 3 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 18
 Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
 Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
-    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_o9m.tdf
-    Info (12023): Found entity 1: lpm_divide_o9m File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_o9m.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_dkh.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e4f.tdf
-    Info (12023): Found entity 1: alt_u_div_e4f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_e4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
     Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_7pc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_8pc.tdf Line: 22
 Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
 Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
-    Info (12023): Found entity 1: lpm_divide_ihm File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_ihm.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_akh.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
-    Info (12023): Found entity 1: alt_u_div_84f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_84f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_a4f.tdf Line: 26
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "states:states|s_preco[4]" merged with LATCH primitive "states:states|s_preco[1]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Info (13026): Duplicate LATCH primitive "states:states|s_preco[3]" merged with LATCH primitive "states:states|s_preco[2]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_hex01[0] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_hex01[1] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[1] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_hex01[2] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[2] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_hex01[3] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[2] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_troco[0] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|NS.SB_463 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal switchesCounter:counter|s_counter[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 16
-Warning (13012): Latch states:states|NS.F_439 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal switchesCounter:counter|s_counter[0] File: C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 16
-Warning (13012): Latch states:states|NS.S_451 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.SB File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 22
-Warning (13012): Latch states:states|s_hex01[6] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 22
-Warning (13012): Latch states:states|s_hex01[4] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[1] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|s_hex01[5] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|s_preco[5] File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-Warning (13012): Latch states:states|NS.I_475 has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 43
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.SB File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 22
+    Info (13026): Duplicate LATCH primitive "states:states|s_preco[1]" merged with LATCH primitive "states:states|s_preco[4]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Info (13026): Duplicate LATCH primitive "states:states|s_preco[2]" merged with LATCH primitive "states:states|s_preco[3]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+Warning (13012): Latch states:states|s_hex01[0] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[1] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[2] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[3] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex_piscar has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[7] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[4] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[5] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+Warning (13012): Latch states:states|s_hex01[6] has unsafe behavior File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.S File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 10
     Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 104 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[0]~0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_e4f.tdf Line: 56
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 61
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 56
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 7
-Info (21057): Implemented 232 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 622 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 194 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Sun May 26 16:38:54 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:41
+    Info (21061): Implemented 584 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Tue May 28 13:13:41 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:39
 
 

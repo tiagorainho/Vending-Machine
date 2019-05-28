@@ -6,6 +6,7 @@ CLOCK_50 => debounceunit:key3.refClk
 CLOCK_50 => acumulador:ac.clk
 CLOCK_50 => switchescounter:counter.clk
 CLOCK_50 => states:states.clk
+CLOCK_50 => hexpiscar:piscar.clk
 SW[0] => switchescounter:counter.switches[0]
 SW[0] => states:states.cafe_curto
 SW[1] => switchescounter:counter.switches[1]
@@ -19,34 +20,34 @@ KEY[0] => debounceunit:key0.dirtyIn
 KEY[1] => debounceunit:key1.dirtyIn
 KEY[2] => debounceunit:key2.dirtyIn
 KEY[3] => debounceunit:key3.dirtyIn
-HEX0[0] << bin7segdecoder:outHex0.decOut_n[0]
-HEX0[1] << bin7segdecoder:outHex0.decOut_n[1]
-HEX0[2] << bin7segdecoder:outHex0.decOut_n[2]
-HEX0[3] << bin7segdecoder:outHex0.decOut_n[3]
-HEX0[4] << bin7segdecoder:outHex0.decOut_n[4]
-HEX0[5] << bin7segdecoder:outHex0.decOut_n[5]
-HEX0[6] << bin7segdecoder:outHex0.decOut_n[6]
-HEX1[0] << bin7segdecoder:outHex1.decOut_n[0]
-HEX1[1] << bin7segdecoder:outHex1.decOut_n[1]
-HEX1[2] << bin7segdecoder:outHex1.decOut_n[2]
-HEX1[3] << bin7segdecoder:outHex1.decOut_n[3]
-HEX1[4] << bin7segdecoder:outHex1.decOut_n[4]
-HEX1[5] << bin7segdecoder:outHex1.decOut_n[5]
-HEX1[6] << bin7segdecoder:outHex1.decOut_n[6]
-HEX2[0] << bin7segdecoder:outHex2.decOut_n[0]
-HEX2[1] << bin7segdecoder:outHex2.decOut_n[1]
-HEX2[2] << bin7segdecoder:outHex2.decOut_n[2]
-HEX2[3] << bin7segdecoder:outHex2.decOut_n[3]
-HEX2[4] << bin7segdecoder:outHex2.decOut_n[4]
-HEX2[5] << bin7segdecoder:outHex2.decOut_n[5]
-HEX2[6] << bin7segdecoder:outHex2.decOut_n[6]
-HEX3[0] << bin7segdecoder:outHex3.decOut_n[0]
-HEX3[1] << bin7segdecoder:outHex3.decOut_n[1]
-HEX3[2] << bin7segdecoder:outHex3.decOut_n[2]
-HEX3[3] << bin7segdecoder:outHex3.decOut_n[3]
-HEX3[4] << bin7segdecoder:outHex3.decOut_n[4]
-HEX3[5] << bin7segdecoder:outHex3.decOut_n[5]
-HEX3[6] << bin7segdecoder:outHex3.decOut_n[6]
+HEX0[0] <= bin7segdecoder:outHex0.decOut_n[0]
+HEX0[1] <= bin7segdecoder:outHex0.decOut_n[1]
+HEX0[2] <= bin7segdecoder:outHex0.decOut_n[2]
+HEX0[3] <= bin7segdecoder:outHex0.decOut_n[3]
+HEX0[4] <= bin7segdecoder:outHex0.decOut_n[4]
+HEX0[5] <= bin7segdecoder:outHex0.decOut_n[5]
+HEX0[6] <= bin7segdecoder:outHex0.decOut_n[6]
+HEX1[0] <= bin7segdecoder:outHex1.decOut_n[0]
+HEX1[1] <= bin7segdecoder:outHex1.decOut_n[1]
+HEX1[2] <= bin7segdecoder:outHex1.decOut_n[2]
+HEX1[3] <= bin7segdecoder:outHex1.decOut_n[3]
+HEX1[4] <= bin7segdecoder:outHex1.decOut_n[4]
+HEX1[5] <= bin7segdecoder:outHex1.decOut_n[5]
+HEX1[6] <= bin7segdecoder:outHex1.decOut_n[6]
+HEX2[0] <= bin7segdecoder:outHex2.decOut_n[0]
+HEX2[1] <= bin7segdecoder:outHex2.decOut_n[1]
+HEX2[2] <= bin7segdecoder:outHex2.decOut_n[2]
+HEX2[3] <= bin7segdecoder:outHex2.decOut_n[3]
+HEX2[4] <= bin7segdecoder:outHex2.decOut_n[4]
+HEX2[5] <= bin7segdecoder:outHex2.decOut_n[5]
+HEX2[6] <= bin7segdecoder:outHex2.decOut_n[6]
+HEX3[0] <= bin7segdecoder:outHex3.decOut_n[0]
+HEX3[1] <= bin7segdecoder:outHex3.decOut_n[1]
+HEX3[2] <= bin7segdecoder:outHex3.decOut_n[2]
+HEX3[3] <= bin7segdecoder:outHex3.decOut_n[3]
+HEX3[4] <= bin7segdecoder:outHex3.decOut_n[4]
+HEX3[5] <= bin7segdecoder:outHex3.decOut_n[5]
+HEX3[6] <= bin7segdecoder:outHex3.decOut_n[6]
 
 
 |Vending_Machine_Ultimate|DebounceUnit:key0
@@ -181,6 +182,7 @@ clk => s_count[3].CLK
 clk => s_count[4].CLK
 clk => s_count[5].CLK
 clk => s_count[6].CLK
+clk => s_count[7].CLK
 reset => s_count.OUTPUTSELECT
 reset => s_count.OUTPUTSELECT
 reset => s_count.OUTPUTSELECT
@@ -188,6 +190,8 @@ reset => s_count.OUTPUTSELECT
 reset => s_count.OUTPUTSELECT
 reset => s_count.OUTPUTSELECT
 reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+key0 => s_count.OUTPUTSELECT
 key0 => s_count.OUTPUTSELECT
 key0 => s_count.OUTPUTSELECT
 key0 => s_count.OUTPUTSELECT
@@ -201,12 +205,15 @@ key1 => s_count.OUTPUTSELECT
 key1 => s_count.OUTPUTSELECT
 key1 => s_count.OUTPUTSELECT
 key1 => s_count.OUTPUTSELECT
+key1 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
 key2 => s_count.OUTPUTSELECT
+key2 => s_count.OUTPUTSELECT
+key3 => s_count.OUTPUTSELECT
 key3 => s_count.OUTPUTSELECT
 key3 => s_count.OUTPUTSELECT
 key3 => s_count.OUTPUTSELECT
@@ -220,6 +227,7 @@ soma[3] <= s_count[3].DB_MAX_OUTPUT_PORT_TYPE
 soma[4] <= s_count[4].DB_MAX_OUTPUT_PORT_TYPE
 soma[5] <= s_count[5].DB_MAX_OUTPUT_PORT_TYPE
 soma[6] <= s_count[6].DB_MAX_OUTPUT_PORT_TYPE
+soma[7] <= s_count[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Vending_Machine_Ultimate|switchesCounter:counter
@@ -241,45 +249,47 @@ cafe_longo => ~NO_FANOUT~
 choc_quente => s_preco.OUTPUTSELECT
 choc_quente => s_preco.OUTPUTSELECT
 choc_quente => s_preco.OUTPUTSELECT
-choc_quente => s_preco[2].DATAIN
-choc_quente => s_preco[3].DATAIN
+choc_quente => Selector21.IN0
 cappucino => s_preco.DATAA
 cappucino => s_preco.DATAA
 cappucino => s_preco.DATAA
 count_sw[0] => Equal0.IN2
-count_sw[0] => Equal2.IN2
+count_sw[0] => Equal1.IN2
 count_sw[1] => Equal0.IN1
-count_sw[1] => Equal2.IN1
+count_sw[1] => Equal1.IN1
 count_sw[2] => Equal0.IN0
-count_sw[2] => Equal2.IN0
-dinheiro[0] => LessThan0.IN7
-dinheiro[0] => Add0.IN14
-dinheiro[0] => Equal1.IN6
-dinheiro[1] => LessThan0.IN6
-dinheiro[1] => Add0.IN13
-dinheiro[1] => Equal1.IN5
-dinheiro[2] => LessThan0.IN5
-dinheiro[2] => Add0.IN12
-dinheiro[2] => Equal1.IN4
-dinheiro[3] => LessThan0.IN4
-dinheiro[3] => Add0.IN11
-dinheiro[3] => Equal1.IN3
-dinheiro[4] => LessThan0.IN3
-dinheiro[4] => Add0.IN10
-dinheiro[4] => Equal1.IN2
-dinheiro[5] => LessThan0.IN2
-dinheiro[5] => Add0.IN9
-dinheiro[5] => Equal1.IN1
-dinheiro[6] => LessThan0.IN1
-dinheiro[6] => Add0.IN8
-dinheiro[6] => Equal1.IN0
+count_sw[2] => Equal1.IN0
+dinheiro[0] => LessThan1.IN8
+dinheiro[0] => Add0.IN16
+dinheiro[1] => LessThan0.IN14
+dinheiro[1] => LessThan1.IN7
+dinheiro[1] => Add0.IN15
+dinheiro[2] => LessThan0.IN13
+dinheiro[2] => LessThan1.IN6
+dinheiro[2] => Add0.IN14
+dinheiro[3] => LessThan0.IN12
+dinheiro[3] => LessThan1.IN5
+dinheiro[3] => Add0.IN13
+dinheiro[4] => LessThan0.IN11
+dinheiro[4] => LessThan1.IN4
+dinheiro[4] => Add0.IN12
+dinheiro[5] => LessThan0.IN10
+dinheiro[5] => LessThan1.IN3
+dinheiro[5] => Add0.IN11
+dinheiro[6] => LessThan0.IN9
+dinheiro[6] => LessThan1.IN2
+dinheiro[6] => Add0.IN10
+dinheiro[7] => LessThan0.IN8
+dinheiro[7] => LessThan1.IN1
+dinheiro[7] => Add0.IN9
 clk => PS~1.DATAIN
 reset => PS.OUTPUTSELECT
 reset => PS.OUTPUTSELECT
 reset => PS.OUTPUTSELECT
 reset => PS.OUTPUTSELECT
-resetAcumulador <= <VCC>
+resetAcumulador <= s_reset_a.DB_MAX_OUTPUT_PORT_TYPE
 hexEn <= s_hex_En.DB_MAX_OUTPUT_PORT_TYPE
+hexPiscar <= s_hex_piscar.DB_MAX_OUTPUT_PORT_TYPE
 hex01[0] <= s_hex01[0].DB_MAX_OUTPUT_PORT_TYPE
 hex01[1] <= s_hex01[1].DB_MAX_OUTPUT_PORT_TYPE
 hex01[2] <= s_hex01[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -287,6 +297,7 @@ hex01[3] <= s_hex01[3].DB_MAX_OUTPUT_PORT_TYPE
 hex01[4] <= s_hex01[4].DB_MAX_OUTPUT_PORT_TYPE
 hex01[5] <= s_hex01[5].DB_MAX_OUTPUT_PORT_TYPE
 hex01[6] <= s_hex01[6].DB_MAX_OUTPUT_PORT_TYPE
+hex01[7] <= s_hex01[7].DB_MAX_OUTPUT_PORT_TYPE
 hex23[0] <= <GND>
 hex23[1] <= <GND>
 hex23[2] <= <GND>
@@ -294,23 +305,26 @@ hex23[3] <= <GND>
 hex23[4] <= <GND>
 hex23[5] <= <GND>
 hex23[6] <= <GND>
+hex23[7] <= <GND>
 
 
 |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01
-r[0] => Mod0.IN13
-r[0] => Div0.IN10
-r[1] => Mod0.IN12
-r[1] => Div0.IN9
-r[2] => Mod0.IN11
-r[2] => Div0.IN8
-r[3] => Mod0.IN10
-r[3] => Div0.IN7
-r[4] => Mod0.IN9
-r[4] => Div0.IN6
-r[5] => Mod0.IN8
-r[5] => Div0.IN5
-r[6] => Mod0.IN7
-r[6] => Div0.IN4
+r[0] => Mod0.IN15
+r[0] => Div0.IN11
+r[1] => Mod0.IN14
+r[1] => Div0.IN10
+r[2] => Mod0.IN13
+r[2] => Div0.IN9
+r[3] => Mod0.IN12
+r[3] => Div0.IN8
+r[4] => Mod0.IN11
+r[4] => Div0.IN7
+r[5] => Mod0.IN10
+r[5] => Div0.IN6
+r[6] => Mod0.IN9
+r[6] => Div0.IN5
+r[7] => Mod0.IN8
+r[7] => Div0.IN4
 u[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 u[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 u[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
@@ -322,20 +336,22 @@ d[3] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Vending_Machine_Ultimate|BinToBCD:bin2BCD_23
-r[0] => Mod0.IN13
-r[0] => Div0.IN10
-r[1] => Mod0.IN12
-r[1] => Div0.IN9
-r[2] => Mod0.IN11
-r[2] => Div0.IN8
-r[3] => Mod0.IN10
-r[3] => Div0.IN7
-r[4] => Mod0.IN9
-r[4] => Div0.IN6
-r[5] => Mod0.IN8
-r[5] => Div0.IN5
-r[6] => Mod0.IN7
-r[6] => Div0.IN4
+r[0] => Mod0.IN15
+r[0] => Div0.IN11
+r[1] => Mod0.IN14
+r[1] => Div0.IN10
+r[2] => Mod0.IN13
+r[2] => Div0.IN9
+r[3] => Mod0.IN12
+r[3] => Div0.IN8
+r[4] => Mod0.IN11
+r[4] => Div0.IN7
+r[5] => Mod0.IN10
+r[5] => Div0.IN6
+r[6] => Mod0.IN9
+r[6] => Div0.IN5
+r[7] => Mod0.IN8
+r[7] => Div0.IN4
 u[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 u[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 u[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
@@ -344,6 +360,13 @@ d[0] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
 d[1] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
 d[2] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
 d[3] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine_Ultimate|hexPiscar:piscar
+enablePiscar => s_enable.OUTPUTSELECT
+clk => s_enable.CLK
+hexEn => s_enable.DATAA
+Enable <= s_enable.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Vending_Machine_Ultimate|Bin7SegDecoder:outHex0

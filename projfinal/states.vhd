@@ -8,22 +8,23 @@ entity states is
 			choc_quente  : in std_logic;
 			cappucino  	 : in std_logic;
 			count_sw		 : in std_logic_vector(2 downto 0); --Contador do numero de SW
-			dinheiro  	 : in std_logic_vector(6 downto 0); -- Acumulador do dinheiro
+			dinheiro  	 : in std_logic_vector(7 downto 0); -- Acumulador do dinheiro
 			clk       	 : in std_logic;
 			reset			 : in std_logic;
 			resetAcumulador : out std_logic;
-			hexEn     	 : out std_logic := '0';
-			hex01     	 : out std_logic_vector(6 downto 0);
-			hex23     	 : out std_logic_vector(6 downto 0));
+			hexEn     	 : out std_logic;
+			hexPiscar	 : out std_logic;
+			hex01     	 : out std_logic_vector(7 downto 0);
+			hex23     	 : out std_logic_vector(7 downto 0));
 end states;
 
 architecture Behav of states is
 	type state is (I, SB, S, F); 		--	I: Inicial;		SB: Stand By;
 	signal PS, NS  : state :=I;					-- S: Start;		F: Final;
-	signal s_preco : std_logic_vector(6 downto 0); --Associar preço de acordo com o produto
-	signal s_troco : std_logic_vector(6 downto 0); --Valor do troco
-	signal s_hex_En : std_logic := '0'; --sinal do HEX Enable
-	signal s_hex01, s_hex23 : unsigned(6 downto 0);
+	signal s_preco : std_logic_vector(7 downto 0); --Associar preço de acordo com o produto
+	signal s_troco : std_logic_vector(7 downto 0); --Valor do troco
+	signal s_hex_En, s_hex_piscar : std_logic := '0'; --sinal do HEX Enable e do Piscar
+	signal s_hex01, s_hex23 : unsigned(7 downto 0);
 	signal s_reset_a: std_logic;
 
 	
@@ -45,7 +46,11 @@ begin
 		case PS is
 		when I =>
 			s_hex_En  <= '0'; -- desligar hexs se ligados;
-			
+			s_hex_piscar <= '0'; --desligar piscar
+			s_preco <= "00000000"; --zerar o preço do produto;
+			s_reset_a <= '1'; -- reset no acumulador das moedas;
+
+							
 			if(count_sw = "001") then
 				NS <= SB;
 			else
@@ -53,29 +58,30 @@ begin
 			end if;
 			
 		when SB =>
-			s_reset_a <= '1'; -- reset no acumulador das moedas
 		
 			--Definir Preço de cada produto
 			if(choc_quente = '1') then
-				s_preco <= "0110010"; -- 50
+				s_preco <= "00110010"; -- 50
 
 			elsif(cappucino = '1') then
-				s_preco <= "0101101"; -- 45
+				s_preco <= "00101101"; -- 45
 			
 			else
-				s_preco <= "0011110"; -- 30
+				s_preco <= "00011110"; -- 30
 			end if;
 			
 			s_hex_En <= '1'; --ligar HEXs;
 			
 			--Definir o que mostrar em cada HEX nesta fase
 			s_hex01 <= unsigned(s_preco);
-			s_hex23 <= "0000000";
+			s_hex23 <= "00000000";
+			
+			
+			s_reset_a <= '0'; --desligar reset do acumulador para começar a contar toque nas keys
 			
 			--Verificar que se encontra um SW para cima:
-			
 			if(count_sw = "001") then
-				if(not(dinheiro = "0000000")) then --passar para S se key tocada
+				if(dinheiro > "0000000") then --passar para S se key tocada
 					NS <= S;
 				end if;
 			else
@@ -87,9 +93,10 @@ begin
 		
 			
 			if (dinheiro >= s_preco) then 
+				s_hex_piscar <='1';
 				s_troco <= std_logic_vector(unsigned(dinheiro) - unsigned(s_preco)); --calculo do troco
 				s_hex01 <= unsigned(s_troco);
-				s_hex23 <= "0000000";
+				s_hex23 <= "00000000";
 				NS <= F;
 			else
 				NS <= S;
@@ -99,18 +106,15 @@ begin
 		when F =>
 			if(count_sw = "000") then
 				NS <= I;
-				s_hex_En <= '0'; --desligar hexs
-				s_reset_a <= '1'; -- reset no acumulador das moedas
 			else
 				NS <= F;
 			end if;
 		end case;
-		
-	end process;
 	hex01 <= std_logic_vector(s_hex01);
 	hex23 <= std_logic_vector(s_hex23);
 	hexEn <= std_logic(s_hex_En);
+	hexPiscar <= std_logic(s_hex_piscar);
 	resetAcumulador <= std_logic(s_reset_a);
-	
-	
+	end process;
+
 end Behav;

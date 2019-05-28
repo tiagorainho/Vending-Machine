@@ -2,112 +2,112 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'states:states|PS.SB'
-Slack : -3.807
-TNS   : -23.620
-
-Type  : Slow 1200mV 85C Model Setup 'states:states|PS.S'
-Slack : -2.518
-TNS   : -27.295
-
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -0.180
-TNS   : -0.462
+Slack : -3.986
+TNS   : -387.342
 
-Type  : Slow 1200mV 85C Model Hold 'states:states|PS.S'
-Slack : 0.022
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'Acumulador:ac|s_count[0]'
+Slack : -3.131
+TNS   : -42.085
 
-Type  : Slow 1200mV 85C Model Hold 'states:states|PS.SB'
-Slack : 0.152
+Type  : Slow 1200mV 85C Model Setup 'states:states|PS.F'
+Slack : -2.267
+TNS   : -11.405
+
+Type  : Slow 1200mV 85C Model Hold 'Acumulador:ac|s_count[0]'
+Slack : 0.366
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.432
+Slack : 0.543
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'states:states|PS.F'
+Slack : 1.260
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -11.995
+TNS   : -157.200
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:states|PS.SB'
-Slack : 0.356
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Acumulador:ac|s_count[0]'
+Slack : 0.203
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:states|PS.S'
-Slack : 0.399
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'states:states|PS.F'
+Slack : 0.391
 TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'states:states|PS.SB'
-Slack : -3.511
-TNS   : -22.091
-
-Type  : Slow 1200mV 0C Model Setup 'states:states|PS.S'
-Slack : -2.331
-TNS   : -25.548
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.040
-TNS   : -0.040
+Slack : -3.584
+TNS   : -345.570
 
-Type  : Slow 1200mV 0C Model Hold 'states:states|PS.S'
-Slack : 0.071
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Setup 'Acumulador:ac|s_count[0]'
+Slack : -3.033
+TNS   : -41.484
 
-Type  : Slow 1200mV 0C Model Hold 'states:states|PS.SB'
-Slack : 0.196
+Type  : Slow 1200mV 0C Model Setup 'states:states|PS.F'
+Slack : -1.938
+TNS   : -9.964
+
+Type  : Slow 1200mV 0C Model Hold 'Acumulador:ac|s_count[0]'
+Slack : 0.319
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.333
+Slack : 0.429
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'states:states|PS.F'
+Slack : 1.147
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -11.995
+TNS   : -157.200
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:states|PS.SB'
-Slack : 0.340
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Acumulador:ac|s_count[0]'
+Slack : 0.290
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:states|PS.S'
-Slack : 0.385
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'states:states|PS.F'
+Slack : 0.423
 TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'states:states|PS.SB'
-Slack : -1.518
-TNS   : -7.127
-
-Type  : Fast 1200mV 0C Model Setup 'states:states|PS.S'
-Slack : -0.761
-TNS   : -6.939
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : 0.424
-TNS   : 0.000
+Slack : -1.479
+TNS   : -130.644
 
-Type  : Fast 1200mV 0C Model Hold 'states:states|PS.S'
-Slack : -0.031
-TNS   : -0.031
+Type  : Fast 1200mV 0C Model Setup 'Acumulador:ac|s_count[0]'
+Slack : -1.309
+TNS   : -16.930
+
+Type  : Fast 1200mV 0C Model Setup 'states:states|PS.F'
+Slack : -0.749
+TNS   : -3.568
+
+Type  : Fast 1200mV 0C Model Hold 'Acumulador:ac|s_count[0]'
+Slack : 0.060
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.148
+Slack : 0.127
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'states:states|PS.SB'
-Slack : 0.156
+Type  : Fast 1200mV 0C Model Hold 'states:states|PS.F'
+Slack : 0.594
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -10.255
+TNS   : -130.727
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:states|PS.S'
-Slack : 0.392
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Acumulador:ac|s_count[0]'
+Slack : 0.093
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:states|PS.SB'
-Slack : 0.396
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'states:states|PS.F'
+Slack : 0.304
 TNS   : 0.000
 
 ------------------------------------------------------------
