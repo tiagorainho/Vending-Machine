@@ -10,11 +10,12 @@ entity states is
 			clk       	 : in std_logic;
 			reset			 : in std_logic;
 			resetAcumulador : out std_logic;
+			troco_final  : out std_logic;
 			hexEn     	 : out std_logic;
-			ledr0         : out std_logic;
-			ledr1         : out std_logic;
-			ledr2         : out std_logic;
-			ledr3         : out std_logic;
+			ledr0        : out std_logic;
+			ledr1        : out std_logic;
+			ledr2        : out std_logic;
+			ledr3        : out std_logic;
 			hexPiscar	 : out std_logic;
 			centimos     : out std_logic_vector(7 downto 0);
 			euros     	 : out std_logic_vector(7 downto 0));
@@ -43,6 +44,7 @@ begin
 	
 	comb_proc : process(PS, dinheiro, price, troco, count_sw)
 	begin
+		troco_final <= '0'; 
 		s_euros    <= "00000000";
 		case PS is
 		when I =>
@@ -67,7 +69,7 @@ begin
 			
 			--Verificar que se encontra um SW para cima:
 			if(count_sw = "001") then
-				if(unsigned(dinheiro) > to_unsigned(1,8)) then --passar para S se key tocada
+				if(unsigned(dinheiro) > to_unsigned(0,8)) then --passar para S se key tocada
 					NS <= S;
 				else
 					NS <= SB;
@@ -77,14 +79,13 @@ begin
 			end if;
 			
 			
-		when S =>
-		
+		when S =>			
 			s_hex_En <= '1'; --ligar HEXs;
 			s_centimos <= unsigned(price);
 			s_reset_a <= '0';
 			s_hex_piscar <= '0';	
 			
-			if (unsigned(troco) < to_unsigned(0,8)) then 
+			if (unsigned(dinheiro) >= unsigned(price)) then
 				s_centimos <= unsigned(troco);
 				s_hex_piscar <= '1';
 				NS <= F;
@@ -95,7 +96,8 @@ begin
 			end if;
 			
 			
-		when F =>		
+		when F =>
+			troco_final <= '1';
 			if(count_sw = "000") then
 				s_hex_En <= '0'; --ligar HEXs;
 				s_centimos <= unsigned(price);

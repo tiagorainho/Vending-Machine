@@ -18,7 +18,7 @@ begin
 		if(rising_edge(clk)) then
 			if(hexEn ='1') then
 				if (enablePiscar = '1') then
-					if(s_count >= to_unsigned(50000000,32)) then
+					if(s_count >= to_unsigned(5000000,32)) then
 						s_switch <= not s_switch;
 						s_count <= to_unsigned(0, 32);
 					else
@@ -30,7 +30,7 @@ begin
 						Enable <= '0';
 					end if;
 				else 
-					Enable<='0';
+					Enable<='1';
 				end if;
 			else
 				Enable <= '0';

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Vending_Machine_Ultimate
-Tue May 28 22:01:21 2019
+Wed May 29 00:25:47 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,16 +15,19 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Vending_Machine_Ultimate|states:states|PS
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: DebounceUnit:key0
  14. Parameter Settings for User Entity Instance: DebounceUnit:key1
  15. Parameter Settings for User Entity Instance: DebounceUnit:key2
  16. Parameter Settings for User Entity Instance: DebounceUnit:key3
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 17. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +53,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 28 22:01:21 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 29 00:25:47 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
 ; Top-level Entity Name              ; Vending_Machine_Ultimate                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 344                                         ;
-;     Total combinational functions  ; 340                                         ;
-;     Dedicated logic registers      ; 118                                         ;
-; Total registers                    ; 118                                         ;
+; Total logic elements               ; 630                                         ;
+;     Total combinational functions  ; 626                                         ;
+;     Dedicated logic registers      ; 166                                         ;
+; Total registers                    ; 166                                         ;
 ; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -170,22 +173,34 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; Debouncer.vhd                    ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd                ;         ;
-; states.vhd                       ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/states.vhd                   ;         ;
-; switchesCounter.vhd              ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd          ;         ;
-; Acumulador.vhd                   ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd               ;         ;
-; Vending_Machine_Ultimate.vhd     ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd ;         ;
-; BinToBCD.vhd                     ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd                 ;         ;
-; Bin7SegDecoder.vhd               ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/Bin7SegDecoder.vhd           ;         ;
-; hexPiscar.vhd                    ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/hexPiscar.vhd                ;         ;
-; price.vhd                        ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/price.vhd                    ;         ;
-; troco.vhd                        ; yes             ; User VHDL File  ; D:/Programacao/Quartus/LSD/projFinal3/troco.vhd                    ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; Debouncer.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd                        ;         ;
+; states.vhd                       ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/states.vhd                           ;         ;
+; switchesCounter.vhd              ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd                  ;         ;
+; Acumulador.vhd                   ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd                       ;         ;
+; Vending_Machine_Ultimate.vhd     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd         ;         ;
+; BinToBCD.vhd                     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd                         ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Bin7SegDecoder.vhd                   ;         ;
+; hexPiscar.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/hexPiscar.vhd                        ;         ;
+; price.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/price.vhd                            ;         ;
+; troco.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/troco.vhd                            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_q9m.tdf                ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_fkh.tdf           ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf                 ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_7pc.tdf                   ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_8pc.tdf                   ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_jhm.tdf                ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_bkh.tdf           ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_a4f.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -193,20 +208,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 344            ;
+; Estimated Total logic elements              ; 630            ;
 ;                                             ;                ;
-; Total combinational functions               ; 340            ;
+; Total combinational functions               ; 626            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 116            ;
-;     -- 3 input functions                    ; 47             ;
-;     -- <=2 input functions                  ; 177            ;
+;     -- 4 input functions                    ; 183            ;
+;     -- 3 input functions                    ; 121            ;
+;     -- <=2 input functions                  ; 322            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 228            ;
-;     -- arithmetic mode                      ; 112            ;
+;     -- normal mode                          ; 419            ;
+;     -- arithmetic mode                      ; 207            ;
 ;                                             ;                ;
-; Total registers                             ; 118            ;
-;     -- Dedicated logic registers            ; 118            ;
+; Total registers                             ; 166            ;
+;     -- Dedicated logic registers            ; 166            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 42             ;
@@ -214,26 +229,44 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 118            ;
-; Total fan-out                               ; 1307           ;
-; Average fan-out                             ; 2.41           ;
+; Maximum fan-out                             ; 166            ;
+; Total fan-out                               ; 2250           ;
+; Average fan-out                             ; 2.57           ;
 +---------------------------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name              ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------------+--------------+
-; |Vending_Machine_Ultimate    ; 340 (0)             ; 118 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Vending_Machine_Ultimate                         ; Vending_Machine_Ultimate ; work         ;
-;    |Acumulador:ac|           ; 53 (53)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Acumulador:ac           ; Acumulador               ; work         ;
-;    |DebounceUnit:key0|       ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key0       ; DebounceUnit             ; work         ;
-;    |DebounceUnit:key1|       ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key1       ; DebounceUnit             ; work         ;
-;    |DebounceUnit:key2|       ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key2       ; DebounceUnit             ; work         ;
-;    |DebounceUnit:key3|       ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key3       ; DebounceUnit             ; work         ;
-;    |states:states|           ; 12 (12)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states           ; states                   ; work         ;
-;    |switchesCounter:counter| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|switchesCounter:counter ; switchesCounter          ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                            ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Entity Name              ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; |Vending_Machine_Ultimate                 ; 626 (0)             ; 166 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Vending_Machine_Ultimate                                                                                                                     ; Vending_Machine_Ultimate ; work         ;
+;    |Acumulador:ac|                        ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Acumulador:ac                                                                                                       ; Acumulador               ; work         ;
+;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex0                                                                                              ; Bin7SegDecoder           ; work         ;
+;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex1                                                                                              ; Bin7SegDecoder           ; work         ;
+;    |BinToBCD:bin2BCD_01|                  ; 175 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD                 ; work         ;
+;       |lpm_divide:Div0|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm           ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh      ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f            ; work         ;
+;       |lpm_divide:Mod0|                   ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 83 (83)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;       |lpm_divide:Mod1|                   ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;    |DebounceUnit:key0|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key0                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key1|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key1                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key2|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key2                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key3|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key3                                                                                                   ; DebounceUnit             ; work         ;
+;    |hexPiscar:piscar|                     ; 44 (44)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|hexPiscar:piscar                                                                                                    ; hexPiscar                ; work         ;
+;    |price:price|                          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|price:price                                                                                                         ; price                    ; work         ;
+;    |states:states|                        ; 37 (37)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states                                                                                                       ; states                   ; work         ;
+;    |switchesCounter:counter|              ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|switchesCounter:counter                                                                                             ; switchesCounter          ; work         ;
+;    |troco:troco|                          ; 9 (9)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|troco:troco                                                                                                         ; troco                    ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -250,43 +283,16 @@ Encoding Type:  One-Hot
 +-------+------+------+-------+------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; price:price|price[6,7]                 ; Stuck at GND due to stuck port data_in      ;
-; price:price|price[4]                   ; Merged with price:price|price[1]            ;
-; price:price|price[3]                   ; Merged with price:price|price[2]            ;
-; states:states|PS.F                     ; Stuck at GND due to stuck port data_in      ;
-; hexPiscar:piscar|Enable                ; Stuck at GND due to stuck port data_in      ;
-; hexPiscar:piscar|s_switch              ; Stuck at VCC due to stuck port clock_enable ;
-; hexPiscar:piscar|s_count[0..31]        ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 39 ;                                             ;
-+----------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                        ;
-+--------------------+---------------------------+-----------------------------------------------------------------------------------+
-; Register name      ; Reason for Removal        ; Registers Removed due to This Register                                            ;
-+--------------------+---------------------------+-----------------------------------------------------------------------------------+
-; states:states|PS.F ; Stuck at GND              ; hexPiscar:piscar|Enable, hexPiscar:piscar|s_switch, hexPiscar:piscar|s_count[28], ;
-;                    ; due to stuck port data_in ; hexPiscar:piscar|s_count[27], hexPiscar:piscar|s_count[26],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[25], hexPiscar:piscar|s_count[24],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[23], hexPiscar:piscar|s_count[22],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[21], hexPiscar:piscar|s_count[20],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[19], hexPiscar:piscar|s_count[18],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[17], hexPiscar:piscar|s_count[16],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[15], hexPiscar:piscar|s_count[14],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[13], hexPiscar:piscar|s_count[12],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[11], hexPiscar:piscar|s_count[10],                       ;
-;                    ;                           ; hexPiscar:piscar|s_count[9], hexPiscar:piscar|s_count[7],                         ;
-;                    ;                           ; hexPiscar:piscar|s_count[8], hexPiscar:piscar|s_count[6],                         ;
-;                    ;                           ; hexPiscar:piscar|s_count[5], hexPiscar:piscar|s_count[4],                         ;
-;                    ;                           ; hexPiscar:piscar|s_count[3], hexPiscar:piscar|s_count[2],                         ;
-;                    ;                           ; hexPiscar:piscar|s_count[1], hexPiscar:piscar|s_count[0]                          ;
-+--------------------+---------------------------+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; price:price|price[6,7]                ; Stuck at GND due to stuck port data_in ;
+; price:price|price[4]                  ; Merged with price:price|price[1]       ;
+; price:price|price[3]                  ; Merged with price:price|price[2]       ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -294,14 +300,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 118   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 166   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 78    ;
+; Number of registers using Clock Enable       ; 118   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; hexPiscar:piscar|s_switch              ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -311,13 +327,13 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Vending_Machine_Ultimate|price:price|price[0]                ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Vending_Machine_Ultimate|price:price|price[1]                ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key3|s_debounceCnt[6]  ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key2|s_debounceCnt[10] ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key1|s_debounceCnt[0]  ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key0|s_debounceCnt[3]  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Vending_Machine_Ultimate|Acumulador:ac|s_count[4]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|ledr3                 ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|Selector10            ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key3|s_debounceCnt[14] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key2|s_debounceCnt[1]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key1|s_debounceCnt[21] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key0|s_debounceCnt[12] ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Vending_Machine_Ultimate|Acumulador:ac|s_count[2]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|ledr0                 ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |Vending_Machine_Ultimate|states:states|Selector8             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -373,27 +389,99 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 42                          ;
-; cycloneiii_ff         ; 118                         ;
-;     ENA               ; 78                          ;
-;     plain             ; 40                          ;
-; cycloneiii_lcell_comb ; 344                         ;
-;     arith             ; 112                         ;
-;         2 data inputs ; 112                         ;
-;     normal            ; 232                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 53                          ;
-;         3 data inputs ; 47                          ;
-;         4 data inputs ; 116                         ;
+; cycloneiii_ff         ; 166                         ;
+;     ENA               ; 86                          ;
+;     ENA SCLR          ; 32                          ;
+;     plain             ; 48                          ;
+; cycloneiii_lcell_comb ; 631                         ;
+;     arith             ; 207                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 150                         ;
+;         3 data inputs ; 54                          ;
+;     normal            ; 424                         ;
+;         0 data inputs ; 13                          ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 141                         ;
+;         3 data inputs ; 67                          ;
+;         4 data inputs ; 183                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.43                        ;
+; Max LUT depth         ; 20.20                       ;
+; Average LUT depth     ; 9.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -402,7 +490,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -412,7 +500,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 28 22:00:55 2019
+    Info: Processing started: Wed May 29 00:25:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -420,13 +508,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
     Info (12022): Found design unit 1: DebounceUnit-Behavioral File: D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd Line: 15
     Info (12023): Found entity 1: DebounceUnit File: D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 23
+    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 24
     Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
     Info (12022): Found design unit 1: switchesCounter-Behav File: D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd Line: 11
     Info (12023): Found entity 1: switchesCounter File: D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file acumulador.vhd
-    Info (12022): Found design unit 1: Acumulador-Behav File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 15
+    Info (12022): Found design unit 1: Acumulador-Behav File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 16
     Info (12023): Found entity 1: Acumulador File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine_ultimate.vhd
     Info (12022): Found design unit 1: Vending_Machine_Ultimate-Shell File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 15
@@ -444,64 +532,74 @@ Info (12021): Found 2 design units, including 1 entities, in source file price.v
     Info (12022): Found design unit 1: price-Behav File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 12
     Info (12023): Found entity 1: price File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file troco.vhd
-    Info (12022): Found design unit 1: troco-Behav File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 12
+    Info (12022): Found design unit 1: troco-Behav File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 14
     Info (12023): Found entity 1: troco File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 5
 Info (12127): Elaborating entity "Vending_Machine_Ultimate" for the top level hierarchy
-Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 30
-Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at Acumulador.vhd(37): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 37
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 29
+Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 50
+Warning (10492): VHDL Process Statement warning at Acumulador.vhd(42): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 42
 Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 62
 Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 68
 Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 76
-Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 84
-Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 117
-Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 103
-Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 116
-Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at troco.vhd(31): signal "s_troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 31
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at states.vhd(118): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at states.vhd(119): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 119
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 106
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 119
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 126
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_a4f.tdf Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 9
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 10
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
     Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
     Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 61
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 56
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 386 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 672 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 344 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Tue May 28 22:01:21 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:41
+    Info (21061): Implemented 630 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Wed May 29 00:25:47 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 

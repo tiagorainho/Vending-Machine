@@ -14,7 +14,7 @@ end Vending_Machine_Ultimate;
 
 architecture Shell of Vending_Machine_Ultimate is
 signal s_centimos, s_euros               					: std_logic_vector(7 downto 0);
-signal s_hexEn, s_reset_a						            : std_logic;
+signal s_hexEn, s_reset_a, s_enable_a, s_troco_final  : std_logic;
 signal s_price 													: std_logic_vector(7 downto 0);
 signal s_troco														: std_logic_vector(7 downto 0);
 signal s_hexEn_piscarI, s_hexEn_piscarO					: std_logic;  
@@ -22,7 +22,6 @@ signal s_key0, s_key1, s_key2, s_key3						: std_logic;
 signal s_dinheiro													: std_logic_vector(7 downto 0);
 signal s_counter_SW 												: std_logic_vector(2 downto 0);
 signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0);
-
 begin
 
 --######################  KEYS  #####################################
@@ -55,6 +54,7 @@ begin
 							key1   => s_key1,
 							key2   => s_key2,
 							key3   => s_key3,
+							enable => s_enable_a,
 							soma   => s_dinheiro);
 
 --######################## contador     #################################
@@ -77,6 +77,8 @@ begin
 					port map(clk        => CLOCK_50,
 								preco      => s_price,
 								troco      => s_troco,
+								enable_a   => s_enable_a,
+								troco_final=> s_troco_final,
 								dinheiro   => s_dinheiro);
 								
 --######################## states  #####################################
@@ -91,6 +93,7 @@ begin
 								price               => s_price,
 								count_sw            => s_counter_SW,
 								dinheiro            => s_dinheiro,
+								troco_final         => s_troco_final,
 								reset               => SW(4),
 								ledr0               => LEDR(0),
 								ledr1               => LEDR(1),
