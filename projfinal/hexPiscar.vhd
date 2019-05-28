@@ -10,19 +10,27 @@ entity hexPiscar is
 end hexPiscar;
 
 architecture Behav of hexPiscar is 
-signal s_enable : std_logic := '0';
-signal s_divCounter : natural;
+signal s_switch : std_logic := '1';
+signal s_count : unsigned(31 downto 0);
 begin
 	process(clk,enablePiscar,hexEn)
 	begin
 		if(rising_edge(clk)) then
-			if (enablePiscar = '0') then
-				s_enable <= hexEn;
+			if (enablePiscar = '1') then
+				if(s_count >= to_unsigned(50000000,32)) then
+					s_switch <= not s_switch;
+					s_count <= to_unsigned(0, 32);
+				else
+					s_count <= s_count+1;
+				end if;
+				if(s_switch='1') then
+					Enable <= '1';
+				else
+					Enable <= '0';
+				end if;
 			else 
-			
-				s_enable <= enablePiscar;
+				Enable<='0';
 			end if;
 		end if;
-		Enable <= s_enable;
 	end process;
 end Behav;

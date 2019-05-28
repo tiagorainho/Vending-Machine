@@ -5,6 +5,7 @@ entity Vending_Machine_Ultimate is
 	port( CLOCK_50 : in std_logic;
 			SW       : in std_logic_vector(4 downto 0);
 			KEY      : in std_logic_vector(3 downto 0);
+			LEDR     : out std_logic_vector(3 downto 0);
 			HEX0     : out std_logic_vector(6 downto 0);
 			HEX1     : out std_logic_vector(6 downto 0);
 			HEX2     : out std_logic_vector(6 downto 0);
@@ -12,17 +13,20 @@ entity Vending_Machine_Ultimate is
 end Vending_Machine_Ultimate;
 
 architecture Shell of Vending_Machine_Ultimate is
-signal s_hex01, s_hex23               						: std_logic_vector(7 downto 0);
+signal s_centimos, s_euros               					: std_logic_vector(7 downto 0);
 signal s_hexEn, s_reset_a						            : std_logic;
+signal s_price 													: std_logic_vector(7 downto 0);
+signal s_troco														: std_logic_vector(7 downto 0);
 signal s_hexEn_piscarI, s_hexEn_piscarO					: std_logic;  
 signal s_key0, s_key1, s_key2, s_key3						: std_logic;
-signal s_soma 														: std_logic_vector(7 downto 0);
+signal s_dinheiro													: std_logic_vector(7 downto 0);
 signal s_counter_SW 												: std_logic_vector(2 downto 0);
 signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0);
 
 begin
 
 --######################  KEYS  #####################################
+
 	key0 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,
 							dirtyIn   => KEY(0),
@@ -51,7 +55,7 @@ begin
 							key1   => s_key1,
 							key2   => s_key2,
 							key3   => s_key3,
-							soma   => s_soma);
+							soma   => s_dinheiro);
 
 --######################## contador     #################################
 
@@ -59,33 +63,50 @@ begin
 					port map(clk        => CLOCK_50,
 								switches   => SW(3 downto 0),
 								counter    => s_counter_SW);
+								
+--######################## price  #####################################
+	price : entity work.price(Behav)
+					port map(clk        => CLOCK_50,
+								swCount    => s_counter_SW,
+								price      => s_price,
+								produtos   => SW(3 downto 0));
 
+--######################## troco  #####################################
+
+	troco : entity work.troco(Behav)
+					port map(clk        => CLOCK_50,
+								preco      => s_price,
+								troco      => s_troco,
+								dinheiro   => s_dinheiro);
+								
 --######################## states  #####################################
 
 	states : entity work.states(Behav)
 					port map(clk                 => CLOCK_50,
 								hexEn               => s_hexEn,
 								hexPiscar			  => s_hexEn_piscarI,
-								hex01               => s_hex01,
-								hex23               => s_hex23,
-								cafe_curto          => SW(0),
-								cafe_longo          => SW(1),
-								choc_quente         => SW(2),
-								cappucino           => SW(3),
+								centimos            => s_centimos,
+								euros               => s_euros,
+								troco               => s_troco,
+								price               => s_price,
 								count_sw            => s_counter_SW,
-								dinheiro            => s_soma,
+								dinheiro            => s_dinheiro,
 								reset               => SW(4),
+								ledr0               => LEDR(0),
+								ledr1               => LEDR(1),
+								ledr2               => LEDR(2),
+								ledr3               => LEDR(3),
 								resetAcumulador     => s_reset_a);
-
+								
 --#######################  bin2BCD  #####################################
 							
 	bin2BCD_01 : entity work.BinToBCD(Behav)
-				port map(r => s_hex01,
+				port map(r => s_centimos,
 							u => Bin_7seg_0,
 							d => Bin_7seg_1);
 							
 	bin2BCD_23 : entity work.BinToBCD(Behav)
-				port map(r => s_hex23,
+				port map(r => s_euros,
 							u => Bin_7seg_2,
 							d => Bin_7seg_3);
 							
