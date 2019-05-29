@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Vending_Machine_Ultimate
-Tue May 28 15:08:58 2019
+Tue May 28 15:27:27 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 28 15:08:58 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 28 15:27:27 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
 ; Top-level Entity Name              ; Vending_Machine_Ultimate                    ;
@@ -177,28 +177,28 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; Debouncer.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd                        ;         ;
-; states.vhd                       ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/states.vhd                           ;         ;
-; switchesCounter.vhd              ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd                  ;         ;
-; Acumulador.vhd                   ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd                       ;         ;
-; Vending_Machine_Ultimate.vhd     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd         ;         ;
-; BinToBCD.vhd                     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd                         ;         ;
-; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/Bin7SegDecoder.vhd                   ;         ;
-; hexPiscar.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/hexPiscar.vhd                        ;         ;
-; price.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/price.vhd                            ;         ;
-; troco.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/projFinal3/troco.vhd                            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
-; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_q9m.tdf                ;         ;
-; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_fkh.tdf           ;         ;
-; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf                 ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_7pc.tdf                   ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_8pc.tdf                   ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_jhm.tdf                ;         ;
-; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_bkh.tdf           ;         ;
-; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_a4f.tdf                 ;         ;
+; Debouncer.vhd                    ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd                   ;         ;
+; states.vhd                       ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd                      ;         ;
+; switchesCounter.vhd              ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd             ;         ;
+; Acumulador.vhd                   ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Acumulador.vhd                  ;         ;
+; Vending_Machine_Ultimate.vhd     ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd    ;         ;
+; BinToBCD.vhd                     ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd                    ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd              ;         ;
+; hexPiscar.vhd                    ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd                   ;         ;
+; price.vhd                        ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/price.vhd                       ;         ;
+; troco.vhd                        ; yes             ; User VHDL File               ; C:/Users/Diogo/projeto-final-lsd/projfinal/troco.vhd                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_q9m.tdf           ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_fkh.tdf      ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf            ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_7pc.tdf              ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_8pc.tdf              ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_jhm.tdf           ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_bkh.tdf      ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_a4f.tdf            ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -484,97 +484,97 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 28 15:08:47 2019
+    Info: Processing started: Tue May 28 15:27:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
-    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd Line: 15
-    Info (12023): Found entity 1: DebounceUnit File: D:/Programacao/Quartus/LSD/projFinal3/Debouncer.vhd Line: 5
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 15
+    Info (12023): Found entity 1: DebounceUnit File: C:/Users/Diogo/projeto-final-lsd/projfinal/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 23
-    Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 5
+    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 23
+    Info (12023): Found entity 1: states File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
-    Info (12022): Found design unit 1: switchesCounter-Behav File: D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd Line: 11
-    Info (12023): Found entity 1: switchesCounter File: D:/Programacao/Quartus/LSD/projFinal3/switchesCounter.vhd Line: 5
+    Info (12022): Found design unit 1: switchesCounter-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 11
+    Info (12023): Found entity 1: switchesCounter File: C:/Users/Diogo/projeto-final-lsd/projfinal/switchesCounter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file acumulador.vhd
-    Info (12022): Found design unit 1: Acumulador-Behav File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 15
-    Info (12023): Found entity 1: Acumulador File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 5
+    Info (12022): Found design unit 1: Acumulador-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/Acumulador.vhd Line: 15
+    Info (12023): Found entity 1: Acumulador File: C:/Users/Diogo/projeto-final-lsd/projfinal/Acumulador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine_ultimate.vhd
-    Info (12022): Found design unit 1: Vending_Machine_Ultimate-Shell File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 15
-    Info (12023): Found entity 1: Vending_Machine_Ultimate File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 4
+    Info (12022): Found design unit 1: Vending_Machine_Ultimate-Shell File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 15
+    Info (12023): Found entity 1: Vending_Machine_Ultimate File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bintobcd.vhd
-    Info (12022): Found design unit 1: BinToBCD-Behav File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 10
-    Info (12023): Found entity 1: BinToBCD File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 5
+    Info (12022): Found design unit 1: BinToBCD-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 10
+    Info (12023): Found entity 1: BinToBCD File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
-    Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: D:/Programacao/Quartus/LSD/projFinal3/Bin7SegDecoder.vhd Line: 10
-    Info (12023): Found entity 1: Bin7SegDecoder File: D:/Programacao/Quartus/LSD/projFinal3/Bin7SegDecoder.vhd Line: 4
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd Line: 10
+    Info (12023): Found entity 1: Bin7SegDecoder File: C:/Users/Diogo/projeto-final-lsd/projfinal/Bin7SegDecoder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file hexpiscar.vhd
-    Info (12022): Found design unit 1: hexPiscar-Behav File: D:/Programacao/Quartus/LSD/projFinal3/hexPiscar.vhd Line: 12
-    Info (12023): Found entity 1: hexPiscar File: D:/Programacao/Quartus/LSD/projFinal3/hexPiscar.vhd Line: 5
+    Info (12022): Found design unit 1: hexPiscar-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd Line: 12
+    Info (12023): Found entity 1: hexPiscar File: C:/Users/Diogo/projeto-final-lsd/projfinal/hexPiscar.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file price.vhd
-    Info (12022): Found design unit 1: price-Behav File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 12
-    Info (12023): Found entity 1: price File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 5
+    Info (12022): Found design unit 1: price-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/price.vhd Line: 12
+    Info (12023): Found entity 1: price File: C:/Users/Diogo/projeto-final-lsd/projfinal/price.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file troco.vhd
-    Info (12022): Found design unit 1: troco-Behav File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 12
-    Info (12023): Found entity 1: troco File: D:/Programacao/Quartus/LSD/projFinal3/troco.vhd Line: 5
+    Info (12022): Found design unit 1: troco-Behav File: C:/Users/Diogo/projeto-final-lsd/projfinal/troco.vhd Line: 12
+    Info (12023): Found entity 1: troco File: C:/Users/Diogo/projeto-final-lsd/projfinal/troco.vhd Line: 5
 Info (12127): Elaborating entity "Vending_Machine_Ultimate" for the top level hierarchy
-Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 30
-Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at Acumulador.vhd(35): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/Acumulador.vhd Line: 35
-Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 62
-Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 68
-Warning (10541): VHDL Signal Declaration warning at price.vhd(9): used implicit default value for signal "price" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 9
-Warning (10036): Verilog HDL or VHDL warning at price.vhd(13): object "s_preco" assigned a value but never read File: D:/Programacao/Quartus/LSD/projFinal3/price.vhd Line: 13
-Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 76
-Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 84
-Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/projFinal3/states.vhd Line: 117
-Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 103
-Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 116
-Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 123
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 30
+Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 51
+Warning (10492): VHDL Process Statement warning at Acumulador.vhd(35): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/Acumulador.vhd Line: 35
+Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 62
+Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 68
+Warning (10541): VHDL Signal Declaration warning at price.vhd(9): used implicit default value for signal "price" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Diogo/projeto-final-lsd/projfinal/price.vhd Line: 9
+Warning (10036): Verilog HDL or VHDL warning at price.vhd(13): object "s_preco" assigned a value but never read File: C:/Users/Diogo/projeto-final-lsd/projfinal/price.vhd Line: 13
+Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 76
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/projeto-final-lsd/projfinal/states.vhd Line: 117
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 103
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 116
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 123
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 18
-Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
-Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 16
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
-    Info (12023): Found entity 1: lpm_divide_q9m File: D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_q9m.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_q9m File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_q9m.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_fkh File: D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_fkh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_fkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
-    Info (12023): Found entity 1: alt_u_div_i4f File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 26
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_7pc.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_7pc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: D:/Programacao/Quartus/LSD/projFinal3/db/add_sub_8pc.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
-Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: D:/Programacao/Quartus/LSD/projFinal3/BinToBCD.vhd Line: 17
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: C:/Users/Diogo/projeto-final-lsd/projfinal/BinToBCD.vhd Line: 17
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
-    Info (12023): Found entity 1: lpm_divide_jhm File: D:/Programacao/Quartus/LSD/projFinal3/db/lpm_divide_jhm.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/lpm_divide_jhm.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_bkh File: D:/Programacao/Quartus/LSD/projFinal3/db/sign_div_unsign_bkh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/sign_div_unsign_bkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
-    Info (12023): Found entity 1: alt_u_div_a4f File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_a4f.tdf Line: 26
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_a4f.tdf Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Programacao/Quartus/LSD/projFinal3/Vending_Machine_Ultimate.vhd Line: 12
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 11
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Diogo/projeto-final-lsd/projfinal/Vending_Machine_Ultimate.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 61
-    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: D:/Programacao/Quartus/LSD/projFinal3/db/alt_u_div_i4f.tdf Line: 56
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 61
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: C:/Users/Diogo/projeto-final-lsd/projfinal/db/alt_u_div_i4f.tdf Line: 56
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 638 device resources after synthesis - the final resource count might be different
@@ -582,9 +582,9 @@ Info (21057): Implemented 638 device resources after synthesis - the final resou
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 596 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4829 megabytes
-    Info: Processing ended: Tue May 28 15:08:58 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Tue May 28 15:27:27 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:32
 
 
