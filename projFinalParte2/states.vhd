@@ -81,16 +81,14 @@ begin
 			
 		when S =>			
 			s_hex_En <= '1'; --ligar HEXs;
-			s_centimos <= unsigned(price);
+			s_centimos <= unsigned(troco);
 			s_reset_a <= '0';
 			s_hex_piscar <= '0';	
 			
 			if (unsigned(dinheiro) >= unsigned(price)) then
-				s_centimos <= unsigned(troco);
 				s_hex_piscar <= '1';
 				NS <= F;
 			else
-				s_centimos <= unsigned(price);
 				s_hex_piscar <= '0';	
 				NS <= S;
 			end if;

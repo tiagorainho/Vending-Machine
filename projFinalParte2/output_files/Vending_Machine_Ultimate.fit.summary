@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed May 29 00:26:02 2019
+Fitter Status : Successful - Wed May 29 15:14:29 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Vending_Machine_Ultimate
 Top-level Entity Name : Vending_Machine_Ultimate
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 628 / 114,480 ( < 1 % )
-    Total combinational functions : 626 / 114,480 ( < 1 % )
+Total logic elements : 637 / 114,480 ( < 1 % )
+    Total combinational functions : 633 / 114,480 ( < 1 % )
     Dedicated logic registers : 166 / 114,480 ( < 1 % )
 Total registers : 166
 Total pins : 42 / 529 ( 8 % )

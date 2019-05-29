@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("D:/Programacao/Quartus/LSD/projFinal3/output_files/") File("Vending_Machine_Ultimate.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/Diogo/Desktop/projFinalParte2/output_files/") File("Vending_Machine_Ultimate.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

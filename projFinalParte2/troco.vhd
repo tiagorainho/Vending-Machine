@@ -20,11 +20,16 @@ begin
 			if(troco_final = '1') then
 				s_troco <= s_troco;
 			else
-				s_troco <= signed(std_logic_vector(unsigned(dinheiro) - unsigned(preco))); --calculo do troco
-				if(s_troco >= to_signed(0,8)) then
-					enable_a <= '0';
-				else
+				if(unsigned(preco)>unsigned(dinheiro)) then
+					s_troco <= signed(std_logic_vector(unsigned(preco) - unsigned(dinheiro))); --calculo do troco
 					enable_a <= '1';
+				else
+					s_troco <= signed(std_logic_vector(unsigned(dinheiro) - unsigned(preco))); --calculo do troco
+					if(s_troco >= to_signed(0,8)) then
+						enable_a <= '0';
+					else
+						enable_a <= '1';
+					end if;
 				end if;
 			end if;
 		end if;
