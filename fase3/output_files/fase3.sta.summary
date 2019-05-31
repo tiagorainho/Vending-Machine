@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -16.016
+TNS   : -1167.519
+
+Type  : Slow 1200mV 85C Model Setup 'limite_troco:limite_troco|s_freeze'
+Slack : -4.427
+TNS   : -7.537
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'limite_troco:limite_troco|s_freeze'
+Slack : 0.665
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -263.855
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'limite_troco:limite_troco|s_freeze'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -14.407
+TNS   : -1046.282
+
+Type  : Slow 1200mV 0C Model Setup 'limite_troco:limite_troco|s_freeze'
+Slack : -4.148
+TNS   : -7.040
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'limite_troco:limite_troco|s_freeze'
+Slack : 0.679
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -263.855
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'limite_troco:limite_troco|s_freeze'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -7.179
+TNS   : -463.948
+
+Type  : Fast 1200mV 0C Model Setup 'limite_troco:limite_troco|s_freeze'
+Slack : -1.840
+TNS   : -2.937
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.026
+TNS   : -0.026
+
+Type  : Fast 1200mV 0C Model Hold 'limite_troco:limite_troco|s_freeze'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -219.719
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'limite_troco:limite_troco|s_freeze'
+Slack : 0.438
+TNS   : 0.000
+
+------------------------------------------------------------
