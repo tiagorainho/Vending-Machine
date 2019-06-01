@@ -16,7 +16,6 @@ entity states is
 			troco_lim_en : out std_logic;
 			troco_final  : out std_logic;
 			hexEn     	 : out std_logic;
-			ledV : out std_logic;
 			ledr0        : out std_logic;
 			ledr1        : out std_logic;
 			ledr2        : out std_logic;
@@ -29,7 +28,7 @@ end states;
 architecture Behav of states is
 	type state is (I, SB, S, F, F_R); 		--	I: Inicial;		SB: Stand By;
 	signal PS, NS  : state :=I;					-- S: Start;		F: Final;	F_R: Final com resto
-	signal s_hex_En, s_hex_piscar : std_logic := '0'; --sinal do HEX Enable e do Piscar
+	signal s_hex_En, s_hex_piscar  : std_logic := '0'; --sinal do HEX Enable e do Piscar
 	signal s_centimos, s_euros    : unsigned(7 downto 0);
 	signal s_reset_a  : std_logic;
 
@@ -105,8 +104,10 @@ begin
 			
 		when F =>
 			troco_lim_en <= '1';
+			s_reset_a   <= '0';
 			troco_final <= '1';
 			s_centimos  <= unsigned(troco);
+			s_hex_piscar<= '1';
 			if(freeze = '0') then
 				
 				if(count_sw = "000") then
@@ -117,21 +118,17 @@ begin
 				else
 					s_centimos  <= unsigned(troco);
 					s_hex_En    <= '1';
-					s_reset_a   <= '0';
-					s_hex_piscar<= '1';
 					NS <= F;
 				end if;
 			else
 				s_hex_En    <= '1';
 				s_centimos  <= unsigned(moedas_falta);
-				ledV        <= '1';
-				s_reset_a   <= '0';
-				s_hex_piscar<= '1';	  
 				
 				NS <= F_R;
 			end if;
 					when F_R =>
 			troco_lim_en <= '1';
+			s_hex_piscar<= '1';
 			troco_final <= '1';
 			s_centimos  <= unsigned(moedas_falta);
 			if(freeze ='0') then
@@ -143,7 +140,6 @@ begin
 				else
 					s_hex_En    <= '1';
 					s_reset_a   <= '0';
-					s_hex_piscar<= '1';
 					NS <= F_R;
 				end if;
 			else
@@ -156,7 +152,6 @@ begin
 	hexPiscar <= std_logic(s_hex_piscar);
 	resetAcumulador <= std_logic(s_reset_a);
 	
-	ledV <= '0';
 	ledr0<='0';
 	ledr1<='0';
 	ledr2<='0';

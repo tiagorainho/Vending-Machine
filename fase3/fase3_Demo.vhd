@@ -117,7 +117,6 @@ begin
 								moedas_falta        => s_moedas_falta,
 								troco               => s_troco,
 								price               => s_price,
-								ledV => LEDG(6),
 								count_sw            => s_counter_SW,
 								dinheiro            => s_dinheiro,
 								troco_final         => s_troco_final,

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fase3
-Thu May 30 20:08:16 2019
+Sat Jun 01 12:29:25 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -16,23 +16,22 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   8. State Machine - |fase3_Demo|states:states|PS
   9. User-Specified and Inferred Latches
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: DebounceUnit:key0
- 16. Parameter Settings for User Entity Instance: DebounceUnit:key1
- 17. Parameter Settings for User Entity Instance: DebounceUnit:key2
- 18. Parameter Settings for User Entity Instance: DebounceUnit:key3
- 19. Parameter Settings for User Entity Instance: resetModule:reset
- 20. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
- 21. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
- 22. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
- 23. Parameter Settings for Inferred Entity Instance: limite_troco:limite_troco|lpm_divide:Div0
- 24. Port Connectivity Checks: "resetModule:reset"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: DebounceUnit:key0
+ 15. Parameter Settings for User Entity Instance: DebounceUnit:key1
+ 16. Parameter Settings for User Entity Instance: DebounceUnit:key2
+ 17. Parameter Settings for User Entity Instance: DebounceUnit:key3
+ 18. Parameter Settings for User Entity Instance: resetModule:reset
+ 19. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
+ 21. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
+ 22. Parameter Settings for Inferred Entity Instance: limite_troco:limite_troco|lpm_divide:Div0
+ 23. Port Connectivity Checks: "resetModule:reset"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -58,13 +57,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 30 20:08:15 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 01 12:29:25 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; fase3                                       ;
 ; Top-level Entity Name              ; fase3_Demo                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 778                                         ;
-;     Total combinational functions  ; 772                                         ;
+; Total logic elements               ; 779                                         ;
+;     Total combinational functions  ; 773                                         ;
 ;     Dedicated logic registers      ; 203                                         ;
 ; Total registers                    ; 203                                         ;
 ; Total pins                         ; 77                                          ;
@@ -174,7 +173,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -219,16 +219,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 778            ;
+; Estimated Total logic elements              ; 779            ;
 ;                                             ;                ;
-; Total combinational functions               ; 772            ;
+; Total combinational functions               ; 773            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 231            ;
-;     -- 3 input functions                    ; 165            ;
+;     -- 4 input functions                    ; 234            ;
+;     -- 3 input functions                    ; 163            ;
 ;     -- <=2 input functions                  ; 376            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 507            ;
+;     -- normal mode                          ; 508            ;
 ;     -- arithmetic mode                      ; 265            ;
 ;                                             ;                ;
 ; Total registers                             ; 203            ;
@@ -241,8 +241,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 203            ;
-; Total fan-out                               ; 2850           ;
-; Average fan-out                             ; 2.52           ;
+; Total fan-out                               ; 2856           ;
+; Average fan-out                             ; 2.53           ;
 +---------------------------------------------+----------------+
 
 
@@ -251,7 +251,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |fase3_Demo                               ; 772 (0)             ; 203 (0)                   ; 0           ; 0            ; 0       ; 0         ; 77   ; 0            ; |fase3_Demo                                                                                                                           ; fase3_Demo          ; work         ;
+; |fase3_Demo                               ; 773 (0)             ; 203 (0)                   ; 0           ; 0            ; 0       ; 0         ; 77   ; 0            ; |fase3_Demo                                                                                                                           ; fase3_Demo          ; work         ;
 ;    |Acumulador:ac|                        ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Acumulador:ac                                                                                                             ; Acumulador          ; work         ;
 ;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex0                                                                                                    ; Bin7SegDecoder      ; work         ;
 ;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex1                                                                                                    ; Bin7SegDecoder      ; work         ;
@@ -274,14 +274,14 @@ refer to the applicable agreement for further details.
 ;    |DebounceUnit:key2|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key2                                                                                                         ; DebounceUnit        ; work         ;
 ;    |DebounceUnit:key3|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key3                                                                                                         ; DebounceUnit        ; work         ;
 ;    |hexPiscar:piscar|                     ; 43 (43)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|hexPiscar:piscar                                                                                                          ; hexPiscar           ; work         ;
-;    |limite_troco:limite_troco|            ; 120 (61)            ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco                                                                                                 ; limite_troco        ; work         ;
+;    |limite_troco:limite_troco|            ; 123 (64)            ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco                                                                                                 ; limite_troco        ; work         ;
 ;       |lpm_divide:Div0|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ihm:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm      ; work         ;
 ;             |sign_div_unsign_akh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
 ;                |alt_u_div_84f:divider|    ; 59 (59)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f       ; work         ;
 ;    |moedas_leds:moedas_leds|              ; 10 (10)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|moedas_leds:moedas_leds                                                                                                   ; moedas_leds         ; work         ;
 ;    |price:price|                          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|price:price                                                                                                               ; price               ; work         ;
-;    |states:states|                        ; 44 (44)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|states:states                                                                                                             ; states              ; work         ;
+;    |states:states|                        ; 42 (42)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|states:states                                                                                                             ; states              ; work         ;
 ;    |switchesCounter:counter|              ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|switchesCounter:counter                                                                                                   ; switchesCounter     ; work         ;
 ;    |troco:troco|                          ; 17 (17)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|troco:troco                                                                                                               ; troco               ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
@@ -307,9 +307,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+-------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
 +----------------------------------------------------+-------------------------+------------------------+
-; states:states|s_hex_piscar                         ; states:states|Selector0 ; yes                    ;
 ; states:states|s_reset_a                            ; states:states|Selector0 ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                         ;                        ;
+; Number of user-specified and inferred latches = 1  ;                         ;                        ;
 +----------------------------------------------------+-------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -326,16 +325,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; limite_troco:limite_troco|s_count[1]        ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 6       ;                                        ;
 +---------------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                               ;
-+----------------------+---------------------------+----------------------------------------+
-; Register name        ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------+---------------------------+----------------------------------------+
-; price:price|price[6] ; Stuck at GND              ; limite_troco:limite_troco|s_count[1]   ;
-;                      ; due to stuck port data_in ;                                        ;
-+----------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -370,18 +359,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[5]                    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[1]                    ;
-; 16:1               ; 10 bits   ; 100 LEs       ; 70 LEs               ; 30 LEs                 ; Yes        ; |fase3_Demo|moedas_leds:moedas_leds|leds[8]         ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[6] ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key3|s_debounceCnt[20]     ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key2|s_debounceCnt[15]     ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key1|s_debounceCnt[22]     ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key0|s_debounceCnt[15]     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|Acumulador:ac|s_count[4]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[0]                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[2]                    ;
+; 16:1               ; 10 bits   ; 100 LEs       ; 70 LEs               ; 30 LEs                 ; Yes        ; |fase3_Demo|moedas_leds:moedas_leds|leds[0]         ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[4] ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key3|s_debounceCnt[22]     ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key2|s_debounceCnt[6]      ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key1|s_debounceCnt[0]      ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key0|s_debounceCnt[0]      ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|Acumulador:ac|s_count[3]                ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[1] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |fase3_Demo|states:states|ledr0                     ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |fase3_Demo|states:states|Selector5                 ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |fase3_Demo|states:states|Selector8                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
@@ -560,20 +549,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 34                          ;
 ;     ENA SLD           ; 14                          ;
 ;     plain             ; 52                          ;
-; cycloneiii_lcell_comb ; 776                         ;
+; cycloneiii_lcell_comb ; 777                         ;
 ;     arith             ; 265                         ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 166                         ;
 ;         3 data inputs ; 96                          ;
-;     normal            ; 511                         ;
+;     normal            ; 512                         ;
 ;         0 data inputs ; 19                          ;
 ;         1 data inputs ; 24                          ;
 ;         2 data inputs ; 168                         ;
-;         3 data inputs ; 69                          ;
-;         4 data inputs ; 231                         ;
+;         3 data inputs ; 67                          ;
+;         4 data inputs ; 234                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.20                       ;
-; Average LUT depth     ; 8.61                        ;
+; Average LUT depth     ; 8.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -592,7 +581,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 30 20:08:04 2019
+    Info: Processing started: Sat Jun 01 12:29:14 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fase3 -c fase3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -627,7 +616,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file limite_
     Info (12022): Found design unit 1: limite_troco-Behav File: D:/Programacao/Quartus/LSD/fase3/limite_troco.vhd Line: 16
     Info (12023): Found entity 1: limite_troco File: D:/Programacao/Quartus/LSD/fase3/limite_troco.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 29
+    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 28
     Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file troco.vhd
     Info (12022): Found design unit 1: troco-Behav File: D:/Programacao/Quartus/LSD/fase3/troco.vhd Line: 14
@@ -637,8 +626,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file resetmo
     Info (12023): Found entity 1: resetModule File: D:/Programacao/Quartus/LSD/fase3/resetModule.vhd Line: 4
 Info (12127): Elaborating entity "fase3_Demo" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at fase3_Demo.vhd(29): object "s_reset_master" assigned a value but never read File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 29
-Warning (10873): Using initial value X (don't care) for net "LEDG[7]" at fase3_Demo.vhd(9) File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 9
-Warning (10873): Using initial value X (don't care) for net "LEDG[5..4]" at fase3_Demo.vhd(9) File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 9
+Warning (10873): Using initial value X (don't care) for net "LEDG[7..4]" at fase3_Demo.vhd(9) File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 9
 Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 36
 Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 57
 Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 69
@@ -647,27 +635,25 @@ Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierar
 Info (12129): Elaborating entity "limite_troco" using architecture "A:behav" for hierarchy "limite_troco:limite_troco" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 92
 Info (12129): Elaborating entity "moedas_leds" using architecture "A:behav" for hierarchy "moedas_leds:moedas_leds" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 103
 Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at states.vhd(153): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 153
-Warning (10492): VHDL Process Statement warning at states.vhd(154): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 154
-Warning (10492): VHDL Process Statement warning at states.vhd(155): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 155
-Warning (10492): VHDL Process Statement warning at states.vhd(156): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 156
-Warning (10492): VHDL Process Statement warning at states.vhd(157): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 157
-Warning (10631): VHDL Process Statement warning at states.vhd(50): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Warning (10631): VHDL Process Statement warning at states.vhd(50): inferring latch(es) for signal or variable "s_hex_piscar", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Warning (10631): VHDL Process Statement warning at states.vhd(50): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Info (10041): Inferred latch for "s_reset_a" at states.vhd(50) File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Info (10041): Inferred latch for "s_hex_piscar" at states.vhd(50) File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Info (10041): Inferred latch for "s_hex_En" at states.vhd(50) File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at states.vhd(149): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 149
+Warning (10492): VHDL Process Statement warning at states.vhd(150): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at states.vhd(151): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at states.vhd(152): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at states.vhd(153): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 153
+Warning (10631): VHDL Process Statement warning at states.vhd(49): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 49
+Warning (10631): VHDL Process Statement warning at states.vhd(49): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 49
+Info (10041): Inferred latch for "s_reset_a" at states.vhd(49) File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 49
+Info (10041): Inferred latch for "s_hex_En" at states.vhd(49) File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 49
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 134
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(17): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 17
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(18): signal "s_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 18
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(21): signal "s_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 21
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(22): signal "s_tr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 22
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(30): signal "s_u" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 30
 Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(31): signal "s_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 31
-Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 150
-Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 157
-Info (12129): Elaborating entity "resetModule" using architecture "A:behav" for hierarchy "resetModule:reset" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 178
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 149
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 156
+Info (12129): Elaborating entity "resetModule" using architecture "A:behav" for hierarchy "resetModule:reset" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 177
 Warning (10541): VHDL Signal Declaration warning at resetModule.vhd(8): used implicit default value for signal "resetOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Programacao/Quartus/LSD/fase3/resetModule.vhd Line: 8
 Info (278001): Inferred 4 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: D:/Programacao/Quartus/LSD/fase3/BinToBCD.vhd Line: 21
@@ -714,10 +700,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: D:/Programacao/Quartus/LSD/fase3/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
     Info (12023): Found entity 1: alt_u_div_84f File: D:/Programacao/Quartus/LSD/fase3/db/alt_u_div_84f.tdf Line: 26
-Warning (13012): Latch states:states|s_hex_piscar has unsafe behavior File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.F_R File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 31
-Warning (13012): Latch states:states|s_reset_a has unsafe behavior File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 50
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.F_R File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 31
+Warning (13012): Latch states:states|s_reset_a has unsafe behavior File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.F_R File: D:/Programacao/Quartus/LSD/fase3/states.vhd Line: 30
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[17]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 8
     Warning (13410): Pin "LEDG[4]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 9
@@ -743,14 +727,14 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[14]" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 6
     Warning (15610): No output dependent on input pin "SW[15]" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 6
     Warning (15610): No output dependent on input pin "SW[16]" File: D:/Programacao/Quartus/LSD/fase3/fase3_Demo.vhd Line: 6
-Info (21057): Implemented 855 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 856 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 54 output pins
-    Info (21061): Implemented 778 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4834 megabytes
-    Info: Processing ended: Thu May 30 20:08:16 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (21061): Implemented 779 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Sat Jun 01 12:29:25 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 
