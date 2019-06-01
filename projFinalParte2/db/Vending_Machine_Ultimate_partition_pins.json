@@ -100,6 +100,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX3[0]",
 					"strict" : false
 				},
@@ -121,6 +125,10 @@
 				},
 				{
 					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{

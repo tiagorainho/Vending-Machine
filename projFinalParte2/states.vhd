@@ -3,22 +3,23 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
 entity states is
-	port( price        : in std_logic_vector(7 downto 0);
-			count_sw		 : in std_logic_vector(2 downto 0); --Contador do numero de SW
-			dinheiro  	 : in std_logic_vector(7 downto 0); -- Acumulador do dinheiro
-			troco        : in std_logic_vector(7 downto 0);
-			clk       	 : in std_logic;
-			reset			 : in std_logic;
+	port( clk       	    : in std_logic;
+			reset			 	 : in std_logic;
+			price        	 : in std_logic_vector(7 downto 0); --preço (do produto selecionado)
+			count_sw		 	 : in std_logic_vector(2 downto 0); --Contador do numero de SW
+			dinheiro  	 	 : in std_logic_vector(7 downto 0); -- Acumulador do dinheiro
+			troco        	 : in std_logic_vector(7 downto 0); --faz a conta do troco	
+			troco_final  	 : out std_logic; --enable do troco
 			resetAcumulador : out std_logic;
-			troco_final  : out std_logic;
-			hexEn     	 : out std_logic;
-			ledr0        : out std_logic;
-			ledr1        : out std_logic;
-			ledr2        : out std_logic;
-			ledr3        : out std_logic;
-			hexPiscar	 : out std_logic;
-			centimos     : out std_logic_vector(7 downto 0);
-			euros     	 : out std_logic_vector(7 downto 0));
+			enable_risco    : out std_logic; --Ativa "-- --"
+			hexEn     	 	 : out std_logic; --ligar/desligar HEXs
+			hexPiscar	 	 : out std_logic; --ligar/desligar modo piscar
+			centimos     	 : out std_logic_vector(7 downto 0);
+			euros     	 	 : out std_logic_vector(7 downto 0);
+			ledr0        	 : out std_logic; --Estado I
+			ledr1        	 : out std_logic;	--Estado SB
+			ledr2        	 : out std_logic; --Estado S
+			ledr3        	 : out std_logic); --Estado F
 end states;
 
 architecture Behav of states is
@@ -46,9 +47,11 @@ begin
 	begin
 		troco_final <= '0'; 
 		s_euros    <= "00000000";
+		enable_risco <= '0';
+		s_hex_En  <= '1';
 		case PS is
 		when I =>
-			s_hex_En  <= '0'; -- desligar hexs se ligados;
+			enable_risco <= '1' ;
 			s_hex_piscar <= '0'; --desligar piscar
 			s_reset_a <= '1'; -- reset no acumulador das moedas;
 			s_euros <= to_unsigned(0,8);
@@ -62,7 +65,6 @@ begin
 			
 		when SB =>
 		
-			s_hex_En <= '1'; --ligar HEXs;
 			s_centimos <= unsigned(price);
 			s_reset_a <= '0';
 			s_hex_piscar <= '0';		
@@ -80,7 +82,6 @@ begin
 			
 			
 		when S =>			
-			s_hex_En <= '1'; --ligar HEXs;
 			s_centimos <= unsigned(troco);
 			s_reset_a <= '0';
 			s_hex_piscar <= '0';	
@@ -97,13 +98,11 @@ begin
 		when F =>
 			troco_final <= '1';
 			if(count_sw = "000") then
-				s_hex_En <= '0'; --ligar HEXs;
 				s_centimos <= unsigned(price);
 				s_reset_a <= '1';
 				s_hex_piscar <= '0';	
 				NS <= I;
 			else
-				s_hex_En <= '1'; --ligar HEXs;
 				s_centimos <= unsigned(troco);
 				s_reset_a <= '0';
 				s_hex_piscar <= '1';	
