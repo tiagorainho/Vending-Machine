@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Vending_Machine_Ultimate
-Wed May 29 15:14:00 2019
+Thu May 30 19:50:54 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -53,13 +53,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 29 15:14:00 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 30 19:50:54 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Vending_Machine_Ultimate                    ;
 ; Top-level Entity Name              ; Vending_Machine_Ultimate                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 637                                         ;
-;     Total combinational functions  ; 633                                         ;
+; Total logic elements               ; 641                                         ;
+;     Total combinational functions  ; 637                                         ;
 ;     Dedicated logic registers      ; 166                                         ;
 ; Total registers                    ; 166                                         ;
 ; Total pins                         ; 42                                          ;
@@ -208,16 +208,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 637            ;
+; Estimated Total logic elements              ; 641            ;
 ;                                             ;                ;
-; Total combinational functions               ; 633            ;
+; Total combinational functions               ; 637            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 181            ;
-;     -- 3 input functions                    ; 123            ;
-;     -- <=2 input functions                  ; 329            ;
+;     -- 4 input functions                    ; 184            ;
+;     -- 3 input functions                    ; 128            ;
+;     -- <=2 input functions                  ; 325            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 419            ;
+;     -- normal mode                          ; 423            ;
 ;     -- arithmetic mode                      ; 214            ;
 ;                                             ;                ;
 ; Total registers                             ; 166            ;
@@ -230,8 +230,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 166            ;
-; Total fan-out                               ; 2277           ;
-; Average fan-out                             ; 2.58           ;
+; Total fan-out                               ; 2298           ;
+; Average fan-out                             ; 2.59           ;
 +---------------------------------------------+----------------+
 
 
@@ -240,30 +240,31 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Entity Name              ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |Vending_Machine_Ultimate                 ; 633 (0)             ; 166 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Vending_Machine_Ultimate                                                                                                                     ; Vending_Machine_Ultimate ; work         ;
+; |Vending_Machine_Ultimate                 ; 637 (0)             ; 166 (0)                   ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Vending_Machine_Ultimate                                                                                                                     ; Vending_Machine_Ultimate ; work         ;
 ;    |Acumulador:ac|                        ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Acumulador:ac                                                                                                       ; Acumulador               ; work         ;
 ;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex0                                                                                              ; Bin7SegDecoder           ; work         ;
 ;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex1                                                                                              ; Bin7SegDecoder           ; work         ;
-;    |BinToBCD:bin2BCD_01|                  ; 175 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD                 ; work         ;
+;    |Bin7SegDecoder:outHex2|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|Bin7SegDecoder:outHex2                                                                                              ; Bin7SegDecoder           ; work         ;
+;    |BinToBCD:bin2BCD_01|                  ; 181 (14)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01                                                                                                 ; BinToBCD                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm           ; work         ;
 ;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh      ; work         ;
 ;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f            ; work         ;
-;       |lpm_divide:Mod0|                   ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide               ; work         ;
-;          |lpm_divide_q9m:auto_generated|  ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
-;             |sign_div_unsign_fkh:divider| ; 83 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
-;                |alt_u_div_i4f:divider|    ; 83 (83)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
-;       |lpm_divide:Mod1|                   ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                 ; lpm_divide               ; work         ;
-;          |lpm_divide_q9m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
-;             |sign_div_unsign_fkh:divider| ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
-;                |alt_u_div_i4f:divider|    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
-;    |DebounceUnit:key0|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key0                                                                                                   ; DebounceUnit             ; work         ;
+;       |lpm_divide:Mod0|                   ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 79 (79)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;       |lpm_divide:Mod1|                   ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                 ; lpm_divide               ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m           ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh      ; work         ;
+;                |alt_u_div_i4f:divider|    ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f            ; work         ;
+;    |DebounceUnit:key0|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key0                                                                                                   ; DebounceUnit             ; work         ;
 ;    |DebounceUnit:key1|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key1                                                                                                   ; DebounceUnit             ; work         ;
-;    |DebounceUnit:key2|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key2                                                                                                   ; DebounceUnit             ; work         ;
-;    |DebounceUnit:key3|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key3                                                                                                   ; DebounceUnit             ; work         ;
-;    |hexPiscar:piscar|                     ; 45 (45)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|hexPiscar:piscar                                                                                                    ; hexPiscar                ; work         ;
+;    |DebounceUnit:key2|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key2                                                                                                   ; DebounceUnit             ; work         ;
+;    |DebounceUnit:key3|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|DebounceUnit:key3                                                                                                   ; DebounceUnit             ; work         ;
+;    |hexPiscar:piscar|                     ; 43 (43)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|hexPiscar:piscar                                                                                                    ; hexPiscar                ; work         ;
 ;    |price:price|                          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|price:price                                                                                                         ; price                    ; work         ;
-;    |states:states|                        ; 32 (32)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states                                                                                                       ; states                   ; work         ;
+;    |states:states|                        ; 33 (33)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|states:states                                                                                                       ; states                   ; work         ;
 ;    |switchesCounter:counter|              ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|switchesCounter:counter                                                                                             ; switchesCounter          ; work         ;
 ;    |troco:troco|                          ; 17 (17)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Vending_Machine_Ultimate|troco:troco                                                                                                         ; troco                    ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
@@ -325,15 +326,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Vending_Machine_Ultimate|price:price|price[0]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Vending_Machine_Ultimate|price:price|price[5]                ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Vending_Machine_Ultimate|price:price|price[1]                ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key3|s_debounceCnt[18] ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key2|s_debounceCnt[3]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key3|s_debounceCnt[8]  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key2|s_debounceCnt[13] ;
 ; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key1|s_debounceCnt[0]  ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key0|s_debounceCnt[1]  ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Vending_Machine_Ultimate|Acumulador:ac|s_count[6]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|ledr3                 ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|Selector10            ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Vending_Machine_Ultimate|DebounceUnit:key0|s_debounceCnt[0]  ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Vending_Machine_Ultimate|Acumulador:ac|s_count[4]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|ledr1                 ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |Vending_Machine_Ultimate|states:states|Selector9             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -469,20 +470,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 32                          ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 48                          ;
-; cycloneiii_lcell_comb ; 638                         ;
+; cycloneiii_lcell_comb ; 640                         ;
 ;     arith             ; 214                         ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 151                         ;
 ;         3 data inputs ; 60                          ;
-;     normal            ; 424                         ;
-;         0 data inputs ; 13                          ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 146                         ;
-;         3 data inputs ; 63                          ;
-;         4 data inputs ; 181                         ;
+;     normal            ; 426                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 142                         ;
+;         3 data inputs ; 68                          ;
+;         4 data inputs ; 184                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 17.20                       ;
-; Average LUT depth     ; 7.91                        ;
+; Max LUT depth         ; 17.50                       ;
+; Average LUT depth     ; 8.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -491,7 +492,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -501,7 +502,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed May 29 15:13:37 2019
+    Info: Processing started: Thu May 30 19:50:32 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Vending_Machine_Ultimate -c Vending_Machine_Ultimate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -509,7 +510,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
     Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Diogo/Desktop/projFinalParte2/Debouncer.vhd Line: 15
     Info (12023): Found entity 1: DebounceUnit File: C:/Users/Diogo/Desktop/projFinalParte2/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
-    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 24
+    Info (12022): Found design unit 1: states-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 25
     Info (12023): Found entity 1: states File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
     Info (12022): Found design unit 1: switchesCounter-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/switchesCounter.vhd Line: 11
@@ -521,7 +522,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file vending
     Info (12022): Found design unit 1: Vending_Machine_Ultimate-Shell File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 15
     Info (12023): Found entity 1: Vending_Machine_Ultimate File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bintobcd.vhd
-    Info (12022): Found design unit 1: BinToBCD-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 10
+    Info (12022): Found design unit 1: BinToBCD-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 11
     Info (12023): Found entity 1: BinToBCD File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
     Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/Bin7SegDecoder.vhd Line: 10
@@ -536,28 +537,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file troco.v
     Info (12022): Found design unit 1: troco-Behav File: C:/Users/Diogo/Desktop/projFinalParte2/troco.vhd Line: 14
     Info (12023): Found entity 1: troco File: C:/Users/Diogo/Desktop/projFinalParte2/troco.vhd Line: 5
 Info (12127): Elaborating entity "Vending_Machine_Ultimate" for the top level hierarchy
-Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 29
-Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 50
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 30
+Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 51
 Warning (10492): VHDL Process Statement warning at Acumulador.vhd(42): signal "s_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/Acumulador.vhd Line: 42
-Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 62
-Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 68
-Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 76
+Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 63
+Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 69
+Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 77
 Warning (10492): VHDL Process Statement warning at troco.vhd(36): signal "s_troco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/troco.vhd Line: 36
-Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at states.vhd(117): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 117
-Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 106
-Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 119
-Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 126
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at states.vhd(112): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at states.vhd(113): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at states.vhd(114): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at states.vhd(115): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at states.vhd(116): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/states.vhd Line: 116
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(23): signal "s_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(24): signal "s_tr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 24
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 123
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 130
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 17
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 18
-Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
-Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 24
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 23
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 23
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -572,8 +575,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Diogo/Desktop/projFinalParte2/db/add_sub_7pc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Diogo/Desktop/projFinalParte2/db/add_sub_8pc.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 17
-Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 17
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: C:/Users/Diogo/Desktop/projFinalParte2/BinToBCD.vhd Line: 16
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -584,23 +587,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/Diogo/Desktop/projFinalParte2/db/sign_div_unsign_bkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
     Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/Diogo/Desktop/projFinalParte2/db/alt_u_div_a4f.tdf Line: 26
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 11
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Diogo/Desktop/projFinalParte2/Vending_Machine_Ultimate.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: C:/Users/Diogo/Desktop/projFinalParte2/db/alt_u_div_i4f.tdf Line: 61
     Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: C:/Users/Diogo/Desktop/projFinalParte2/db/alt_u_div_i4f.tdf Line: 56
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 679 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 683 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 637 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Wed May 29 15:14:00 2019
+    Info (21061): Implemented 641 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Thu May 30 19:50:55 2019
     Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Total CPU time (on all processors): 00:00:45
 
 

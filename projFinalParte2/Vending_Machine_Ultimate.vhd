@@ -14,14 +14,15 @@ end Vending_Machine_Ultimate;
 
 architecture Shell of Vending_Machine_Ultimate is
 signal s_centimos, s_euros               					: std_logic_vector(7 downto 0);
-signal s_hexEn, s_reset_a, s_enable_a, s_troco_final  : std_logic;
-signal s_price 													: std_logic_vector(7 downto 0);
-signal s_troco														: std_logic_vector(7 downto 0);
-signal s_hexEn_piscarI, s_hexEn_piscarO					: std_logic;  
-signal s_key0, s_key1, s_key2, s_key3						: std_logic;
-signal s_dinheiro													: std_logic_vector(7 downto 0);
-signal s_counter_SW 												: std_logic_vector(2 downto 0);
-signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0);
+signal s_hexEn, s_reset_a, s_enable_a, s_troco_final  : std_logic; --ligar hex, reset acumulador, enable acumulador, freeze troco
+signal s_price 													: std_logic_vector(7 downto 0); 
+signal s_troco														: std_logic_vector(7 downto 0); 
+signal s_hexEn_piscarI, s_hexEn_piscarO					: std_logic; --Sinal ligar/desligar piscar 
+signal s_key0, s_key1, s_key2, s_key3						: std_logic; --Sinal pós debouncer
+signal s_dinheiro													: std_logic_vector(7 downto 0); 
+signal s_counter_SW 												: std_logic_vector(2 downto 0); 
+signal Bin_7seg_0, Bin_7seg_1, Bin_7seg_2, Bin_7seg_3 : std_logic_vector(3 downto 0); --sinal ligaçao BCD->Bin7
+signal s_enable_risco											: std_logic; --sinal para ligar "-- --" 
 begin
 
 --######################  KEYS  #####################################
@@ -99,19 +100,22 @@ begin
 								ledr1               => LEDR(1),
 								ledr2               => LEDR(2),
 								ledr3               => LEDR(3),
-								resetAcumulador     => s_reset_a);
+								resetAcumulador     => s_reset_a,
+								enable_risco		  => s_enable_risco);
 								
 --#######################  bin2BCD  #####################################
 							
 	bin2BCD_01 : entity work.BinToBCD(Behav)
-				port map(r => s_centimos,
-							u => Bin_7seg_0,
-							d => Bin_7seg_1);
+				port map(r 					=> s_centimos,
+							enable			=> s_enable_risco,
+							u 					=> Bin_7seg_0,
+							d 					=> Bin_7seg_1);
 							
 	bin2BCD_23 : entity work.BinToBCD(Behav)
-				port map(r => s_euros,
-							u => Bin_7seg_2,
-							d => Bin_7seg_3);
+				port map(r 					=> s_euros,
+							enable	   	=> s_enable_risco,
+							u 					=> Bin_7seg_2,
+							d 					=> Bin_7seg_3);
 							
 
 --#######################  HexPiscar   ##########################################
