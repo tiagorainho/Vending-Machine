@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fase4
-Sat Jun 01 20:36:07 2019
+Sun Jun 02 20:59:23 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -64,16 +64,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 01 20:36:06 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 02 20:59:23 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; fase4                                       ;
 ; Top-level Entity Name              ; fase3_Demo                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,081                                       ;
-;     Total combinational functions  ; 1,068                                       ;
-;     Dedicated logic registers      ; 322                                         ;
-; Total registers                    ; 322                                         ;
-; Total pins                         ; 90                                          ;
+; Total logic elements               ; 1,079                                       ;
+;     Total combinational functions  ; 1,070                                       ;
+;     Dedicated logic registers      ; 319                                         ;
+; Total registers                    ; 319                                         ;
+; Total pins                         ; 78                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -229,30 +229,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,081          ;
+; Estimated Total logic elements              ; 1,079          ;
 ;                                             ;                ;
-; Total combinational functions               ; 1068           ;
+; Total combinational functions               ; 1070           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 395            ;
-;     -- 3 input functions                    ; 207            ;
-;     -- <=2 input functions                  ; 466            ;
+;     -- 4 input functions                    ; 403            ;
+;     -- 3 input functions                    ; 203            ;
+;     -- <=2 input functions                  ; 464            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 760            ;
+;     -- normal mode                          ; 762            ;
 ;     -- arithmetic mode                      ; 308            ;
 ;                                             ;                ;
-; Total registers                             ; 322            ;
-;     -- Dedicated logic registers            ; 322            ;
+; Total registers                             ; 319            ;
+;     -- Dedicated logic registers            ; 319            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 90             ;
+; I/O pins                                    ; 78             ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 322            ;
-; Total fan-out                               ; 4132           ;
-; Average fan-out                             ; 2.62           ;
+; Maximum fan-out                             ; 319            ;
+; Total fan-out                               ; 4125           ;
+; Average fan-out                             ; 2.66           ;
 +---------------------------------------------+----------------+
 
 
@@ -261,7 +261,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |fase3_Demo                               ; 1068 (1)            ; 322 (0)                   ; 0           ; 0            ; 0       ; 0         ; 90   ; 0            ; |fase3_Demo                                                                                                                           ; fase3_Demo          ; work         ;
+; |fase3_Demo                               ; 1070 (1)            ; 319 (0)                   ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |fase3_Demo                                                                                                                           ; fase3_Demo          ; work         ;
 ;    |Acumulador:ac|                        ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Acumulador:ac                                                                                                             ; Acumulador          ; work         ;
 ;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex0                                                                                                    ; Bin7SegDecoder      ; work         ;
 ;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex1                                                                                                    ; Bin7SegDecoder      ; work         ;
@@ -279,12 +279,12 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_q9m:auto_generated|  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                         ; lpm_divide_q9m      ; work         ;
 ;             |sign_div_unsign_fkh:divider| ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                             ; sign_div_unsign_fkh ; work         ;
 ;                |alt_u_div_i4f:divider|    ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider       ; alt_u_div_i4f       ; work         ;
-;    |DebounceUnit:key0|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key0                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key0|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key0                                                                                                         ; DebounceUnit        ; work         ;
 ;    |DebounceUnit:key1|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key1                                                                                                         ; DebounceUnit        ; work         ;
-;    |DebounceUnit:key2|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key2                                                                                                         ; DebounceUnit        ; work         ;
-;    |DebounceUnit:key3|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key3                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key2|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key2                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key3|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key3                                                                                                         ; DebounceUnit        ; work         ;
 ;    |hexPiscar:piscar|                     ; 43 (43)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|hexPiscar:piscar                                                                                                          ; hexPiscar           ; work         ;
-;    |lcd_controller_ex:lcd|                ; 297 (156)           ; 119 (45)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|lcd_controller_ex:lcd                                                                                                     ; lcd_controller_ex   ; work         ;
+;    |lcd_controller_ex:lcd|                ; 298 (157)           ; 116 (42)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|lcd_controller_ex:lcd                                                                                                     ; lcd_controller_ex   ; work         ;
 ;       |lcd_controller:DISPLAY|            ; 141 (141)           ; 74 (74)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY                                                                              ; lcd_controller      ; work         ;
 ;    |limite_troco:limite_troco|            ; 123 (64)            ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco                                                                                                 ; limite_troco        ; work         ;
 ;       |lpm_divide:Div0|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
@@ -361,117 +361,121 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                           ;
-+-----------------------------------------------------------------------------------------+----------------------------------------------------+
-; Register name                                                                           ; Reason for Removal                                 ;
-+-----------------------------------------------------------------------------------------+----------------------------------------------------+
-; lcd_controller_ex:lcd|bottom_line[0]                                                    ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|txd_request                                                       ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[5]                                                    ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[7,9,12]                                               ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[13]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[15]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[21]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[23]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[29]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[31]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[37]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[39]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[45]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[47]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[53]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[55,59,63,68]                                          ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[69]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[71,73,79,81,84]                                       ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[85]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[87,92]                                                ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[93]                                                   ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[95,99]                                                ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[101]                                                  ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[103]                                                  ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[109]                                                  ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[111,114]                                              ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[117]                                                  ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[119,123,127]                                          ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[1,3]                                                     ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[5]                                                       ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[6,7,11]                                                  ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[13]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[14..16,20]                                               ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[21]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[22..27]                                                  ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[29]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[30..36]                                                  ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[37]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[38,39,41,43,44]                                          ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[45]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[47]                                                      ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[53]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[55]                                                      ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[61]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[63]                                                      ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[69]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[71]                                                      ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[77]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[79,87,89,91]                                             ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[93]                                                      ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[95,99]                                                   ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[101]                                                     ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[103]                                                     ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[109]                                                     ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[111,113,114,116]                                         ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[117]                                                     ; Stuck at VCC due to stuck port data_in             ;
-; lcd_controller_ex:lcd|top_line[119,122..124,127]                                        ; Stuck at GND due to stuck port data_in             ;
-; price:price|price[6,7]                                                                  ; Stuck at GND due to stuck port data_in             ;
-; limite_troco:limite_troco|s_moedas_falta[7]                                             ; Stuck at GND due to stuck port data_in             ;
-; lcd_controller_ex:lcd|bottom_line[125]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[76]  ;
-; lcd_controller_ex:lcd|bottom_line[76]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[49]  ;
-; lcd_controller_ex:lcd|bottom_line[126]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[124] ;
-; lcd_controller_ex:lcd|bottom_line[124]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[118] ;
-; lcd_controller_ex:lcd|bottom_line[118]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[110] ;
-; lcd_controller_ex:lcd|bottom_line[110]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[105] ;
-; lcd_controller_ex:lcd|bottom_line[105]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[104] ;
-; lcd_controller_ex:lcd|bottom_line[104]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[102] ;
-; lcd_controller_ex:lcd|bottom_line[102]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[94]  ;
-; lcd_controller_ex:lcd|bottom_line[94]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[90]  ;
-; lcd_controller_ex:lcd|bottom_line[90]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[88]  ;
-; lcd_controller_ex:lcd|bottom_line[88]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[78]  ;
-; lcd_controller_ex:lcd|bottom_line[78]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[62]  ;
-; lcd_controller_ex:lcd|bottom_line[62]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[54]  ;
-; lcd_controller_ex:lcd|bottom_line[54]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[46]  ;
-; lcd_controller_ex:lcd|bottom_line[46]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[41]  ;
-; lcd_controller_ex:lcd|bottom_line[41]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[40]  ;
-; lcd_controller_ex:lcd|bottom_line[40]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[38]  ;
-; lcd_controller_ex:lcd|bottom_line[38]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[30]  ;
-; lcd_controller_ex:lcd|bottom_line[30]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[24]  ;
-; lcd_controller_ex:lcd|bottom_line[24]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[22]  ;
-; lcd_controller_ex:lcd|bottom_line[22]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[18]  ;
-; lcd_controller_ex:lcd|bottom_line[18]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[14]  ;
-; lcd_controller_ex:lcd|bottom_line[14]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[8]   ;
-; lcd_controller_ex:lcd|bottom_line[8]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[6]   ;
-; lcd_controller_ex:lcd|bottom_line[6]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[2]   ;
-; lcd_controller_ex:lcd|top_line[12,17..19,28,62,70,72,78,86,102,110,118,120,121,125,126] ; Merged with lcd_controller_ex:lcd|top_line[4]      ;
-; price:price|price[4]                                                                    ; Merged with price:price|price[1]                   ;
-; price:price|price[3]                                                                    ; Merged with price:price|price[2]                   ;
-; lcd_controller_ex:lcd|top_line[8]                                                       ; Merged with lcd_controller_ex:lcd|top_line[112]    ;
-; lcd_controller_ex:lcd|top_line[2,40,42,46,52,84,97,104,107,115]                         ; Merged with lcd_controller_ex:lcd|top_line[0]      ;
-; lcd_controller_ex:lcd|top_line[50,54,74,96,106]                                         ; Merged with lcd_controller_ex:lcd|top_line[105]    ;
-; lcd_controller_ex:lcd|top_line[88,90,92,94,108]                                         ; Merged with lcd_controller_ex:lcd|top_line[100]    ;
-; lcd_controller_ex:lcd|top_line[64]                                                      ; Merged with lcd_controller_ex:lcd|top_line[10]     ;
-; lcd_controller_ex:lcd|top_line[75,82,83]                                                ; Merged with lcd_controller_ex:lcd|top_line[56]     ;
-; lcd_controller_ex:lcd|top_line[9,49,51,65,98]                                           ; Merged with lcd_controller_ex:lcd|top_line[48]     ;
-; lcd_controller_ex:lcd|bottom_line[16,28,32,61,80,82,83,86,98,108,112,115,120,121]       ; Merged with lcd_controller_ex:lcd|bottom_line[100] ;
-; lcd_controller_ex:lcd|bottom_line[17,27,50,67,70,77,89,91,96,97,107,113,116,122]        ; Merged with lcd_controller_ex:lcd|bottom_line[106] ;
-; lcd_controller_ex:lcd|bottom_line[36,72]                                                ; Merged with lcd_controller_ex:lcd|bottom_line[26]  ;
-; lcd_controller_ex:lcd|bottom_line[3,20,33..35,56,60,64]                                 ; Merged with lcd_controller_ex:lcd|bottom_line[10]  ;
-; lcd_controller_ex:lcd|bottom_line[1,4,19,25,44,48,58,65,66]                             ; Merged with lcd_controller_ex:lcd|bottom_line[11]  ;
-; lcd_controller_ex:lcd|top_line[68]                                                      ; Merged with lcd_controller_ex:lcd|top_line[60]     ;
-; lcd_controller_ex:lcd|bottom_line[43,57]                                                ; Merged with lcd_controller_ex:lcd|bottom_line[42]  ;
-; lcd_controller_ex:lcd|bottom_line[74]                                                   ; Merged with lcd_controller_ex:lcd|bottom_line[52]  ;
-; limite_troco:limite_troco|s_count[1]                                                    ; Stuck at GND due to stuck port data_in             ;
-; Total Number of Removed Registers = 233                                                 ;                                                    ;
-+-----------------------------------------------------------------------------------------+----------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                             ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
+; Register name                                                                             ; Reason for Removal                                 ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
+; lcd_controller_ex:lcd|bottom_line[0]                                                      ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|txd_request                                                         ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[5]                                                      ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[7,9,12]                                                 ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[13]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[15]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[21]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[23]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[29]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[31]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[37]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[39]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[45]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[47]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[53]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[55,59,63,68]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[69]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[71,73,79,81,84]                                         ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[85]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[87,92]                                                  ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[93]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[95,99]                                                  ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[101]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[103]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[109]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[111,114]                                                ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[117]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[119,123,127]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[1,3]                                                       ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[5]                                                         ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[6,7,11]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[13]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[14..16,20]                                                 ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[21]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[22..27]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[29]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[30..36]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[37]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[38,39,41,43,44]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[45]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[47]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[53]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[55]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[61]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[63]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[69]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[71]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[77]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[79,87,89,91]                                               ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[93]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[95,99]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[101]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[103]                                                       ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[109]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[111,113,114,116]                                           ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[117]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[119,122..124,127]                                          ; Stuck at GND due to stuck port data_in             ;
+; price:price|price[6,7]                                                                    ; Stuck at GND due to stuck port data_in             ;
+; limite_troco:limite_troco|s_moedas_falta[7]                                               ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[125]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[76]  ;
+; lcd_controller_ex:lcd|bottom_line[76]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[49]  ;
+; lcd_controller_ex:lcd|bottom_line[126]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[124] ;
+; lcd_controller_ex:lcd|bottom_line[124]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[118] ;
+; lcd_controller_ex:lcd|bottom_line[118]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[110] ;
+; lcd_controller_ex:lcd|bottom_line[110]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[105] ;
+; lcd_controller_ex:lcd|bottom_line[105]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[104] ;
+; lcd_controller_ex:lcd|bottom_line[104]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[102] ;
+; lcd_controller_ex:lcd|bottom_line[102]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[94]  ;
+; lcd_controller_ex:lcd|bottom_line[94]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[90]  ;
+; lcd_controller_ex:lcd|bottom_line[90]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[88]  ;
+; lcd_controller_ex:lcd|bottom_line[88]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[78]  ;
+; lcd_controller_ex:lcd|bottom_line[78]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[62]  ;
+; lcd_controller_ex:lcd|bottom_line[62]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[54]  ;
+; lcd_controller_ex:lcd|bottom_line[54]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[46]  ;
+; lcd_controller_ex:lcd|bottom_line[46]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[41]  ;
+; lcd_controller_ex:lcd|bottom_line[41]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[40]  ;
+; lcd_controller_ex:lcd|bottom_line[40]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[38]  ;
+; lcd_controller_ex:lcd|bottom_line[38]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[30]  ;
+; lcd_controller_ex:lcd|bottom_line[30]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[24]  ;
+; lcd_controller_ex:lcd|bottom_line[24]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[22]  ;
+; lcd_controller_ex:lcd|bottom_line[22]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[18]  ;
+; lcd_controller_ex:lcd|bottom_line[18]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[14]  ;
+; lcd_controller_ex:lcd|bottom_line[14]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[8]   ;
+; lcd_controller_ex:lcd|bottom_line[8]                                                      ; Merged with lcd_controller_ex:lcd|bottom_line[6]   ;
+; lcd_controller_ex:lcd|bottom_line[6]                                                      ; Merged with lcd_controller_ex:lcd|bottom_line[2]   ;
+; lcd_controller_ex:lcd|bottom_line[4,11,19,25,44,48,58,65,66]                              ; Merged with lcd_controller_ex:lcd|bottom_line[1]   ;
+; lcd_controller_ex:lcd|bottom_line[10,20,33..35,56,60,64]                                  ; Merged with lcd_controller_ex:lcd|bottom_line[3]   ;
+; lcd_controller_ex:lcd|bottom_line[28,32,61,80,82,83,86,98,100,108,112,115,120,121]        ; Merged with lcd_controller_ex:lcd|bottom_line[16]  ;
+; lcd_controller_ex:lcd|bottom_line[27,50,67,70,77,89,91,96,97,106,107,113,116,122]         ; Merged with lcd_controller_ex:lcd|bottom_line[17]  ;
+; lcd_controller_ex:lcd|bottom_line[36,72]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[26]  ;
+; lcd_controller_ex:lcd|bottom_line[43,57]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[42]  ;
+; lcd_controller_ex:lcd|bottom_line[74]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[52]  ;
+; lcd_controller_ex:lcd|top_line[12,17..19,28,50,54,62,70,72,78,86,102,110,118,120,121,126] ; Merged with lcd_controller_ex:lcd|top_line[4]      ;
+; price:price|price[4]                                                                      ; Merged with price:price|price[1]                   ;
+; price:price|price[3]                                                                      ; Merged with price:price|price[2]                   ;
+; lcd_controller_ex:lcd|top_line[8,48,49,51]                                                ; Merged with lcd_controller_ex:lcd|top_line[112]    ;
+; lcd_controller_ex:lcd|top_line[2,40,42,46,52,84,97,104,107,115]                           ; Merged with lcd_controller_ex:lcd|top_line[0]      ;
+; lcd_controller_ex:lcd|top_line[74,96,106]                                                 ; Merged with lcd_controller_ex:lcd|top_line[105]    ;
+; lcd_controller_ex:lcd|top_line[88,90,92,94,108]                                           ; Merged with lcd_controller_ex:lcd|top_line[100]    ;
+; lcd_controller_ex:lcd|top_line[64]                                                        ; Merged with lcd_controller_ex:lcd|top_line[10]     ;
+; lcd_controller_ex:lcd|top_line[75,82,83]                                                  ; Merged with lcd_controller_ex:lcd|top_line[56]     ;
+; lcd_controller_ex:lcd|top_line[68]                                                        ; Merged with lcd_controller_ex:lcd|top_line[60]     ;
+; lcd_controller_ex:lcd|top_line[9,98]                                                      ; Merged with lcd_controller_ex:lcd|top_line[65]     ;
+; limite_troco:limite_troco|s_count[1]                                                      ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[125]                                                       ; Merged with lcd_controller_ex:lcd|top_line[4]      ;
+; lcd_controller_ex:lcd|bottom_line[75]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[42]  ;
+; lcd_controller_ex:lcd|bottom_line[51]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[3]   ;
+; lcd_controller_ex:lcd|bottom_line[52]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[26]  ;
+; Total Number of Removed Registers = 236                                                   ;                                                    ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -479,8 +483,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 322   ;
-; Number of registers using Synchronous Clear  ; 34    ;
+; Total registers                              ; 319   ;
+; Number of registers using Synchronous Clear  ; 35    ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -508,14 +512,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; lcd_controller_ex:lcd|top_line[57]                             ; 1       ;
 ; lcd_controller_ex:lcd|top_line[66]                             ; 1       ;
 ; lcd_controller_ex:lcd|top_line[58]                             ; 1       ;
-; lcd_controller_ex:lcd|bottom_line[52]                          ; 2       ;
-; lcd_controller_ex:lcd|bottom_line[51]                          ; 1       ;
-; lcd_controller_ex:lcd|bottom_line[75]                          ; 1       ;
 ; lcd_controller_ex:lcd|top_line[67]                             ; 1       ;
 ; lcd_controller_ex:lcd|top_line[59]                             ; 1       ;
 ; lcd_controller_ex:lcd|top_line[60]                             ; 1       ;
 ; lcd_controller_ex:lcd|top_line[85]                             ; 1       ;
-; Total number of inverted registers = 21                        ;         ;
+; Total number of inverted registers = 18                        ;         ;
 +----------------------------------------------------------------+---------+
 
 
@@ -525,24 +526,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[0]                                                 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|top_line[80]                                   ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[2]                                                 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|top_line[56]                                   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|write_enable_counter[3] ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|delay_counter[8]        ;
 ; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|delay_counter[5]        ;
 ; 16:1               ; 10 bits   ; 100 LEs       ; 70 LEs               ; 30 LEs                 ; Yes        ; |fase3_Demo|moedas_leds:moedas_leds|leds[2]                                      ;
 ; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[5]                              ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key3|s_debounceCnt[5]                                   ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key3|s_debounceCnt[4]                                   ;
 ; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key2|s_debounceCnt[18]                                  ;
 ; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key1|s_debounceCnt[0]                                   ;
 ; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key0|s_debounceCnt[0]                                   ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|Acumulador:ac|s_count[2]                                             ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|Acumulador:ac|s_count[6]                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|top_line[85]                                   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[1]                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fase3_Demo|states:states|ledr1                                                  ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|state                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |fase3_Demo|lcd_controller_ex:lcd|top_line                                       ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |fase3_Demo|states:states|state_info[0]                                          ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |fase3_Demo|states:states|Selector8                                              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |fase3_Demo|lcd_controller_ex:lcd|top_line                                       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |fase3_Demo|states:states|Selector3                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
 
 
@@ -762,27 +764,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 90                          ;
-; cycloneiii_ff         ; 322                         ;
+; boundary_port         ; 78                          ;
+; cycloneiii_ff         ; 319                         ;
 ;     ENA               ; 158                         ;
 ;     ENA SCLR          ; 34                          ;
 ;     ENA SLD           ; 20                          ;
-;     plain             ; 110                         ;
+;     SCLR              ; 1                           ;
+;     plain             ; 106                         ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 1070                        ;
+; cycloneiii_lcell_comb ; 1072                        ;
 ;     arith             ; 308                         ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 209                         ;
 ;         3 data inputs ; 96                          ;
-;     normal            ; 762                         ;
+;     normal            ; 764                         ;
 ;         0 data inputs ; 19                          ;
-;         1 data inputs ; 49                          ;
-;         2 data inputs ; 188                         ;
-;         3 data inputs ; 111                         ;
-;         4 data inputs ; 395                         ;
+;         1 data inputs ; 48                          ;
+;         2 data inputs ; 187                         ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 403                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.20                       ;
-; Average LUT depth     ; 7.23                        ;
+; Average LUT depth     ; 7.25                        ;
 +-----------------------+-----------------------------+
 
 
@@ -791,7 +794,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -801,7 +804,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Jun 01 20:35:52 2019
+    Info: Processing started: Sun Jun 02 20:59:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fase4 -c fase4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -852,7 +855,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file lcd_con
     Info (12023): Found entity 1: lcd_controller_ex File: D:/Programacao/Quartus/LSD/fase4/lcd_controller_ex.vhd Line: 26
 Info (12127): Elaborating entity "fase3_Demo" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at fase3_Demo.vhd(35): object "s_reset_master" assigned a value but never read File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 35
-Warning (10873): Using initial value X (don't care) for net "LEDG[7..4]" at fase3_Demo.vhd(9) File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 9
 Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 43
 Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 64
 Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 76
@@ -932,11 +934,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
 Warning (13012): Latch states:states|s_reset_a has unsafe behavior File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
     Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.F_R File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 31
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 8
-    Warning (13410): Pin "LEDG[4]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 9
-    Warning (13410): Pin "LEDG[5]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 9
-    Warning (13410): Pin "LEDG[6]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 9
-    Warning (13410): Pin "LEDG[7]" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 9
     Warning (13410): Pin "lcd_blon" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
@@ -957,15 +954,15 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[14]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
     Warning (15610): No output dependent on input pin "SW[15]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
     Warning (15610): No output dependent on input pin "SW[16]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
-Info (21057): Implemented 1179 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1167 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 59 output pins
+    Info (21059): Implemented 47 output pins
     Info (21060): Implemented 8 bidirectional pins
     Info (21061): Implemented 1089 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 4834 megabytes
-    Info: Processing ended: Sat Jun 01 20:36:07 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Sun Jun 02 20:59:23 2019
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:26
 
 

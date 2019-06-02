@@ -5,8 +5,8 @@ entity fase3_Demo is
 	port( CLOCK_50 : in std_logic;
 			SW       : in std_logic_vector(17 downto 0);
 			KEY      : in std_logic_vector(3 downto 0);
-			LEDR     : out std_logic_vector(17 downto 0); --9
-			LEDG     : out std_logic_vector(7 downto 0); --3
+			LEDR     : out std_logic_vector(9 downto 0);
+			LEDG     : out std_logic_vector(3 downto 0);
 			lcd_on   : out std_logic;
 			lcd_blon : out std_logic;
 			lcd_rw   : out std_logic;
@@ -38,7 +38,7 @@ begin
 
 --######################  KEYS  #####################################
 
-	LEDR(17 downto 10) <= s_moedas_falta;
+	--LEDR(17 downto 10) <= s_moedas_falta;
 
 	key0 : entity work.DebounceUnit(Behavioral)
 				port map(refClk    => CLOCK_50,

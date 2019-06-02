@@ -102,7 +102,8 @@ begin
   process(clock) is
   begin
     if rising_edge(clock) then
-		--bottom_line
+		
+		
 		if(state = "000") then
 			top_line <= X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20";
 		else
@@ -117,11 +118,12 @@ begin
 				top_line <= X"43" & X"68" & X"6F" & X"63" & X"20" & X"51" & X"75" & X"65" & X"6E" & X"74" & X"65" & X"20" & X"30" & X"2E" & X"34" & X"35";
 			else
 				-- Cappuccino
-				top_line <= X"43" & X"61" & X"70" & X"70" & X"75" & X"63" & X"63" & X"69" & X"6E" & X"20" & X"20" & X"20" & X"30" & X"2E" & X"35" & X"30";
+				top_line <= X"43" & X"61" & X"70" & X"70" & X"75" & X"63" & X"63" & X"69" & X"6E" & X"6F" & X"20" & X"20" & X"30" & X"2E" & X"35" & X"30";
 			end if;
 		end if;
 		
 		if(freeze = '1') then
+			top_line <= X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20" & X"20";
 			bottom_line <= X"53" & X"69" & X"73" & X"74" & X"65" & X"6D" & X"61" & X"20" & X"42" & X"6C" & X"6F" & X"71" & X"75" & X"65" & X"61" & X"64";
 		else
 			if(n_moedas = "0000") then
