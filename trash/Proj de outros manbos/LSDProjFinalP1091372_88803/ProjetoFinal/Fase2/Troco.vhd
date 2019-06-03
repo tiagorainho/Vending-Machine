@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Troco is
+	port(enable : in std_logic;
+		  valAcum : in std_logic_vector(7 downto 0);
+		  valProd : in std_logic_vector(7 downto 0);
+		  valTroco: out std_logic_vector(6 downto 0));
+end Troco;
+
+architecture Behavioral of Troco is
+	signal s_valTroco : unsigned(7 downto 0);
+begin
+	process(enable)
+	begin
+		if(enable = '1')then
+			s_valTroco <= unsigned(valAcum) - unsigned(valProd);
+		end if;
+	end process;	
+	valTroco <= std_logic_vector(s_valTroco(6 downto 0)); -- Desconsideramos o bit mais significativo, uma vez que nunca será necessário
+end Behavioral;

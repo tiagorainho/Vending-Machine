@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity LCD is
+	port( clk      : in std_logic;
+			switches : in std_logic_vector(3 downto 0);
+			counter  : out std_logic_vector(2 downto 0));
+end LCD;
+
+architecture Behav of LCD is
+signal s_counter : unsigned(2 downto 0);
+begin
+
+end Behav;

@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity MaqVendas is
+	port(clk : in std_logic;
+		  reset :in std_logic;
+		  start : in std_logic;
+		  selProd : in std_logic;
+		  liberar : in std_logic;
+		  moedas : out std_logic;
+		  produto : out std_logic;
+		  saida : out std_logic);
+end MaqVendas;
+
+architecture Behavioral of MaqVendas is
+	type TState is (FStart, FProduto, FMoedas, FSaida);
+	signal pState, nState : TState;
+	
+begin
+process(clk)
+
+begin
+	if(rising_edge(clk)) then
+		if(reset = '1') then
+			pState <= FStart;--start
+		else
+			pState <= nState;
+		end if;
+	end if;
+end process;	
+
+comb_proc : process(pState)
+begin
+	case(pState) is
+	
+	when FStart =>
+		saida <= '0';
+		moedas <= '0';
+		produto <= '0';
+		if(start = '1')then
+			nState <= FProduto;
+		else
+			nState <= FStart;
+		end if;
+		
+	when FProduto =>
+		saida <= '0';
+		moedas <= '0';
+		produto <= '1';
+		if(selProd = '1')then
+			nState <= FMoedas;
+		else
+			nState <= FProduto;
+		end if;	
+		
+	when FMoedas =>
+		saida <= '0';
+		moedas <= '1';
+		produto <= '0';
+		if(liberar = '1')then
+			nState <= FSaida;
+		else
+			nState <= FMoedas;
+		end if;
+		
+	when FSaida =>
+		saida <= '1';
+		moedas <= '0';
+		produto <= '0';
+		nState <= FProduto;
+	
+	end case;
+	end process;
+end Behavioral;

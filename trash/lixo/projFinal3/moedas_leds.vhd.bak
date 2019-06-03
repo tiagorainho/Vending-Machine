@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity moedas_leds is
+	port( clk     : in std_logic;
+			n_moedas   : in std_logic_vector(3 downto 0));
+end moedas_leds;
+
+architecture Behav of moedas_leds is
+signal s_troco : signed(7 downto 0) :=to_signed(0,8);
+begin

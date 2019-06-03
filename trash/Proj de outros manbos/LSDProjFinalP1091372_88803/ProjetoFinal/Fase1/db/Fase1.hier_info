@@ -1,0 +1,202 @@
+|Fase1
+KEY[0] => mux:Mux.Input1
+CLOCK_50 => clkdivider:clk.clkIn
+SW[0] => maqvendas:Maquina.reset
+SW[1] => maqvendas:Maquina.start
+SW[2] => selprod:Prod.sel[0]
+SW[3] => selprod:Prod.sel[1]
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => contmoedas:Moed.V
+SW[16] => contmoedas:Moed.C
+SW[17] => contmoedas:Moed.E
+LEDR[0] << selprod:Prod.numProd[0]
+LEDR[1] << selprod:Prod.numProd[1]
+LEDR[2] << selprod:Prod.numProd[2]
+LEDR[3] << selprod:Prod.numProd[3]
+LEDG[0] << maqvendas:Maquina.saida
+LEDG[1] << clkdivider:clk.clkOut
+LEDG[2] << <GND>
+LEDG[3] << <GND>
+HEX6[0] << bin7segdecoder:display.decOut_n[0]
+HEX6[1] << bin7segdecoder:display.decOut_n[1]
+HEX6[2] << bin7segdecoder:display.decOut_n[2]
+HEX6[3] << bin7segdecoder:display.decOut_n[3]
+HEX6[4] << bin7segdecoder:display.decOut_n[4]
+HEX6[5] << bin7segdecoder:display.decOut_n[5]
+HEX6[6] << bin7segdecoder:display.decOut_n[6]
+
+
+|Fase1|ClkDivider:clk
+clkIn => s_divCounter[0].CLK
+clkIn => s_divCounter[1].CLK
+clkIn => s_divCounter[2].CLK
+clkIn => s_divCounter[3].CLK
+clkIn => s_divCounter[4].CLK
+clkIn => s_divCounter[5].CLK
+clkIn => s_divCounter[6].CLK
+clkIn => s_divCounter[7].CLK
+clkIn => s_divCounter[8].CLK
+clkIn => s_divCounter[9].CLK
+clkIn => s_divCounter[10].CLK
+clkIn => s_divCounter[11].CLK
+clkIn => s_divCounter[12].CLK
+clkIn => s_divCounter[13].CLK
+clkIn => s_divCounter[14].CLK
+clkIn => s_divCounter[15].CLK
+clkIn => s_divCounter[16].CLK
+clkIn => s_divCounter[17].CLK
+clkIn => s_divCounter[18].CLK
+clkIn => s_divCounter[19].CLK
+clkIn => s_divCounter[20].CLK
+clkIn => s_divCounter[21].CLK
+clkIn => s_divCounter[22].CLK
+clkIn => s_divCounter[23].CLK
+clkIn => s_divCounter[24].CLK
+clkIn => s_divCounter[25].CLK
+clkIn => s_divCounter[26].CLK
+clkIn => s_divCounter[27].CLK
+clkIn => s_divCounter[28].CLK
+clkIn => s_divCounter[29].CLK
+clkIn => s_divCounter[30].CLK
+clkIn => s_divCounter[31].CLK
+clkIn => clkOut~reg0.CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Fase1|Mux:Mux
+Sel => Output.OUTPUTSELECT
+Input0 => Output.DATAB
+Input1 => Output.DATAA
+Output <= Output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Fase1|SelProd:Prod
+enable => s_valProd[7].IN1
+enable => comb.IN1
+enable => s_estado.IN1
+enable => comb.IN1
+enable => s_numProd[2].OUTPUTSELECT
+enable => s_numProd[1].OUTPUTSELECT
+enable => s_numProd[0].OUTPUTSELECT
+sel[0] => Equal0.IN1
+sel[0] => Equal1.IN1
+sel[0] => Equal2.IN0
+sel[0] => Equal3.IN1
+sel[1] => Equal0.IN0
+sel[1] => Equal1.IN0
+sel[1] => Equal2.IN1
+sel[1] => Equal3.IN0
+valProd[0] <= <GND>
+valProd[1] <= s_valProd[1].DB_MAX_OUTPUT_PORT_TYPE
+valProd[2] <= s_valProd[2].DB_MAX_OUTPUT_PORT_TYPE
+valProd[3] <= <VCC>
+valProd[4] <= s_valProd[4].DB_MAX_OUTPUT_PORT_TYPE
+valProd[5] <= s_valProd[5].DB_MAX_OUTPUT_PORT_TYPE
+valProd[6] <= s_valProd[6].DB_MAX_OUTPUT_PORT_TYPE
+valProd[7] <= <GND>
+estado <= s_estado.DB_MAX_OUTPUT_PORT_TYPE
+numProd[0] <= s_numProd[0].DB_MAX_OUTPUT_PORT_TYPE
+numProd[1] <= s_numProd[1].DB_MAX_OUTPUT_PORT_TYPE
+numProd[2] <= s_numProd[2].DB_MAX_OUTPUT_PORT_TYPE
+numProd[3] <= <GND>
+
+
+|Fase1|MaqVendas:Maquina
+clk => pState~1.DATAIN
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+start => Selector0.IN3
+start => nState.FStart.DATAB
+selProd => Selector1.IN3
+selProd => Selector0.IN2
+liberar => nState.FSaida.DATAB
+liberar => Selector1.IN1
+moedas <= moedas.DB_MAX_OUTPUT_PORT_TYPE
+produto <= produto.DB_MAX_OUTPUT_PORT_TYPE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Fase1|ContMoedas:Moed
+clk => liberar~reg0.CLK
+clk => s_soma[0].CLK
+clk => s_soma[1].CLK
+clk => s_soma[2].CLK
+clk => s_soma[3].CLK
+clk => s_soma[4].CLK
+clk => s_soma[5].CLK
+clk => s_soma[6].CLK
+clk => s_soma[7].CLK
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => s_soma.OUTPUTSELECT
+enable => liberar~reg0.ENA
+V => Equal0.IN2
+V => Equal1.IN1
+V => Equal2.IN1
+C => Equal0.IN1
+C => Equal1.IN2
+C => Equal2.IN0
+E => Equal0.IN0
+E => Equal1.IN0
+E => Equal2.IN2
+valProd[0] => LessThan0.IN16
+valProd[1] => LessThan0.IN15
+valProd[2] => LessThan0.IN14
+valProd[3] => LessThan0.IN13
+valProd[4] => LessThan0.IN12
+valProd[5] => LessThan0.IN11
+valProd[6] => LessThan0.IN10
+valProd[7] => LessThan0.IN9
+liberar <= liberar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Fase1|Bin7SegDecoder:display
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n[1].DATAIN
+binInput[0] => Equal0.IN2
+binInput[0] => Equal1.IN3
+binInput[0] => Equal2.IN2
+binInput[0] => Equal3.IN3
+binInput[1] => Equal0.IN1
+binInput[1] => Equal1.IN2
+binInput[1] => Equal2.IN3
+binInput[1] => Equal3.IN2
+binInput[2] => Equal0.IN3
+binInput[2] => Equal1.IN1
+binInput[2] => Equal2.IN1
+binInput[2] => Equal3.IN1
+binInput[3] => Equal0.IN0
+binInput[3] => Equal1.IN0
+binInput[3] => Equal2.IN0
+binInput[3] => Equal3.IN0
+decOut_n[0] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[1] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[2] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[3] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[4] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[5] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[6] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+
+

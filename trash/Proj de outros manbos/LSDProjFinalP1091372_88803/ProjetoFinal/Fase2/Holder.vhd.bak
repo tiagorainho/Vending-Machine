@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Holder is 
+	port( Input		:	in std_logic_vector(3 downto 0);
+			Sel		:	in std_logic;
+			Output	:	out std_logic_vector(3 downto 0);
+			Memory	:	out std_logic_vector(3 downto 0));
+end Holder;
+
+architecture Behavioral of Holder is
+
+signal s_Memory : std_logic_vector(3 downto 0); 
+
+begin 
+	process(Sel)
+	begin
+		if(Sel = '0') then
+			Output <= Input;
+			s_Memory <= Input;
+		else 
+			Memory <= s_Memory;
+		end if;
+	end process;
+end Behavioral;

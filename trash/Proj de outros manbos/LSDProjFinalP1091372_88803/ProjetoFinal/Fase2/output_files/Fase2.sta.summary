@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'ClkDivider:clk|clkOut'
+Slack : -4.715
+TNS   : -59.889
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.296
+TNS   : -70.842
+
+Type  : Slow 1200mV 85C Model Setup 'ContMoedas:Moed|liberar'
+Slack : -3.807
+TNS   : -21.186
+
+Type  : Slow 1200mV 85C Model Setup 'MaqVendas:Maquina|pState.FProduto'
+Slack : -2.657
+TNS   : -7.556
+
+Type  : Slow 1200mV 85C Model Hold 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.673
+TNS   : -1.673
+
+Type  : Slow 1200mV 85C Model Hold 'ClkDivider:clk|clkOut'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ContMoedas:Moed|liberar'
+Slack : 0.586
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.655
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -45.405
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ClkDivider:clk|clkOut'
+Slack : -1.285
+TNS   : -23.130
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ContMoedas:Moed|liberar'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Slow 1200mV 0C Model Setup 'ClkDivider:clk|clkOut'
+Slack : -4.232
+TNS   : -53.589
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.880
+TNS   : -60.794
+
+Type  : Slow 1200mV 0C Model Setup 'ContMoedas:Moed|liberar'
+Slack : -3.276
+TNS   : -18.473
+
+Type  : Slow 1200mV 0C Model Setup 'MaqVendas:Maquina|pState.FProduto'
+Slack : -2.302
+TNS   : -6.161
+
+Type  : Slow 1200mV 0C Model Hold 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.593
+TNS   : -1.593
+
+Type  : Slow 1200mV 0C Model Hold 'ClkDivider:clk|clkOut'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ContMoedas:Moed|liberar'
+Slack : 0.525
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -45.405
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ClkDivider:clk|clkOut'
+Slack : -1.285
+TNS   : -23.130
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ContMoedas:Moed|liberar'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Fast 1200mV 0C Model Setup 'ClkDivider:clk|clkOut'
+Slack : -2.146
+TNS   : -24.709
+
+Type  : Fast 1200mV 0C Model Setup 'ContMoedas:Moed|liberar'
+Slack : -1.876
+TNS   : -10.421
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.619
+TNS   : -18.475
+
+Type  : Fast 1200mV 0C Model Setup 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.226
+TNS   : -2.145
+
+Type  : Fast 1200mV 0C Model Hold 'MaqVendas:Maquina|pState.FProduto'
+Slack : -0.846
+TNS   : -0.846
+
+Type  : Fast 1200mV 0C Model Hold 'ClkDivider:clk|clkOut'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ContMoedas:Moed|liberar'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -38.080
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ClkDivider:clk|clkOut'
+Slack : -1.000
+TNS   : -18.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ContMoedas:Moed|liberar'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MaqVendas:Maquina|pState.FProduto'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

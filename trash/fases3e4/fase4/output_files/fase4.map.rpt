@@ -1,0 +1,968 @@
+Analysis & Synthesis report for fase4
+Sun Jun 02 20:59:23 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|state
+  9. State Machine - |fase3_Demo|states:states|PS
+ 10. Registers Protected by Synthesis
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for lcd_controller_ex:lcd|lcd_controller:DISPLAY
+ 17. Parameter Settings for User Entity Instance: DebounceUnit:key0
+ 18. Parameter Settings for User Entity Instance: DebounceUnit:key1
+ 19. Parameter Settings for User Entity Instance: DebounceUnit:key2
+ 20. Parameter Settings for User Entity Instance: DebounceUnit:key3
+ 21. Parameter Settings for User Entity Instance: resetModule:reset
+ 22. Parameter Settings for User Entity Instance: lcd_controller_ex:lcd
+ 23. Parameter Settings for User Entity Instance: lcd_controller_ex:lcd|lcd_controller:DISPLAY
+ 24. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0
+ 25. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0
+ 26. Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1
+ 27. Parameter Settings for Inferred Entity Instance: limite_troco:limite_troco|lpm_divide:Div0
+ 28. Port Connectivity Checks: "lcd_controller_ex:lcd|lcd_controller:DISPLAY"
+ 29. Port Connectivity Checks: "lcd_controller_ex:lcd"
+ 30. Port Connectivity Checks: "resetModule:reset"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 02 20:59:23 2019       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; fase4                                       ;
+; Top-level Entity Name              ; fase3_Demo                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,079                                       ;
+;     Total combinational functions  ; 1,070                                       ;
+;     Dedicated logic registers      ; 319                                         ;
+; Total registers                    ; 319                                         ;
+; Total pins                         ; 78                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; fase3_Demo         ; fase4              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; troco.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/troco.vhd                                 ;         ;
+; switchesCounter.vhd              ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/switchesCounter.vhd                       ;         ;
+; states.vhd                       ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/states.vhd                                ;         ;
+; resetModule.vhd                  ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/resetModule.vhd                           ;         ;
+; price.vhd                        ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/price.vhd                                 ;         ;
+; moedas_leds.vhd                  ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/moedas_leds.vhd                           ;         ;
+; limite_troco.vhd                 ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd                          ;         ;
+; hexPiscar.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/hexPiscar.vhd                             ;         ;
+; fase3_Demo.vhd                   ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd                            ;         ;
+; Debouncer.vhd                    ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/Debouncer.vhd                             ;         ;
+; BinToBCD.vhd                     ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd                              ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/Bin7SegDecoder.vhd                        ;         ;
+; Acumulador.vhd                   ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/Acumulador.vhd                            ;         ;
+; lcd_controller.vhd               ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/lcd_controller.vhd                        ;         ;
+; lcd_controller_ex.vhd            ; yes             ; User VHDL File               ; D:/Programacao/Quartus/LSD/fase4/lcd_controller_ex.vhd                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/programacao/quartus/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_q9m.tdf                     ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_fkh.tdf                ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_i4f.tdf                      ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/add_sub_7pc.tdf                        ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/add_sub_8pc.tdf                        ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_jhm.tdf                     ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_bkh.tdf                ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_a4f.tdf                      ;         ;
+; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_ihm.tdf                     ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_akh.tdf                ;         ;
+; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_84f.tdf                      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 1,079          ;
+;                                             ;                ;
+; Total combinational functions               ; 1070           ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 403            ;
+;     -- 3 input functions                    ; 203            ;
+;     -- <=2 input functions                  ; 464            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 762            ;
+;     -- arithmetic mode                      ; 308            ;
+;                                             ;                ;
+; Total registers                             ; 319            ;
+;     -- Dedicated logic registers            ; 319            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 78             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 319            ;
+; Total fan-out                               ; 4125           ;
+; Average fan-out                             ; 2.66           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |fase3_Demo                               ; 1070 (1)            ; 319 (0)                   ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |fase3_Demo                                                                                                                           ; fase3_Demo          ; work         ;
+;    |Acumulador:ac|                        ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Acumulador:ac                                                                                                             ; Acumulador          ; work         ;
+;    |Bin7SegDecoder:outHex0|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex0                                                                                                    ; Bin7SegDecoder      ; work         ;
+;    |Bin7SegDecoder:outHex1|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex1                                                                                                    ; Bin7SegDecoder      ; work         ;
+;    |Bin7SegDecoder:outHex2|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|Bin7SegDecoder:outHex2                                                                                                    ; Bin7SegDecoder      ; work         ;
+;    |BinToBCD:bin2BCD_01|                  ; 172 (14)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01                                                                                                       ; BinToBCD            ; work         ;
+;       |lpm_divide:Div0|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Div0                                                                                       ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                         ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                             ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider       ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod0                                                                                       ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                         ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                             ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider       ; alt_u_div_i4f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1                                                                                       ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                         ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                             ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider       ; alt_u_div_i4f       ; work         ;
+;    |DebounceUnit:key0|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key0                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key1|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key1                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key2|                    ; 67 (67)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key2                                                                                                         ; DebounceUnit        ; work         ;
+;    |DebounceUnit:key3|                    ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|DebounceUnit:key3                                                                                                         ; DebounceUnit        ; work         ;
+;    |hexPiscar:piscar|                     ; 43 (43)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|hexPiscar:piscar                                                                                                          ; hexPiscar           ; work         ;
+;    |lcd_controller_ex:lcd|                ; 298 (157)           ; 116 (42)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|lcd_controller_ex:lcd                                                                                                     ; lcd_controller_ex   ; work         ;
+;       |lcd_controller:DISPLAY|            ; 141 (141)           ; 74 (74)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY                                                                              ; lcd_controller      ; work         ;
+;    |limite_troco:limite_troco|            ; 123 (64)            ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco                                                                                                 ; limite_troco        ; work         ;
+;       |lpm_divide:Div0|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ihm:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_84f:divider|    ; 59 (59)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|limite_troco:limite_troco|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f       ; work         ;
+;    |moedas_leds:moedas_leds|              ; 10 (10)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|moedas_leds:moedas_leds                                                                                                   ; moedas_leds         ; work         ;
+;    |price:price|                          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|price:price                                                                                                               ; price               ; work         ;
+;    |states:states|                        ; 42 (42)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|states:states                                                                                                             ; states              ; work         ;
+;    |switchesCounter:counter|              ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|switchesCounter:counter                                                                                                   ; switchesCounter     ; work         ;
+;    |troco:troco|                          ; 17 (17)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fase3_Demo|troco:troco                                                                                                               ; troco               ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type: Safe One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|state                                                                                                                                                                                  ;
++----------------------------+----------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; Name                       ; state.PROCESS_TXD_REQUESTS ; state.POWER_ON_PHASE_8 ; state.POWER_ON_PHASE_7 ; state.POWER_ON_PHASE_6 ; state.POWER_ON_PHASE_5 ; state.POWER_ON_PHASE_4 ; state.POWER_ON_PHASE_3 ; state.POWER_ON_PHASE_2 ; state.POWER_ON_PHASE_1 ;
++----------------------------+----------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; state.POWER_ON_PHASE_1     ; 0                          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ;
+; state.POWER_ON_PHASE_2     ; 0                          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 1                      ;
+; state.POWER_ON_PHASE_3     ; 0                          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 1                      ;
+; state.POWER_ON_PHASE_4     ; 0                          ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 1                      ;
+; state.POWER_ON_PHASE_5     ; 0                          ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; state.POWER_ON_PHASE_6     ; 0                          ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; state.POWER_ON_PHASE_7     ; 0                          ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; state.POWER_ON_PHASE_8     ; 0                          ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; state.PROCESS_TXD_REQUESTS ; 1                          ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
++----------------------------+----------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------+
+; State Machine - |fase3_Demo|states:states|PS ;
++--------+--------+------+------+-------+------+
+; Name   ; PS.F_R ; PS.F ; PS.S ; PS.SB ; PS.I ;
++--------+--------+------+------+-------+------+
+; PS.I   ; 0      ; 0    ; 0    ; 0     ; 0    ;
+; PS.SB  ; 0      ; 0    ; 0    ; 1     ; 1    ;
+; PS.S   ; 0      ; 0    ; 1    ; 0     ; 1    ;
+; PS.F   ; 0      ; 1    ; 0    ; 0     ; 1    ;
+; PS.F_R ; 1      ; 0    ; 0    ; 0     ; 1    ;
++--------+--------+------+------+-------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                        ;
++-------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                                           ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++-------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.PROCESS_TXD_REQUESTS ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_8     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_1     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_2     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_3     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_4     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_5     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_6     ; no                                                               ; yes                                        ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|state.POWER_ON_PHASE_7     ; no                                                               ; yes                                        ;
+; Total number of protected registers is 9                                ;                                                                  ;                                            ;
++-------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++----------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------+------------------------+
+; states:states|s_reset_a                            ; states:states|Selector0 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                         ;                        ;
++----------------------------------------------------+-------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                             ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
+; Register name                                                                             ; Reason for Removal                                 ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
+; lcd_controller_ex:lcd|bottom_line[0]                                                      ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|txd_request                                                         ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[5]                                                      ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[7,9,12]                                                 ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[13]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[15]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[21]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[23]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[29]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[31]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[37]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[39]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[45]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[47]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[53]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[55,59,63,68]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[69]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[71,73,79,81,84]                                         ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[85]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[87,92]                                                  ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[93]                                                     ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[95,99]                                                  ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[101]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[103]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[109]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[111,114]                                                ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[117]                                                    ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[119,123,127]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[1,3]                                                       ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[5]                                                         ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[6,7,11]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[13]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[14..16,20]                                                 ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[21]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[22..27]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[29]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[30..36]                                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[37]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[38,39,41,43,44]                                            ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[45]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[47]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[53]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[55]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[61]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[63]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[69]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[71]                                                        ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[77]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[79,87,89,91]                                               ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[93]                                                        ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[95,99]                                                     ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[101]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[103]                                                       ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[109]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[111,113,114,116]                                           ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[117]                                                       ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[119,122..124,127]                                          ; Stuck at GND due to stuck port data_in             ;
+; price:price|price[6,7]                                                                    ; Stuck at GND due to stuck port data_in             ;
+; limite_troco:limite_troco|s_moedas_falta[7]                                               ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|bottom_line[125]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[76]  ;
+; lcd_controller_ex:lcd|bottom_line[76]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[49]  ;
+; lcd_controller_ex:lcd|bottom_line[126]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[124] ;
+; lcd_controller_ex:lcd|bottom_line[124]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[118] ;
+; lcd_controller_ex:lcd|bottom_line[118]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[110] ;
+; lcd_controller_ex:lcd|bottom_line[110]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[105] ;
+; lcd_controller_ex:lcd|bottom_line[105]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[104] ;
+; lcd_controller_ex:lcd|bottom_line[104]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[102] ;
+; lcd_controller_ex:lcd|bottom_line[102]                                                    ; Merged with lcd_controller_ex:lcd|bottom_line[94]  ;
+; lcd_controller_ex:lcd|bottom_line[94]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[90]  ;
+; lcd_controller_ex:lcd|bottom_line[90]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[88]  ;
+; lcd_controller_ex:lcd|bottom_line[88]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[78]  ;
+; lcd_controller_ex:lcd|bottom_line[78]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[62]  ;
+; lcd_controller_ex:lcd|bottom_line[62]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[54]  ;
+; lcd_controller_ex:lcd|bottom_line[54]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[46]  ;
+; lcd_controller_ex:lcd|bottom_line[46]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[41]  ;
+; lcd_controller_ex:lcd|bottom_line[41]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[40]  ;
+; lcd_controller_ex:lcd|bottom_line[40]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[38]  ;
+; lcd_controller_ex:lcd|bottom_line[38]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[30]  ;
+; lcd_controller_ex:lcd|bottom_line[30]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[24]  ;
+; lcd_controller_ex:lcd|bottom_line[24]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[22]  ;
+; lcd_controller_ex:lcd|bottom_line[22]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[18]  ;
+; lcd_controller_ex:lcd|bottom_line[18]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[14]  ;
+; lcd_controller_ex:lcd|bottom_line[14]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[8]   ;
+; lcd_controller_ex:lcd|bottom_line[8]                                                      ; Merged with lcd_controller_ex:lcd|bottom_line[6]   ;
+; lcd_controller_ex:lcd|bottom_line[6]                                                      ; Merged with lcd_controller_ex:lcd|bottom_line[2]   ;
+; lcd_controller_ex:lcd|bottom_line[4,11,19,25,44,48,58,65,66]                              ; Merged with lcd_controller_ex:lcd|bottom_line[1]   ;
+; lcd_controller_ex:lcd|bottom_line[10,20,33..35,56,60,64]                                  ; Merged with lcd_controller_ex:lcd|bottom_line[3]   ;
+; lcd_controller_ex:lcd|bottom_line[28,32,61,80,82,83,86,98,100,108,112,115,120,121]        ; Merged with lcd_controller_ex:lcd|bottom_line[16]  ;
+; lcd_controller_ex:lcd|bottom_line[27,50,67,70,77,89,91,96,97,106,107,113,116,122]         ; Merged with lcd_controller_ex:lcd|bottom_line[17]  ;
+; lcd_controller_ex:lcd|bottom_line[36,72]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[26]  ;
+; lcd_controller_ex:lcd|bottom_line[43,57]                                                  ; Merged with lcd_controller_ex:lcd|bottom_line[42]  ;
+; lcd_controller_ex:lcd|bottom_line[74]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[52]  ;
+; lcd_controller_ex:lcd|top_line[12,17..19,28,50,54,62,70,72,78,86,102,110,118,120,121,126] ; Merged with lcd_controller_ex:lcd|top_line[4]      ;
+; price:price|price[4]                                                                      ; Merged with price:price|price[1]                   ;
+; price:price|price[3]                                                                      ; Merged with price:price|price[2]                   ;
+; lcd_controller_ex:lcd|top_line[8,48,49,51]                                                ; Merged with lcd_controller_ex:lcd|top_line[112]    ;
+; lcd_controller_ex:lcd|top_line[2,40,42,46,52,84,97,104,107,115]                           ; Merged with lcd_controller_ex:lcd|top_line[0]      ;
+; lcd_controller_ex:lcd|top_line[74,96,106]                                                 ; Merged with lcd_controller_ex:lcd|top_line[105]    ;
+; lcd_controller_ex:lcd|top_line[88,90,92,94,108]                                           ; Merged with lcd_controller_ex:lcd|top_line[100]    ;
+; lcd_controller_ex:lcd|top_line[64]                                                        ; Merged with lcd_controller_ex:lcd|top_line[10]     ;
+; lcd_controller_ex:lcd|top_line[75,82,83]                                                  ; Merged with lcd_controller_ex:lcd|top_line[56]     ;
+; lcd_controller_ex:lcd|top_line[68]                                                        ; Merged with lcd_controller_ex:lcd|top_line[60]     ;
+; lcd_controller_ex:lcd|top_line[9,98]                                                      ; Merged with lcd_controller_ex:lcd|top_line[65]     ;
+; limite_troco:limite_troco|s_count[1]                                                      ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller_ex:lcd|top_line[125]                                                       ; Merged with lcd_controller_ex:lcd|top_line[4]      ;
+; lcd_controller_ex:lcd|bottom_line[75]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[42]  ;
+; lcd_controller_ex:lcd|bottom_line[51]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[3]   ;
+; lcd_controller_ex:lcd|bottom_line[52]                                                     ; Merged with lcd_controller_ex:lcd|bottom_line[26]  ;
+; Total Number of Removed Registers = 236                                                   ;                                                    ;
++-------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 319   ;
+; Number of registers using Synchronous Clear  ; 35    ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 212   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------+
+; Inverted Register Statistics                                             ;
++----------------------------------------------------------------+---------+
+; Inverted Register                                              ; Fan out ;
++----------------------------------------------------------------+---------+
+; limite_troco:limite_troco|s_n_moedas[1]                        ; 16      ;
+; limite_troco:limite_troco|s_n_moedas[3]                        ; 16      ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[16] ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[17] ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[18] ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[19] ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[6]  ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[9]  ; 2       ;
+; lcd_controller_ex:lcd|lcd_controller:DISPLAY|reset_counter[14] ; 2       ;
+; hexPiscar:piscar|s_switch                                      ; 2       ;
+; lcd_controller_ex:lcd|bottom_line[49]                          ; 3       ;
+; lcd_controller_ex:lcd|top_line[57]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[66]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[58]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[67]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[59]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[60]                             ; 1       ;
+; lcd_controller_ex:lcd|top_line[85]                             ; 1       ;
+; Total number of inverted registers = 18                        ;         ;
++----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[0]                                                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|price:price|price[2]                                                 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|top_line[56]                                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|write_enable_counter[3] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|delay_counter[8]        ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|delay_counter[5]        ;
+; 16:1               ; 10 bits   ; 100 LEs       ; 70 LEs               ; 30 LEs                 ; Yes        ; |fase3_Demo|moedas_leds:moedas_leds|leds[2]                                      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[5]                              ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key3|s_debounceCnt[4]                                   ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key2|s_debounceCnt[18]                                  ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key1|s_debounceCnt[0]                                   ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |fase3_Demo|DebounceUnit:key0|s_debounceCnt[0]                                   ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fase3_Demo|Acumulador:ac|s_count[6]                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fase3_Demo|lcd_controller_ex:lcd|top_line[85]                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |fase3_Demo|limite_troco:limite_troco|s_n_moedas[1]                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fase3_Demo|states:states|ledr1                                                  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|state                   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |fase3_Demo|states:states|state_info[0]                                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |fase3_Demo|lcd_controller_ex:lcd|top_line                                       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |fase3_Demo|states:states|Selector3                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for lcd_controller_ex:lcd|lcd_controller:DISPLAY ;
++--------------------+-------+------+---------------------------------+
+; Assignment         ; Value ; From ; To                              ;
++--------------------+-------+------+---------------------------------+
+; SAFE_STATE_MACHINE ; on    ; -    ; state                           ;
++--------------------+-------+------+---------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:key0 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                        ;
+; msecmininwidth ; 100   ; Signed Integer                        ;
+; inpolarity     ; '0'   ; Enumerated                            ;
+; outpolarity    ; '1'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:key1 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                        ;
+; msecmininwidth ; 100   ; Signed Integer                        ;
+; inpolarity     ; '0'   ; Enumerated                            ;
+; outpolarity    ; '1'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:key2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                        ;
+; msecmininwidth ; 100   ; Signed Integer                        ;
+; inpolarity     ; '0'   ; Enumerated                            ;
+; outpolarity    ; '1'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:key3 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                        ;
+; msecmininwidth ; 100   ; Signed Integer                        ;
+; inpolarity     ; '0'   ; Enumerated                            ;
+; outpolarity    ; '1'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: resetModule:reset ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 4     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_controller_ex:lcd ;
++--------------------+------------+----------------------------------+
+; Parameter Name     ; Value      ; Type                             ;
++--------------------+------------+----------------------------------+
+; clock_50_frequency ; 50000000.0 ; Signed Float                     ;
++--------------------+------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_controller_ex:lcd|lcd_controller:DISPLAY ;
++-----------------+------------+------------------------------------------------------------+
+; Parameter Name  ; Value      ; Type                                                       ;
++-----------------+------------+------------------------------------------------------------+
+; clock_frequency ; 50000000.0 ; Signed Float                                               ;
++-----------------+------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:bin2BCD_01|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                    ;
+; LPM_WIDTHD             ; 8              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: limite_troco:limite_troco|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                          ;
+; LPM_WIDTHD             ; 3              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller_ex:lcd|lcd_controller:DISPLAY" ;
++-------+-------+----------+-----------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                       ;
++-------+-------+----------+-----------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                  ;
++-------+-------+----------+-----------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller_ex:lcd" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "resetModule:reset"                                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; resetin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; resetout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 78                          ;
+; cycloneiii_ff         ; 319                         ;
+;     ENA               ; 158                         ;
+;     ENA SCLR          ; 34                          ;
+;     ENA SLD           ; 20                          ;
+;     SCLR              ; 1                           ;
+;     plain             ; 106                         ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 1072                        ;
+;     arith             ; 308                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 209                         ;
+;         3 data inputs ; 96                          ;
+;     normal            ; 764                         ;
+;         0 data inputs ; 19                          ;
+;         1 data inputs ; 48                          ;
+;         2 data inputs ; 187                         ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 403                         ;
+;                       ;                             ;
+; Max LUT depth         ; 18.20                       ;
+; Average LUT depth     ; 7.25                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sun Jun 02 20:59:08 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fase4 -c fase4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file troco.vhd
+    Info (12022): Found design unit 1: troco-Behav File: D:/Programacao/Quartus/LSD/fase4/troco.vhd Line: 14
+    Info (12023): Found entity 1: troco File: D:/Programacao/Quartus/LSD/fase4/troco.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file switchescounter.vhd
+    Info (12022): Found design unit 1: switchesCounter-Behav File: D:/Programacao/Quartus/LSD/fase4/switchesCounter.vhd Line: 11
+    Info (12023): Found entity 1: switchesCounter File: D:/Programacao/Quartus/LSD/fase4/switchesCounter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file states.vhd
+    Info (12022): Found design unit 1: states-Behav File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 29
+    Info (12023): Found entity 1: states File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file resetmodule.vhd
+    Info (12022): Found design unit 1: resetModule-Behav File: D:/Programacao/Quartus/LSD/fase4/resetModule.vhd Line: 11
+    Info (12023): Found entity 1: resetModule File: D:/Programacao/Quartus/LSD/fase4/resetModule.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file price.vhd
+    Info (12022): Found design unit 1: price-Behav File: D:/Programacao/Quartus/LSD/fase4/price.vhd Line: 12
+    Info (12023): Found entity 1: price File: D:/Programacao/Quartus/LSD/fase4/price.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file moedas_leds.vhd
+    Info (12022): Found design unit 1: moedas_leds-Behav File: D:/Programacao/Quartus/LSD/fase4/moedas_leds.vhd Line: 11
+    Info (12023): Found entity 1: moedas_leds File: D:/Programacao/Quartus/LSD/fase4/moedas_leds.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file limite_troco.vhd
+    Info (12022): Found design unit 1: limite_troco-Behav File: D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd Line: 16
+    Info (12023): Found entity 1: limite_troco File: D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file hexpiscar.vhd
+    Info (12022): Found design unit 1: hexPiscar-Behav File: D:/Programacao/Quartus/LSD/fase4/hexPiscar.vhd Line: 12
+    Info (12023): Found entity 1: hexPiscar File: D:/Programacao/Quartus/LSD/fase4/hexPiscar.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fase3_demo.vhd
+    Info (12022): Found design unit 1: fase3_Demo-Shell File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 22
+    Info (12023): Found entity 1: fase3_Demo File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: D:/Programacao/Quartus/LSD/fase4/Debouncer.vhd Line: 15
+    Info (12023): Found entity 1: DebounceUnit File: D:/Programacao/Quartus/LSD/fase4/Debouncer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bintobcd.vhd
+    Info (12022): Found design unit 1: BinToBCD-Behav File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 11
+    Info (12023): Found entity 1: BinToBCD File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behav File: D:/Programacao/Quartus/LSD/fase4/Bin7SegDecoder.vhd Line: 10
+    Info (12023): Found entity 1: Bin7SegDecoder File: D:/Programacao/Quartus/LSD/fase4/Bin7SegDecoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file acumulador.vhd
+    Info (12022): Found design unit 1: Acumulador-Behav File: D:/Programacao/Quartus/LSD/fase4/Acumulador.vhd Line: 16
+    Info (12023): Found entity 1: Acumulador File: D:/Programacao/Quartus/LSD/fase4/Acumulador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-conservative File: D:/Programacao/Quartus/LSD/fase4/lcd_controller.vhd Line: 43
+    Info (12023): Found entity 1: lcd_controller File: D:/Programacao/Quartus/LSD/fase4/lcd_controller.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller_ex.vhd
+    Info (12022): Found design unit 1: lcd_controller_ex-example File: D:/Programacao/Quartus/LSD/fase4/lcd_controller_ex.vhd Line: 47
+    Info (12023): Found entity 1: lcd_controller_ex File: D:/Programacao/Quartus/LSD/fase4/lcd_controller_ex.vhd Line: 26
+Info (12127): Elaborating entity "fase3_Demo" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at fase3_Demo.vhd(35): object "s_reset_master" assigned a value but never read File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 35
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:key0" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 43
+Info (12129): Elaborating entity "Acumulador" using architecture "A:behav" for hierarchy "Acumulador:ac" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 64
+Info (12129): Elaborating entity "switchesCounter" using architecture "A:behav" for hierarchy "switchesCounter:counter" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 76
+Info (12129): Elaborating entity "price" using architecture "A:behav" for hierarchy "price:price" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 82
+Info (12129): Elaborating entity "troco" using architecture "A:behav" for hierarchy "troco:troco" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 90
+Info (12129): Elaborating entity "limite_troco" using architecture "A:behav" for hierarchy "limite_troco:limite_troco" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 99
+Info (12129): Elaborating entity "moedas_leds" using architecture "A:behav" for hierarchy "moedas_leds:moedas_leds" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 110
+Info (12129): Elaborating entity "states" using architecture "A:behav" for hierarchy "states:states" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at states.vhd(150): signal "s_centimos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at states.vhd(151): signal "s_euros" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at states.vhd(152): signal "s_hex_En" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at states.vhd(153): signal "s_hex_piscar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at states.vhd(154): signal "s_reset_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at states.vhd(50): inferring latch(es) for signal or variable "s_hex_En", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at states.vhd(50): inferring latch(es) for signal or variable "s_reset_a", which holds its previous value in one or more paths through the process File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
+Info (10041): Inferred latch for "s_reset_a" at states.vhd(50) File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
+Info (10041): Inferred latch for "s_hex_En" at states.vhd(50) File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
+Info (12129): Elaborating entity "BinToBCD" using architecture "A:behav" for hierarchy "BinToBCD:bin2BCD_01" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(17): signal "r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(18): signal "s_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(21): signal "s_r" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(22): signal "s_tr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(30): signal "s_u" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at BinToBCD.vhd(31): signal "s_d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 31
+Info (12129): Elaborating entity "hexPiscar" using architecture "A:behav" for hierarchy "hexPiscar:piscar" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 157
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behav" for hierarchy "Bin7SegDecoder:outHex0" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 164
+Info (12129): Elaborating entity "resetModule" using architecture "A:behav" for hierarchy "resetModule:reset" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 185
+Warning (10541): VHDL Signal Declaration warning at resetModule.vhd(8): used implicit default value for signal "resetOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Programacao/Quartus/LSD/fase4/resetModule.vhd Line: 8
+Info (12129): Elaborating entity "lcd_controller_ex" using architecture "A:example" for hierarchy "lcd_controller_ex:lcd" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 192
+Info (12129): Elaborating entity "lcd_controller" using architecture "A:conservative" for hierarchy "lcd_controller_ex:lcd|lcd_controller:DISPLAY" File: D:/Programacao/Quartus/LSD/fase4/lcd_controller_ex.vhd Line: 80
+Info (284007): State machine "|fase3_Demo|lcd_controller_ex:lcd|lcd_controller:DISPLAY|state" will be implemented as a safe state machine. File: D:/Programacao/Quartus/LSD/fase4/lcd_controller.vhd Line: 71
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod0" File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 21
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Div0" File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 18
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:bin2BCD_01|Mod1" File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "limite_troco:limite_troco|Div0" File: D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd Line: 33
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Mod0" File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 21
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Mod0" with the following parameter: File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 21
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/Programacao/Quartus/LSD/fase4/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/Programacao/Quartus/LSD/fase4/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "BinToBCD:bin2BCD_01|lpm_divide:Div0" File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 18
+Info (12133): Instantiated megafunction "BinToBCD:bin2BCD_01|lpm_divide:Div0" with the following parameter: File: D:/Programacao/Quartus/LSD/fase4/BinToBCD.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_a4f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "limite_troco:limite_troco|lpm_divide:Div0" File: D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd Line: 33
+Info (12133): Instantiated megafunction "limite_troco:limite_troco|lpm_divide:Div0" with the following parameter: File: D:/Programacao/Quartus/LSD/fase4/limite_troco.vhd Line: 33
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
+    Info (12023): Found entity 1: lpm_divide_ihm File: D:/Programacao/Quartus/LSD/fase4/db/lpm_divide_ihm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: D:/Programacao/Quartus/LSD/fase4/db/sign_div_unsign_akh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
+    Info (12023): Found entity 1: alt_u_div_84f File: D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_84f.tdf Line: 26
+Warning (13012): Latch states:states|s_reset_a has unsafe behavior File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal states:states|PS.F_R File: D:/Programacao/Quartus/LSD/fase4/states.vhd Line: 31
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_blon" is stuck at GND File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_i4f.tdf Line: 61
+    Info (17048): Logic cell "BinToBCD:bin2BCD_01|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: D:/Programacao/Quartus/LSD/fase4/db/alt_u_div_i4f.tdf Line: 56
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[7]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[8]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[9]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[10]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[11]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[12]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[13]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[14]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[15]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[16]" File: D:/Programacao/Quartus/LSD/fase4/fase3_Demo.vhd Line: 6
+Info (21057): Implemented 1167 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 1089 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Sun Jun 02 20:59:23 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
+
+

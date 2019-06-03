@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ContMoedas is
+	port(clk : in std_logic;
+		  enable : in std_logic;
+		  V : in std_logic;
+		  C : in std_logic;
+		  E : in std_logic;
+		  valProd : in std_logic_vector(7 downto 0);
+		  liberar : out std_logic);
+end ContMoedas;
+
+architecture Behavioral of ContMoedas is
+	signal s_moedas : std_logic_vector(2 downto 0);
+	signal s_soma : unsigned(7 downto 0) := "00000000";
+	signal s_valProd : unsigned(7 downto 0);
+begin
+	s_valProd <= unsigned(valProd);
+	s_moedas <= E & C & V;
+	process(clk)
+	begin
+		if(rising_edge(clk))then
+			if(enable = '1')then
+				if(s_moedas = "001")then
+					s_soma <= s_soma + "00010100"; -- 20
+				elsif(s_moedas = "010")then	
+					s_soma <= s_soma + "00110010"; -- 50	
+				elsif(s_moedas = "100")then
+					s_soma <= s_soma + "01100100"; -- 100	
+				end if;
+				if(s_soma >= s_valProd)then
+						liberar <= '1';
+						s_soma <= "00000000";
+						-- troco <= s_soma - s_vaProd;
+				else
+					liberar <= '0';
+				end if;	
+			else	
+				s_soma <= "00000000";
+			end if;
+		end if;
+	end process;
+end Behavioral;	

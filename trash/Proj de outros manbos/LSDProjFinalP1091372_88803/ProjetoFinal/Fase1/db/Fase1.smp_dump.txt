@@ -1,0 +1,7 @@
+
+State Machine - |Fase1|MaqVendas:Maquina|pState
+Name pState.FSaida pState.FMoedas pState.FProduto pState.FStart 
+pState.FStart 0 0 0 0 
+pState.FProduto 0 0 1 1 
+pState.FMoedas 0 1 0 1 
+pState.FSaida 1 0 0 1 

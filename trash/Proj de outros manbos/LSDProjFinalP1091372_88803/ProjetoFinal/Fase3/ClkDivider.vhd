@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ClkDivider is
+	generic(K : positive := 50000000);
+	port(clkIn	: in  std_logic;
+		  clkOut	: out std_logic);
+end ClkDivider;
+
+architecture Behavioral of ClkDivider is
+
+	signal s_divCounter : unsigned(31 downto 0);
+
+begin
+	
+	process(clkIn)
+	begin
+		if (rising_edge(clkIn)) then
+			if (s_divCounter = k - 1) then
+				clkOut		 <= '0';
+				s_divCounter <= (others => '0');
+			else
+				if (s_divCounter = (k / 2 - 1)) then
+					clkOut	 <= '1';
+				end if;
+				s_divCounter <= s_divCounter + 1;
+			end if;
+		end if;
+	end process;
+end Behavioral;
