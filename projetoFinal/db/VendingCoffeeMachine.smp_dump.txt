@@ -1,8 +1,0 @@
-
-State Machine - |control|states:data|PS
-Name PS.F_T PS.F_N PS.S PS.SB PS.I 
-PS.I 0 0 0 0 0 
-PS.SB 0 0 0 1 1 
-PS.S 0 0 1 0 1 
-PS.F_N 0 1 0 0 1 
-PS.F_T 1 0 0 0 1 

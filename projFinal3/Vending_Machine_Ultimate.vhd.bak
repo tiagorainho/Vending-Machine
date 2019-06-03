@@ -1,8 +1,0 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity Vending_Machine_Ultimate is
-	port( 
-
-			);
-end Vending_Machine_Ultimate;

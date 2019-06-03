@@ -1,8 +1,0 @@
-
-State Machine - |fase3_Demo|states:states|PS
-Name PS.F_R PS.F PS.S PS.SB PS.I 
-PS.I 0 0 0 0 0 
-PS.SB 0 0 0 1 1 
-PS.S 0 0 1 0 1 
-PS.F 0 1 0 0 1 
-PS.F_R 1 0 0 0 1 
